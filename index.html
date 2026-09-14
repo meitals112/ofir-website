@@ -1,1848 +1,289 @@
-/* ===== OFIR Leadership Center — stylesheet ===== */
-
-/* --- core editorial system --- */
-:root{
-  --ivory:#dbd9ca;
-  --ivory-2:#ece8dc;
-  --sage:#acb7a5;
-  --muted:#6b7f62;
-  --bluegray:#98a6a5;
-  --deep:#273026;
-  --deep-2:#1e261f;
-  --paper:#f6f2eb;
-  --white:#ffffff;
-  --ink:#273026;
-  --line:rgba(39,48,38,.14);
-  --line-dark:rgba(219,217,202,.18);
-  --display:'Hammersmith One', sans-serif;
-  --body:'Varela Round', sans-serif;
-  --mono:'Roboto Mono', ui-monospace, monospace;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-a{text-decoration:none;color:inherit}
-p{margin:0;line-height:1.72;color:rgba(39,48,38,.74)}
-h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:400;letter-spacing:-.02em}
-img{display:block;max-width:100%}
-.wrap{width:min(1180px,calc(100% - 56px));margin:auto}
-.eyebrow{font:500 10px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.mono{font-family:var(--mono)}
-header{position:sticky;top:0;z-index:40;background:rgba(246,242,235,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav{height:72px;width:min(1220px,calc(100% - 44px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:32px}
-.brand{display:flex;align-items:center;gap:12px;min-width:0}
-.brand img{width:22px;height:34px;object-fit:cover;mix-blend-mode:multiply}
-.brand-text{display:flex;flex-direction:column;line-height:1}
-.brand-text strong{font:400 18px var(--display)}
-.brand-text span{margin-top:5px;font:400 9px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:rgba(39,48,38,.62)}
-.nav ul{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:28px}
-.nav li a{font:500 10px var(--mono);letter-spacing:.08em;text-transform:uppercase}
-.nav-cta{border:1px solid var(--deep);padding:10px 16px}
-.hero{position:relative;overflow:hidden;background:var(--deep)}
-.hero:before{content:"";position:absolute;inset:0;background:
-  radial-gradient(circle at 78% 16%, rgba(172,183,165,.92), rgba(145,166,115,.55) 18%, rgba(107,127,98,.32) 32%, rgba(39,48,38,.78) 56%, rgba(24,31,25,1) 100%),
-  linear-gradient(135deg,#1b211c 0%,#273026 44%,#6b7f62 76%,#acb7a5 100%)}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,19,16,.55),rgba(15,19,16,.16) 48%,rgba(15,19,16,.05));}
-.hero-content{position:relative;display:block;min-height:640px;padding:94px 0 76px}
-.hero-copy{color:var(--ivory-2);padding-top:54px;max-width:760px}
-.hero-copy .eyebrow{color:rgba(236,232,220,.76);margin-bottom:20px}
-.hero-copy h1{font-size:clamp(56px,7vw,92px);line-height:.95;max-width:700px}
-.hero-copy p{margin-top:26px;max-width:560px;font-size:15px;color:rgba(236,232,220,.74)}
-.hero-actions{display:flex;gap:10px;margin-top:32px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;font:500 10px var(--mono);letter-spacing:.08em;text-transform:uppercase}
-.btn-solid{background:var(--ivory);color:var(--deep)}
-.btn-outline{border:1px solid rgba(236,232,220,.54);color:var(--ivory)}
-.hero-notes{align-self:end;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.note{padding:18px 18px 16px;border:1px solid rgba(236,232,220,.18);background:rgba(255,255,255,.05);backdrop-filter:blur(6px);color:var(--ivory)}
-.note b{display:block;font:500 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:rgba(236,232,220,.58);margin-bottom:10px}
-.note span{display:block;font-size:14px;line-height:1.45}
-.triad{background:var(--ivory);padding:72px 0}
-.triad-grid{display:grid;grid-template-columns:repeat(3,1fr)}
-.triad-item{padding:0 34px;border-right:1px solid rgba(39,48,38,.14)}
-.triad-item:first-child{padding-left:0}
-.triad-item:last-child{padding-right:0;border-right:0}
-.num{font:500 10px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
-.triad h3{font-size:22px;margin-bottom:10px}
-.triad p{font-size:13px}
-.section{padding:102px 0}
-.center-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:74px;align-items:center}
-.section-title h2{font-size:clamp(40px,5vw,64px);line-height:1.02;margin-top:12px}
-.section-title p{margin-top:20px;font-size:15px;max-width:500px}
-.text-block{padding-top:14px}
-.rule{width:46px;height:1px;background:var(--muted);margin:26px 0}
-.image-stack{display:grid;grid-template-columns:1fr .86fr;gap:18px;align-items:stretch}
-.image-stack .tall{height:520px;border-radius:2px;overflow:hidden}
-.image-stack .tall img{width:100%;height:100%;object-fit:cover}
-.image-stack .small-col{display:grid;grid-template-rows:1fr 1fr;gap:18px}
-.image-stack .small{border-radius:2px;overflow:hidden;min-height:251px}
-.image-stack .small img{width:100%;height:100%;object-fit:cover}
-.image-stack.center-images .tall{height:560px}
-.services{background:var(--white)}
-.section-head{text-align:center;max-width:680px;margin:0 auto 50px}
-.section-head h2{font-size:42px;margin:10px 0 14px}
-.section-head p{font-size:14px}
-.service-grid{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.service{padding:34px 22px 38px;border-right:1px solid var(--line)}
-.service:last-child{border-right:0}
-.service .icon{font:500 10px var(--mono);letter-spacing:.08em;color:var(--muted);margin-bottom:20px}
-.service h3{font-size:17px;margin-bottom:10px}
-.service p{font-size:12.5px;line-height:1.65}
-.stats{background:var(--deep);color:var(--ivory);padding:72px 0 52px}
-.stats .section-head{margin-bottom:34px}
-.stats .section-head h2{color:var(--ivory)}
-.stats .section-head p{color:rgba(236,232,220,.63)}
-.stats .eyebrow{color:var(--sage)}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark)}
-.stat{padding:26px 22px;border-right:1px solid var(--line-dark)}
-.stat:first-child{padding-left:0}
-.stat:last-child{padding-right:0;border-right:0}
-.stat b{display:block;font:400 38px var(--display);line-height:1;color:var(--ivory)}
-.stat span{display:block;margin-top:9px;font:500 9px/1.55 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(236,232,220,.58)}
-.stats-source{text-align:right;margin-top:16px;font:400 9px var(--mono);color:rgba(236,232,220,.38)}
-.features{background:var(--sage)}
-.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:52px}
-.feature-index{font:500 10px var(--mono);letter-spacing:.08em;color:rgba(39,48,38,.58);margin-bottom:18px}
-.feature h3{font-size:24px;line-height:1.18;margin-bottom:12px}
-.feature p{font-size:13px}
-.feature .line{width:32px;height:1px;background:var(--deep);margin-top:22px}
-.simulation{background:transparent;color:var(--ivory);padding:0 0 150px}
-.sim-grid{width:min(1240px,calc(100% - 56px));margin:auto;display:grid;grid-template-columns:.96fr 1fr;gap:22px;align-items:stretch;min-height:auto}
-.sim-visual{position:relative;overflow:hidden;border-radius:28px;min-height:720px;background:#111}
-.sim-main{position:absolute;inset:0}
-.sim-main img{width:100%;height:100%;object-fit:cover}
-.sim-main:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,24,19,.05),rgba(18,24,19,.26))}
-.sim-inset{position:absolute;right:34px;bottom:34px;width:min(42%,280px);border:1px solid rgba(236,232,220,.18);border-radius:18px;box-shadow:0 18px 40px rgba(0,0,0,.26)}
-.sim-copy{padding:82px 66px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(145deg,#1c241d 0%,#273026 50%,#314135 100%);border-radius:28px;min-height:720px}
-.sim-copy .eyebrow{color:var(--sage)}
-.sim-copy h2{font-size:52px;line-height:1.02;margin:12px 0 18px;color:var(--ivory);max-width:560px}
-.sim-copy p{font-size:14px;color:rgba(236,232,220,.7);max-width:560px}
-.sim-list{margin-top:28px;border-top:1px solid var(--line-dark)}
-.sim-row{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid var(--line-dark)}
-.sim-row span:first-child{font-size:13px;color:var(--ivory)}
-.sim-row span:last-child{font:400 10px var(--mono);color:rgba(236,232,220,.5);text-align:right}
-.method{background:var(--bluegray)}
-.method-title{text-align:center;margin-bottom:56px}
-.method-title h2{font-size:42px;margin-top:10px}
-.steps{display:grid;grid-template-columns:repeat(5,1fr)}
-.step{padding-right:26px;position:relative}
-.step:after{content:"";position:absolute;top:14px;right:12px;width:40px;height:1px;background:rgba(39,48,38,.28)}
-.step:last-child:after{display:none}
-.step b{display:block;font:500 10px var(--mono);letter-spacing:.08em;color:rgba(39,48,38,.58);margin-bottom:24px}
-.step h3{font-size:17px;margin-bottom:9px}
-.step p{font-size:12px;line-height:1.62}
-.team{background:var(--white)}
-.team-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:68px;align-items:start}
-.team-intro h2{font-size:52px;line-height:1.03;margin:12px 0 18px}
-.team-intro p{font-size:14px;max-width:430px}
-.people{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 24px}
-.person{position:relative}
-.person-photo{position:relative;aspect-ratio:1/1.05;overflow:hidden;background:#e8e7e1}
-.person-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(100%) contrast(.96);transition:transform .45s ease,filter .35s ease}
-.person-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;background:linear-gradient(180deg,rgba(39,48,38,.03) 8%,rgba(39,48,38,.28) 42%,rgba(39,48,38,.96) 100%);color:var(--ivory);opacity:0;transform:translateY(8px);transition:opacity .28s ease,transform .28s ease}
-.person:hover .person-overlay,.person:focus-within .person-overlay{opacity:1;transform:translateY(0)}
-.person:hover .person-photo img,.person:focus-within .person-photo img{transform:scale(1.025);filter:grayscale(100%) contrast(.88) brightness(.72)}
-.person-overlay p{font-size:12px;line-height:1.58;color:rgba(236,232,220,.92)}
-.person-overlay .bio-meta{margin-top:12px;padding-top:12px;border-top:1px solid rgba(236,232,220,.22);font:400 9px/1.5 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:rgba(236,232,220,.67)}
-.person h3{font-size:16px;margin-top:14px}
-.person>span{display:block;margin-top:6px;font:400 10px var(--mono);letter-spacing:.05em;color:rgba(39,48,38,.58)}
-.measurement{background:var(--ivory)}
-.measure-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:76px;align-items:center}
-.data-card{background:var(--deep);color:var(--ivory);padding:30px;min-height:360px;display:grid;grid-template-rows:auto 1fr auto}
-.data-top{display:flex;justify-content:space-between;gap:14px;font:500 9px var(--mono);letter-spacing:.08em;color:var(--sage)}
-.chart{align-self:center;height:152px;display:flex;align-items:end;gap:8px}
-.bar{flex:1;position:relative;background:rgba(152,166,165,.16)}
-.bar:after{content:"";position:absolute;left:0;right:0;bottom:0;height:var(--h);background:linear-gradient(180deg,var(--bluegray),var(--sage))}
-.data-foot{padding-top:16px;border-top:1px solid var(--line-dark);display:flex;justify-content:space-between;gap:12px;font:400 9px var(--mono);color:rgba(236,232,220,.5)}
-.measure-copy h2{font-size:48px;line-height:1.04;margin:10px 0 18px}
-.measure-copy p{font-size:14px}
-.measure-copy ul{list-style:none;padding:0;margin:28px 0 0}
-.measure-copy li{padding:12px 0;border-top:1px solid rgba(39,48,38,.16);font-size:13px}
-.about{background:var(--paper)}
-.about-head{text-align:left;margin-bottom:34px}
-.about-head h2{font-size:56px;line-height:1;margin-top:10px}
-.about-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:68px;align-items:center}
-.about-visual{position:relative;min-height:460px}
-.about-visual .panel{position:absolute;overflow:hidden;border-radius:2px;box-shadow:0 20px 45px rgba(39,48,38,.12)}
-.about-visual .panel img{width:100%;height:100%;object-fit:cover}
-.about-visual .panel-1{left:0;top:38px;width:58%;height:320px}
-.about-visual .panel-2{right:0;top:0;width:44%;height:220px}
-.about-visual .panel-3{right:34px;bottom:0;width:48%;height:180px;background:var(--white);display:flex;align-items:center;justify-content:center;padding:20px}
-.about-visual .panel-3 img{width:126px;height:auto;mix-blend-mode:multiply}
-.quote{font:400 24px/1.42 var(--display);color:var(--deep);margin-bottom:18px;max-width:620px}
-.about-copy p{font-size:15px}
-.ofir-portrait{position:relative;overflow:hidden;background:#d9ddd4;box-shadow:0 20px 45px rgba(39,48,38,.12)}
-.ofir-portrait img{width:100%;height:100%;object-fit:cover;filter:none}
-.ofir-date{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;background:rgba(39,48,38,.88);color:var(--ivory);font:500 10px var(--mono);letter-spacing:.08em;text-transform:uppercase;text-align:center}
-.about-visual.ofir-layout{display:grid;grid-template-columns:1.08fr .92fr;gap:18px;min-height:460px}
-.about-visual.ofir-layout .ofir-portrait{height:460px}
-.about-visual.ofir-layout .space-pair{display:grid;grid-template-rows:1fr 1fr;gap:18px}
-.about-visual.ofir-layout .space-pair img{width:100%;height:100%;object-fit:cover;min-height:221px}
-.cta{background:radial-gradient(circle at 80% 22%,#acb7a5 0,#91a673 14%,#6b7f62 28%,#273026 62%,#1b211c 100%);color:var(--ivory);padding:82px 0}
-.cta .wrap{display:flex;justify-content:space-between;align-items:center;gap:48px}
-.cta h2{font-size:40px;max-width:670px;line-height:1.08}
-.cta a{padding:14px 20px;border:1px solid rgba(236,232,220,.68);font:500 10px var(--mono);letter-spacing:.08em;text-transform:uppercase}
-footer{padding:24px 0;background:var(--deep);color:rgba(236,232,220,.6)}
-.footer-grid{display:flex;justify-content:space-between;gap:24px;font:400 9px var(--mono);letter-spacing:.08em;text-transform:uppercase}
-
-.memory-visual{min-height:auto}.memory-portrait{background:#e9e6dc;overflow:hidden;box-shadow:0 20px 45px rgba(39,48,38,.12)}.memory-portrait img{width:100%;height:auto;display:block;object-fit:cover}.memory-dates{margin-top:14px;font:500 10px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(39,48,38,.58)}
-
-.extreme{background:var(--white);padding:100px 0}.extreme-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:72px;align-items:start}.extreme h2{font-size:46px;line-height:1.04;margin-top:10px}.extreme-intro p{margin-top:18px;font-size:15px}.extreme-list{border-top:1px solid var(--line)}.extreme-row{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:18px 0;border-bottom:1px solid var(--line)}.extreme-row b{font:500 10px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.extreme-row span{font-size:14px;line-height:1.55;color:rgba(39,48,38,.76)}
-
-/* Modern white-spread refinement — inspired by the supplied reference while retaining the Ofir design system */
-body{background:#fff}
-header{background:rgba(255,255,255,.92);border-bottom:1px solid rgba(39,48,38,.09)}
-.wrap{width:min(1200px,calc(100% - 64px))}
-.section{padding:124px 0}
-.eyebrow{font-size:9px;letter-spacing:.14em}
-
-/* Hero: white editorial field, brand gradient as a contained visual object */
-.hero{background:#fff;min-height:700px;border-bottom:1px solid rgba(39,48,38,.08)}
-.hero:before{inset:auto;right:max(32px,5vw);top:58px;bottom:58px;width:min(42vw,610px);border-radius:30px;background:radial-gradient(circle at 72% 18%,rgba(172,183,165,.98) 0,rgba(145,166,115,.82) 20%,rgba(107,127,98,.7) 43%,rgba(39,48,38,.94) 78%,#1c241d 100%);box-shadow:0 28px 70px rgba(39,48,38,.12)}
-.hero:after{display:none}
-.hero-content{min-height:700px;padding:100px 0;display:flex;align-items:center}
-.hero-copy{padding-top:0;max-width:610px;color:var(--deep);position:relative;z-index:2}
-.hero-copy .eyebrow{color:var(--muted);margin-bottom:20px}
-.hero-copy h1{font-size:clamp(58px,6.4vw,88px);line-height:.94;color:var(--deep)}
-.hero-copy p{font-size:15px;color:rgba(39,48,38,.68);max-width:510px}
-.btn-solid{background:var(--deep);color:#fff;border-radius:999px;padding:14px 20px}
-.btn-outline{border:1px solid rgba(39,48,38,.22);color:var(--deep);border-radius:999px;padding:14px 20px;background:#fff}
-
-/* Intro three-up becomes a light floating strip */
-.triad{background:#fff;padding:26px 0 108px}
-.triad-grid{background:#f5f5f1;border:1px solid rgba(39,48,38,.07);border-radius:24px;padding:36px 34px}
-.triad-item{padding:0 30px}
-.triad h3{font-size:21px}
-
-/* Center: generous white space and softer image geometry */
-#center{background:#fff}
-.center-grid{grid-template-columns:.78fr 1.22fr;gap:88px}
-.section-title h2{font-size:clamp(42px,4.8vw,64px)}
-.image-stack{gap:20px}
-.image-stack .small-col{gap:20px}
-.image-stack .tall,.image-stack .small{border-radius:24px}
-.image-stack.center-images .tall{height:600px}
-.image-stack .small{min-height:290px}
-
-/* Capabilities: cards rather than ruled table */
-.services{background:#fff;padding-top:112px}
-.section-head{margin-bottom:58px}
-.section-head h2{font-size:44px}
-.service-grid{border:0;gap:14px}
-.service{border:0!important;background:#f4f5f1;border-radius:18px;padding:30px 24px;min-height:220px;transition:transform .2s ease,background .2s ease}
-.service:hover{transform:translateY(-3px);background:#e9ede6}
-.service .icon{margin-bottom:42px}
-
-/* Evidence stays serious but becomes a contained panel in a white page */
-.stats{background:#fff;color:var(--ivory);padding:18px 0 118px}
-.stats .wrap{background:var(--deep);border-radius:28px;padding:62px 64px 34px;overflow:hidden}
-.stats .section-head{max-width:760px}
-.stats-grid{margin-top:8px}
-.stat b{font-size:42px}
-
-/* Three core conditions become calm cards */
-.features{background:#fff;padding:0 0 120px}
-.features-grid{gap:16px}
-.feature{background:rgba(172,183,165,.28);border-radius:22px;padding:34px 30px;min-height:250px}
-.feature-index{margin-bottom:48px}
-.feature .line{display:none}
-
-/* Extreme conditions: editorial left + quiet structured panel */
-.extreme{background:#fff;padding:118px 0 126px}
-.extreme-grid{grid-template-columns:.78fr 1.22fr;gap:90px}
-.extreme h2{font-size:50px}
-.extreme-list{border:0;background:#f5f5f2;border-radius:24px;padding:8px 28px}
-.extreme-row{padding:22px 4px}
-
-/* Simulation as a dark immersive object, not a full-page color band */
-.simulation{background:#fff;padding:0 28px 124px}
-.sim-grid{width:min(1200px,100%);margin:auto;min-height:680px;border-radius:30px;overflow:hidden;box-shadow:0 28px 80px rgba(20,27,21,.14)}
-.sim-copy{padding:80px 62px}
-.sim-inset{border-radius:16px;overflow:hidden;border:1px solid rgba(236,232,220,.22)}
-
-/* Method: light modular cards */
-.method{background:#fff;padding:0 0 124px}
-.method .wrap{background:rgba(152,166,165,.18);border-radius:28px;padding:64px 58px}
-.steps{gap:14px}
-.step{background:rgba(255,255,255,.72);border:1px solid rgba(39,48,38,.08);border-radius:18px;padding:24px;min-height:176px}
-.step:after{display:none}
-.step b{margin-bottom:34px}
-
-/* Team: cleaner gallery, rounded imagery, subtle reveal */
-.team{background:#fff;padding-top:124px}
-.team-grid{grid-template-columns:.72fr 1.28fr;gap:82px}
-.people{gap:34px 22px}
-.person-photo{border-radius:22px}
-.person-overlay{padding:22px;border-radius:22px}
-.person h3{margin-top:16px;font-size:17px}
-.person>span{font-size:9px;line-height:1.5}
-
-/* Measurement: one softly colored module */
-.measurement{background:#fff;padding:118px 0}
-.measurement .wrap{background:#f2f1ea;border-radius:28px;padding:48px}
-.data-card{border-radius:22px;min-height:390px}
-.measure-copy h2{font-size:50px}
-
-/* Memorial section: white, restrained, photographic */
-.about{background:#fff;padding:126px 0}
-.about-grid{grid-template-columns:.72fr 1.28fr;gap:88px}
-.memory-portrait{border-radius:24px;overflow:hidden;box-shadow:none}
-.memory-dates{margin-top:16px}
-.quote{font-size:25px;line-height:1.38}
-
-/* CTA as a contained final card */
-.cta{background:#fff;padding:0 0 64px;color:var(--ivory)}
-.cta .wrap{background:radial-gradient(circle at 84% 20%,#acb7a5 0,#6b7f62 26%,#273026 62%,#1b211c 100%);border-radius:30px;padding:60px 64px}
-.cta h2{font-size:42px}
-.cta a{border-radius:999px;padding:14px 20px}
-footer{background:#fff;color:rgba(39,48,38,.48);border-top:1px solid rgba(39,48,38,.08)}
-
-@media (max-width:1080px){
-  .hero:before{right:28px;width:44%;opacity:.42}
-  .hero-copy{max-width:56%}
-  .center-grid,.extreme-grid,.team-grid,.about-grid{grid-template-columns:1fr;gap:52px}
-  .measurement .wrap{padding:38px}
-
-  .service-grid{grid-template-columns:repeat(2,1fr)}
-  .service:nth-child(2){border-right:0}
-  .hero-content,.center-grid,.team-grid,.measure-grid,.about-grid,.sim-grid{grid-template-columns:1fr}
-  .hero-notes{grid-template-columns:repeat(2,1fr)}
-  .sim-visual{min-height:460px}
-  .about-visual{min-height:540px}
-}
-@media (max-width:760px){
-  .wrap{width:min(100% - 28px,1200px)}
-  .hero{min-height:auto}
-  .hero:before{position:absolute;right:-40px;top:34px;bottom:auto;width:220px;height:220px;border-radius:50%;opacity:.22}
-  .hero-content{min-height:auto;padding:90px 0 76px}
-  .hero-copy{max-width:none}
-  .triad{padding:12px 0 72px}.triad-grid{padding:18px 22px}
-  .image-stack.center-images .tall{height:360px}
-  .stats{padding:0 14px 82px}.stats .wrap{padding:42px 26px 28px;border-radius:22px}
-  .feature{min-height:auto}.feature-index{margin-bottom:28px}
-  .simulation{padding:0 14px 84px}.sim-grid{border-radius:22px}
-  .method{padding:0 14px 84px}.method .wrap{padding:42px 24px;border-radius:22px}
-  .measurement{padding:84px 14px}.measurement .wrap{padding:24px;border-radius:22px}
-  .cta{padding:0 14px 38px}.cta .wrap{padding:42px 26px;border-radius:22px}
-
-  .extreme-grid,.extreme-row{grid-template-columns:1fr}.extreme-row{gap:8px}
-  .wrap{width:min(100% - 32px,1180px)}
-  .nav{height:auto;padding:14px 0;flex-direction:column;align-items:flex-start}
-  .nav ul{flex-wrap:wrap;gap:14px 18px}
-  .hero-content{min-height:auto;padding:64px 0 54px;gap:36px}
-  .hero-copy h1{font-size:48px}
-  .hero-notes,.triad-grid,.stats-grid,.features-grid,.steps,.people,.service-grid,.image-stack{grid-template-columns:1fr}
-  .triad-item,.service,.stat{padding:24px 0;border-right:0;border-bottom:1px solid var(--line)}
-  .stats .stat{border-bottom:1px solid var(--line-dark)}
-  .triad-item:last-child,.service:last-child,.stat:last-child{border-bottom:0}
-  .step{padding:0 0 24px}.step:after{display:none}
-  .section,.triad{padding:72px 0}
-  .section-head h2,.method-title h2,.cta h2,.sim-copy h2,.measure-copy h2,.team-intro h2,.about-head h2{font-size:36px}
-  .section-title h2{font-size:38px}
-  .image-stack .tall{height:300px}.image-stack .small{min-height:180px}
-  .sim-copy{padding:56px 24px}.sim-inset{position:static;width:100%;margin:20px 0 0}
-  .about-visual{min-height:auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}.about-visual .panel{position:static;height:200px;width:auto}.about-visual .panel-3{height:200px}
-  .about-visual.ofir-layout{grid-template-columns:1fr;min-height:auto}.about-visual.ofir-layout .ofir-portrait{height:auto;aspect-ratio:1/1}.about-visual.ofir-layout .space-pair{grid-template-columns:1fr 1fr;grid-template-rows:none}.about-visual.ofir-layout .space-pair img{min-height:150px}
-  .cta .wrap,.footer-grid{flex-direction:column;align-items:flex-start}
-  .person-overlay{position:static;opacity:1;transform:none;background:var(--deep);padding:18px;margin-top:0}
-  .person:hover .person-photo img,.person:focus-within .person-photo img{transform:none;filter:grayscale(100%) contrast(.96)}
-}
-
-
-/* v8 — editorial white-space and image-layout refinement */
-.wrap{width:min(1240px,calc(100% - 88px))}
-.section{padding:144px 0}
-.section-head{max-width:760px;text-align:left;margin:0 0 66px}
-.section-head h2{font-size:46px;line-height:1.03;margin:12px 0 16px}
-.section-head p{max-width:590px}
-
-/* Center imagery: stronger asymmetry, generous image scale */
-.center-grid{grid-template-columns:.72fr 1.28fr;gap:104px;align-items:center}
-.image-stack{grid-template-columns:1.22fr .78fr;gap:24px}
-.image-stack .small-col{gap:24px}
-.image-stack .tall,.image-stack .small{border-radius:20px}
-.image-stack.center-images .tall{height:650px}
-.image-stack .small{min-height:313px}
-.section-title p{max-width:470px}
-
-/* Capabilities: quiet objects floating in white space */
-.services{padding:150px 0 138px}
-.service-grid{gap:16px}
-.service{min-height:240px;padding:30px 26px 28px;border-radius:20px;background:#f6f6f3}
-.service:hover{transform:none;background:#f0f2ed}
-.service .icon{margin-bottom:54px}
-
-.stats{padding:0 0 142px}
-.stats .wrap{border-radius:26px;padding:68px 72px 38px}
-.features{padding:0 0 144px}
-.feature{border-radius:20px;padding:38px 32px;min-height:270px}
-.extreme{padding:144px 0}
-.extreme-grid{grid-template-columns:.72fr 1.28fr;gap:110px}
-.extreme-list{border-radius:22px;padding:12px 32px}
-.extreme-row{padding:24px 4px}
-
-.simulation{padding:0 36px 150px}
-.sim-grid{width:min(1240px,100%);border-radius:28px;min-height:720px}
-.sim-copy{padding:88px 70px}
-.method{padding:0 0 150px}
-.method .wrap{border-radius:26px;padding:70px 64px}
-
-/* Team: wide gallery rather than dense 2x2 block */
-.team{padding:150px 0}
-.team-grid{display:block}
-.team-intro{max-width:760px;margin-bottom:64px}
-.team-intro h2{font-size:50px;max-width:720px}
-.team-intro p{max-width:560px}
-.people{grid-template-columns:repeat(4,1fr);gap:22px}
-.person-photo{aspect-ratio:3/4;border-radius:18px}
-.person-overlay{padding:20px;border-radius:18px;overflow:auto}
-.person-overlay p{font-size:11.2px;line-height:1.53}
-.person-overlay .bio-meta{font-size:8.3px;line-height:1.45}
-.person h3{font-size:16px;margin-top:16px}
-.person>span{font-size:8.8px;line-height:1.5}
-
-/* Programs replace the measurement block */
-.programs{background:#fff;padding:150px 0}
-.programs-intro{display:grid;grid-template-columns:1.05fr .95fr;gap:120px;align-items:end;margin-bottom:68px}
-.programs-intro h2{font-size:clamp(42px,4.8vw,62px);line-height:1.02;margin-top:12px;max-width:650px}
-.programs-intro>p{font-size:15px;max-width:450px;padding-bottom:6px}
-.program-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.program-card{min-height:350px;border-radius:20px;background:#f6f6f3;padding:28px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s ease}
-.program-card:hover{transform:translateY(-4px)}
-.program-card:nth-child(2){background:rgba(219,217,202,.55)}
-.program-card:nth-child(3){background:rgba(172,183,165,.32)}
-.program-card:nth-child(4){background:rgba(152,166,165,.24)}
-.program-card.program-featured{background:var(--deep);color:var(--ivory)}
-.program-card.program-featured p{color:rgba(236,232,220,.72)}
-.program-top{display:flex;justify-content:space-between;gap:14px;font:500 9px var(--mono);letter-spacing:.09em;text-transform:uppercase;color:rgba(39,48,38,.52)}
-.program-featured .program-top{color:rgba(236,232,220,.56)}
-.program-card h3{font-size:24px;line-height:1.08;margin-bottom:12px}
-.program-card p{font-size:12.5px;line-height:1.62}
-
-.about{padding:150px 0}
-.about-grid{grid-template-columns:.68fr 1.32fr;gap:108px}
-.memory-portrait{border-radius:20px}
-.cta{padding:0 0 78px}
-.cta .wrap{border-radius:28px;padding:66px 72px}
-
-@media(max-width:1080px){
-  .wrap{width:min(100% - 56px,1240px)}
-  .center-grid,.extreme-grid,.programs-intro,.about-grid{grid-template-columns:1fr;gap:56px}
-  .sim-grid{grid-template-columns:1fr;gap:18px;width:min(100% - 56px,1240px)}
-  .sim-visual,.sim-copy{min-height:unset}
-  .people,.program-grid{grid-template-columns:repeat(2,1fr)}
-  .image-stack.center-images .tall{height:560px}
-}
-@media(max-width:760px){
-  .wrap{width:min(100% - 30px,1240px)}
-  .section,.services,.team,.programs,.about,.extreme{padding:88px 0}
-  .section-head{margin-bottom:42px}
-  .center-grid{gap:42px}
-  .image-stack.center-images .tall{height:360px}
-  .people,.program-grid{grid-template-columns:1fr}
-  .program-card{min-height:260px}
-  .programs-intro{gap:28px;margin-bottom:42px}
-  .programs-intro h2{font-size:38px}
-  .person-photo{aspect-ratio:1/1.02}
-  .person-overlay{position:static;opacity:1;transform:none;border-radius:0 0 18px 18px}
-  .simulation{padding:0 14px 88px}
-  .method{padding:0 14px 88px}
-  .stats{padding:0 14px 88px}
-  .features{padding:0 0 88px}
-}
-
-/* Hero video refinement */
-.hero{position:relative;min-height:720px;background:var(--deep);overflow:hidden;display:block}
-.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
-.hero-video-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(24,31,25,.76) 0%,rgba(24,31,25,.56) 42%,rgba(39,48,38,.27) 70%,rgba(39,48,38,.12) 100%)}
-.hero-video-overlay:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,20,16,.16),rgba(16,20,16,.08) 55%,rgba(16,20,16,.22))}
-.hero .hero-content{position:relative;z-index:2;min-height:720px;display:flex;align-items:center;padding:108px 0 96px}
-.hero .hero-copy{max-width:850px;padding:0;color:#f6f3eb}
-.hero .hero-copy .eyebrow{color:rgba(246,243,235,.72);margin-bottom:22px}
-.hero .hero-copy h1{font-size:clamp(58px,7vw,96px);line-height:.94;max-width:880px;color:#f6f3eb;letter-spacing:-.035em}
-.hero .hero-copy p{font-size:17px;line-height:1.65;max-width:650px;margin-top:28px;color:rgba(246,243,235,.78)}
-.hero .hero-actions{margin-top:34px}
-@media(max-width:760px){.hero,.hero .hero-content{min-height:650px}.hero .hero-content{padding:86px 0 66px}.hero .hero-copy h1{font-size:48px}.hero .hero-copy p{font-size:15px}.hero-video-overlay{background:linear-gradient(90deg,rgba(24,31,25,.76),rgba(24,31,25,.45))}}
-
-
-/* v10 — simplified information architecture */
-.lang-switch{display:flex;align-items:center;gap:7px;margin-left:2px}
-.lang-switch span{font:400 9px var(--mono);color:rgba(39,48,38,.35)}
-.lang-btn{appearance:none;border:0;background:transparent;padding:0;font:500 10px var(--mono);letter-spacing:.06em;color:rgba(39,48,38,.45);cursor:pointer}
-.lang-btn.active{color:var(--deep);text-decoration:underline;text-underline-offset:4px}
-
-/* cleaner white rhythm */
-#center{padding-top:148px;padding-bottom:150px}
-.extreme{padding:150px 0;background:#f8f8f5}
-.learning{padding:150px 0;background:#fff}
-.learning-head{display:grid;grid-template-columns:.85fr 1.15fr;gap:90px;align-items:end;margin-bottom:62px}
-.learning-head .eyebrow{grid-column:1/-1;margin-bottom:-60px}
-.learning-head h2{font-size:clamp(42px,4.8vw,62px);line-height:1.02;max-width:650px}
-.learning-head p{font-size:15px;max-width:500px;padding-bottom:6px}
-.learning-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.learning-card{min-height:390px;border-radius:24px;padding:36px;display:flex;flex-direction:column;justify-content:flex-end}
-.learning-doing{background:var(--deep);color:var(--ivory)}
-.learning-doing p{color:rgba(236,232,220,.72)}
-.learning-knowledge{background:rgba(172,183,165,.34)}
-.learning-index{margin-bottom:auto;font:500 10px var(--mono);letter-spacing:.08em;text-transform:uppercase;opacity:.55}
-.learning-card h3{font-size:32px;line-height:1.06;max-width:480px;margin-bottom:16px}
-.learning-card p{font-size:14px;max-width:520px}
-.learning-tag{display:block;margin-top:26px;padding-top:18px;border-top:1px solid currentColor;font:400 10px var(--mono);letter-spacing:.04em;opacity:.55}
-
-.simulation{margin:0 auto;max-width:1440px;border-radius:28px;overflow:hidden}
-.sim-grid{min-height:680px}
-.sim-copy h2{font-size:clamp(42px,4.5vw,58px);max-width:560px}
-
-.programs{padding:154px 0 142px}
-.programs-intro{margin-bottom:72px}
-.program-grid{gap:22px}
-.program-card{min-height:330px;border-radius:24px;padding:30px}
-
-.serve{padding:0 0 150px;background:#fff}
-.serve-head{display:grid;grid-template-columns:.75fr 1.25fr;gap:80px;align-items:end;margin-bottom:42px}
-.serve-head h2{font-size:34px;line-height:1.1;max-width:720px}
-.serve-bar{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.serve-bar span{min-height:110px;padding:24px 18px;display:flex;align-items:flex-end;border-right:1px solid var(--line);font:500 11px/1.45 var(--mono);letter-spacing:.03em}
-.serve-bar span:last-child{border-right:0}
-
-.team{padding-top:150px;padding-bottom:154px}
-.about{padding:156px 0}
-.about-grid.memory-grid{grid-template-columns:390px 1fr;gap:92px;align-items:start}
-.memory-visual{width:390px;margin:0}
-.memory-portrait{border-radius:22px;box-shadow:none}
-.memory-dates{font:500 13px/1.4 var(--mono)!important;letter-spacing:.06em!important;margin-top:16px!important;color:rgba(39,48,38,.62)!important}
-.about-copy{padding-top:4px}
-.about-copy .quote{font-size:22px;line-height:1.48;margin-bottom:26px}
-.about-copy p{font-size:14px;line-height:1.8;max-width:700px}
-
-html[dir="rtl"] body{direction:rtl;text-align:right}
-html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3,html[dir="rtl"] h4{font-family:var(--body)}
-html[dir="rtl"] .about-head,html[dir="rtl"] .section-title,html[dir="rtl"] .team-intro,html[dir="rtl"] .programs-intro,html[dir="rtl"] .extreme-intro,html[dir="rtl"] .sim-copy,html[dir="rtl"] .learning-head,html[dir="rtl"] .serve-head{text-align:right}
-html[dir="rtl"] .eyebrow,html[dir="rtl"] .nav li a,html[dir="rtl"] .program-top,html[dir="rtl"] .learning-index,html[dir="rtl"] .serve-bar span,html[dir="rtl"] .memory-dates{letter-spacing:0;text-transform:none}
-html[dir="rtl"] .serve-bar span{border-right:0;border-left:1px solid var(--line)}
-html[dir="rtl"] .serve-bar span:last-child{border-left:0}
-
-@media(max-width:1100px){
- .learning-head,.serve-head{grid-template-columns:1fr;gap:24px}.learning-head .eyebrow{grid-column:auto;margin-bottom:0}
- .serve-bar{grid-template-columns:repeat(3,1fr)}
- .about-grid.memory-grid{grid-template-columns:320px 1fr;gap:54px}.memory-visual{width:320px}
-}
-@media(max-width:760px){
- .learning,.extreme,#center,.programs,.team,.about{padding:88px 0}
- .learning-grid{grid-template-columns:1fr}.learning-card{min-height:300px;padding:28px}
- .serve{padding-bottom:88px}.serve-bar{grid-template-columns:1fr 1fr}.serve-bar span{min-height:86px}
- .about-grid.memory-grid{grid-template-columns:1fr;gap:34px}.memory-visual{width:100%;max-width:390px}.memory-dates{font-size:12px!important}
- .lang-switch{margin-top:2px}
-}
-
-/* language-specific header logo */
-.brand{display:flex;align-items:center;min-width:118px;height:58px}
-.brand .brand-logo{
-  width:112px!important;
-  height:54px!important;
-  object-fit:contain!important;
-  object-position:left center!important;
-  mix-blend-mode:normal!important;
-}
-.brand-logo-he{display:none!important}
-html[lang="he"] .brand-logo-en{display:none!important}
-html[lang="he"] .brand-logo-he{display:block!important;object-position:right center!important}
-html[lang="en"] .brand-logo-en{display:block!important}
-.about-head h2{font-size:clamp(34px,4vw,52px);line-height:1.05;margin-top:0}
-
-
-/* Native Hebrew typography */
-html[lang="he"] body,
-html[lang="he"] button,
-html[lang="he"] input,
-html[lang="he"] textarea,
-html[lang="he"] select{font-family:var(--body);font-weight:400}
-html[lang="he"] h1,
-html[lang="he"] h2,
-html[lang="he"] h3,
-html[lang="he"] h4{font-family:var(--body);font-weight:400;letter-spacing:-.02em}
-html[lang="he"] .eyebrow,
-html[lang="he"] .nav li a,
-html[lang="he"] .lang-toggle,
-html[lang="he"] .program-top,
-html[lang="he"] .learning-index,
-html[lang="he"] .serve-bar span,
-html[lang="he"] .sim-row span:last-child,
-html[lang="he"] .person>span,
-html[lang="he"] .bio-meta,
-html[lang="he"] .memory-dates,
-html[lang="he"] footer{font-family:var(--body)!important}
-html[lang="he"] p{line-height:1.72}
-html[lang="he"] .hero-copy h1{line-height:1.03}
-html[lang="he"] .sim-row span:last-child{font-size:11px;line-height:1.5}
-
-
-/* Hebrew typography: Varela Round throughout, including header/navigation */
-html[lang="he"] body,
-html[lang="he"] body *{
-  font-family:'Varela Round',sans-serif;
-}
-
-
-/* Hebrew eyebrow labels */
-html[lang="he"] .eyebrow{
-  font-size:11.5px!important;
-  line-height:1.5!important;
-  letter-spacing:.06em!important;
-}
-
-
-
-/* =========================================================
-   v16 — professional editorial web refinement
-   Less slide/card language; more architectural/editorial rhythm.
-   ========================================================= */
-:root{
-  --page:#faf9f5;
-  --page-alt:#f3f2ec;
-  --deep:#222b23;
-  --deep-2:#182019;
-  --ink:#222b23;
-  --muted:#667261;
-  --rule:rgba(34,43,35,.15);
-  --rule-dark:rgba(241,239,229,.18);
-}
-
-body{background:var(--page);color:var(--ink)}
-html[lang="en"] body{font-family:"Helvetica Neue",Arial,sans-serif}
-html[lang="en"] p{font-family:"Helvetica Neue",Arial,sans-serif}
-html[lang="en"] h1,html[lang="en"] h2,html[lang="en"] h3,html[lang="en"] h4{font-family:var(--display)}
-.wrap{width:min(1240px,calc(100% - 88px))}
-.section{padding:148px 0}
-.eyebrow{font-size:9px;letter-spacing:.14em;color:var(--muted)}
-
-/* Header — compact and website-like, not a presentation title bar */
-header{height:68px;background:rgba(250,249,245,.91);border-bottom:1px solid rgba(34,43,35,.08);backdrop-filter:blur(14px)}
-.nav{height:68px;width:min(1320px,calc(100% - 64px));gap:36px}
-.brand{height:56px;min-width:94px}
-.brand .brand-logo{width:96px!important;height:48px!important}
-.nav ul{gap:22px}
-.nav li a{position:relative;font-size:9px;letter-spacing:.09em;color:rgba(34,43,35,.72);transition:color .18s ease}
-.nav li a:after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:var(--deep);transition:right .2s ease}
-.nav li a:hover{color:var(--deep)}
-.nav li a:hover:after{right:0}
-.lang-btn{font-size:9px}
-
-/* Hero — cinematic field with a real brand lockup inside it */
-.hero{min-height:820px;background:var(--deep-2);border:0}
-.hero:before,.hero:after{display:none!important}
-.hero-video{filter:saturate(.68) contrast(1.02) brightness(.84);transform:scale(1.012)}
-.hero-video-overlay{background:linear-gradient(90deg,rgba(18,24,19,.90) 0%,rgba(18,24,19,.72) 38%,rgba(18,24,19,.32) 68%,rgba(18,24,19,.12) 100%)}
-.hero-video-overlay:after{background:linear-gradient(180deg,rgba(12,16,13,.18),rgba(12,16,13,.03) 46%,rgba(12,16,13,.42))}
-html[dir="rtl"] .hero-video-overlay{background:linear-gradient(270deg,rgba(18,24,19,.90) 0%,rgba(18,24,19,.72) 38%,rgba(18,24,19,.32) 68%,rgba(18,24,19,.12) 100%)}
-.hero .hero-content{min-height:820px;padding:76px 0 76px;display:flex;align-items:flex-start;justify-content:flex-end;flex-direction:column}
-.hero-brand-lockup{position:absolute;top:58px;left:0;width:318px;padding:14px 18px 13px;background:rgba(249,248,242,.93);border:1px solid rgba(255,255,255,.22);box-shadow:0 12px 32px rgba(0,0,0,.12);backdrop-filter:blur(10px);z-index:3}
-.hero-logo{width:100%;height:auto;object-fit:contain}
-.hero-logo-he{display:none}
-html[lang="he"] .hero-logo-en{display:none}
-html[lang="he"] .hero-logo-he{display:block}
-html[dir="rtl"] .hero-brand-lockup{left:auto;right:0}
-.hero .hero-copy{max-width:770px;padding:0;color:#f5f2e9}
-.hero .hero-copy .eyebrow{margin-bottom:18px;color:rgba(245,242,233,.72)}
-.hero .hero-copy h1{font-size:clamp(48px,5.6vw,76px);line-height:1.015;letter-spacing:-.026em;max-width:770px;color:#f5f2e9;text-wrap:balance}
-.hero .hero-copy p{margin-top:24px;max-width:620px;font-size:16px;line-height:1.67;color:rgba(245,242,233,.78)}
-.hero .hero-actions{margin-top:30px;gap:22px;align-items:center}
-.btn{font-size:9px;letter-spacing:.09em;transition:opacity .18s ease,transform .18s ease}
-.btn-solid{border-radius:2px;background:#f2efe5;color:var(--deep);padding:13px 17px}
-.btn-outline{border:0;border-radius:0;background:transparent;color:#f2efe5;padding:13px 2px;border-bottom:1px solid rgba(242,239,229,.46)}
-.btn-outline:after{content:"  ↗";font-size:11px}
-.btn:hover{transform:translateY(-1px)}
-
-/* Center — editorial split, square photography, less decorative framing */
-#center{background:var(--page);padding:160px 0 174px}
-.center-grid{grid-template-columns:.70fr 1.30fr;gap:108px;align-items:center}
-.section-title h2{font-size:clamp(42px,4.4vw,60px);line-height:1.04;max-width:560px}
-.section-title p{font-size:15px;line-height:1.78;max-width:470px}
-.rule{width:62px;margin:32px 0;background:rgba(34,43,35,.35)}
-.image-stack{grid-template-columns:1.24fr .76fr;gap:18px}
-.image-stack .small-col{gap:18px}
-.image-stack .tall,.image-stack .small{border-radius:0!important}
-.image-stack.center-images .tall{height:660px}
-.image-stack .small{min-height:321px}
-.image-stack img{filter:saturate(.88)}
-
-/* Extreme conditions — open editorial rows instead of a contained card */
-.extreme{background:#fff;padding:148px 0 160px}
-.extreme-grid{grid-template-columns:.72fr 1.28fr;gap:116px}
-.extreme h2{font-size:clamp(40px,4vw,54px);line-height:1.06}
-.extreme-intro p{font-size:15px;line-height:1.78;max-width:500px}
-.extreme-list{background:transparent;border-radius:0;padding:0;border-top:1px solid var(--rule)}
-.extreme-row{grid-template-columns:178px 1fr;gap:38px;padding:23px 0;border-bottom:1px solid var(--rule)}
-.extreme-row b{font-size:9px;letter-spacing:.08em}
-.extreme-row span{font-size:14px;line-height:1.62;max-width:560px}
-
-/* Learning — two editorial columns, not two large cards */
-.learning{background:var(--page-alt);padding:148px 0 156px}
-.learning-head{grid-template-columns:.82fr 1.18fr;gap:92px;margin-bottom:76px}
-.learning-head .eyebrow{margin-bottom:-58px}
-.learning-head h2{font-size:clamp(42px,4.3vw,58px)}
-.learning-head p{font-size:15px;line-height:1.76;max-width:520px}
-.learning-grid{grid-template-columns:1fr 1fr;gap:82px}
-.learning-card,.learning-doing,.learning-knowledge{min-height:0;border-radius:0!important;padding:28px 0 0!important;background:transparent!important;color:var(--deep)!important;border-top:1px solid rgba(34,43,35,.34)}
-.learning-card p,.learning-doing p,.learning-knowledge p{color:rgba(34,43,35,.72)!important}
-.learning-index{margin-bottom:54px;font-size:9px;color:var(--muted);opacity:1}
-.learning-card h3{font-size:29px;line-height:1.1;max-width:470px}
-.learning-tag{margin-top:30px;padding-top:17px;border-top:1px solid var(--rule);font-size:9px;color:var(--muted);opacity:1}
-
-/* Simulation — one full-bleed immersive section; no floating rounded card */
-.simulation{max-width:none;margin:0;background:var(--deep);padding:118px 0 122px;border-radius:0!important}
-.sim-grid{width:min(1240px,calc(100% - 88px));grid-template-columns:1.16fr .84fr;gap:0;min-height:650px;border-radius:0!important;box-shadow:none!important;overflow:visible}
-.sim-visual{min-height:650px;border-radius:0!important}
-.sim-main:after{background:linear-gradient(90deg,rgba(18,24,19,.02),rgba(18,24,19,.18))}
-.sim-inset{right:28px;bottom:28px;border-radius:2px;width:min(38%,250px);box-shadow:0 16px 42px rgba(0,0,0,.24)}
-.sim-copy{min-height:650px;border-radius:0!important;padding:72px 64px;background:#202920;border-left:1px solid var(--rule-dark)}
-.sim-copy h2{font-size:clamp(40px,4vw,54px);line-height:1.05}
-.sim-copy p{font-size:14px;line-height:1.74}
-.sim-list{margin-top:34px}
-.sim-row{padding:17px 0}
-
-/* Programs — a serious program directory rather than four presentation cards */
-.programs{background:#fff;padding:150px 0 158px}
-.programs-intro{grid-template-columns:.92fr 1.08fr;gap:100px;margin-bottom:72px}
-.programs-intro h2{font-size:clamp(42px,4.3vw,58px)}
-.programs-intro>p{font-size:15px;line-height:1.76;max-width:500px}
-.program-grid{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--rule)}
-.program-card,.program-card:nth-child(2),.program-card:nth-child(3),.program-card:nth-child(4),.program-card.program-featured{min-height:0;border-radius:0!important;background:transparent!important;color:var(--deep)!important;padding:28px 0;display:grid;grid-template-columns:150px 1fr;align-items:start;border-bottom:1px solid var(--rule);transition:background .18s ease}
-.program-card:hover{transform:none;background:rgba(172,183,165,.10)!important}
-.program-top,.program-featured .program-top{justify-content:flex-start;gap:18px;color:var(--muted);padding-top:3px}
-.program-card>div:last-child{display:grid;grid-template-columns:minmax(250px,.75fr) 1fr;gap:66px;align-items:start}
-.program-card h3{font-size:26px;line-height:1.12;margin:0}
-.program-card p,.program-featured p{font-size:13.5px;line-height:1.68;color:rgba(34,43,35,.70);max-width:520px}
-
-/* Audience — 3 x 2 institutional index, giving each audience room */
-.serve{background:var(--page-alt);padding:124px 0 144px}
-.serve-head{grid-template-columns:.7fr 1.3fr;gap:90px;margin-bottom:54px}
-.serve-head h2{font-size:36px;line-height:1.14;max-width:760px}
-.serve-bar{grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule);border-bottom:0}
-.serve-bar span{min-height:116px;padding:26px 22px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);font-size:10px;line-height:1.5}
-.serve-bar span:nth-child(3n){border-right:0}
-html[dir="rtl"] .serve-bar span{border-right:0;border-left:1px solid var(--rule)}
-html[dir="rtl"] .serve-bar span:nth-child(3n){border-left:0}
-
-/* Team — portrait-led and quieter; still human, less 'deck card' */
-.team{background:var(--page);padding:154px 0 166px}
-.team-intro{max-width:810px;margin-bottom:68px}
-.team-intro h2{font-size:clamp(42px,4.2vw,56px);line-height:1.06}
-.team-intro p{font-size:14.5px;line-height:1.76;max-width:600px}
-.people{grid-template-columns:repeat(4,1fr);gap:28px}
-.person-photo{aspect-ratio:4/5;border-radius:0!important;background:#e7e6df}
-.person-photo img{filter:grayscale(28%) saturate(.82) contrast(.98);transition:transform .45s ease,filter .35s ease}
-.person-overlay{border-radius:0!important;padding:22px;background:linear-gradient(180deg,rgba(28,36,29,.02) 16%,rgba(28,36,29,.42) 58%,rgba(28,36,29,.96) 100%)}
-.person:hover .person-photo img,.person:focus-within .person-photo img{filter:grayscale(12%) saturate(.8) brightness(.70);transform:scale(1.018)}
-.person h3{font-size:17px;margin-top:17px}
-.person>span{font-size:9px;line-height:1.55;color:rgba(34,43,35,.56)}
-
-/* Memorial — restrained editorial treatment */
-.about{background:#fff;padding:154px 0 166px}
-.about-head{margin-bottom:52px}
-.about-head h2{font-size:clamp(38px,4.2vw,54px)}
-.about-grid.memory-grid{grid-template-columns:420px 1fr;gap:118px;align-items:start}
-.memory-visual{width:420px}
-.memory-portrait{border-radius:0!important;background:#ebe8df}
-.memory-dates{font-size:11px!important;margin-top:14px!important}
-.about-copy{padding-top:2px;max-width:760px}
-.about-copy .quote{font-size:25px;line-height:1.48;margin-bottom:30px;max-width:740px}
-.about-copy p{font-size:15px;line-height:1.82;max-width:720px}
-
-/* Final CTA — one decisive close; squared architecture, not a pitch-deck card */
-.cta{background:var(--page);padding:0 0 88px;color:#f2efe5}
-.cta .wrap{background:var(--deep);border-radius:0!important;padding:58px 64px}
-.cta h2{font-size:clamp(32px,3.4vw,44px);line-height:1.13;max-width:760px}
-.cta a{border-radius:0;padding:13px 18px;font-size:9px;letter-spacing:.08em;transition:background .18s ease,color .18s ease}
-.cta a:hover{background:#f2efe5;color:var(--deep)}
-footer{background:var(--page);border-top:1px solid rgba(34,43,35,.08);padding:26px 0;color:rgba(34,43,35,.46)}
-
-/* Directional / Hebrew refinements */
-html[lang="he"] .hero .hero-copy h1{font-size:clamp(46px,5.1vw,70px);line-height:1.08}
-html[lang="he"] .hero .hero-copy p{font-size:16px}
-html[lang="he"] .program-card>div:last-child{text-align:right}
-
-@media(max-width:1100px){
-  .wrap{width:min(100% - 56px,1240px)}
-  .nav{width:min(100% - 42px,1320px)}
-  .nav ul{gap:15px}
-  .nav li a{font-size:8.5px}
-  .hero-brand-lockup{width:280px}
-  .center-grid,.extreme-grid,.learning-head,.programs-intro,.serve-head,.about-grid.memory-grid{grid-template-columns:1fr;gap:54px}
-  .learning-head .eyebrow{margin-bottom:0}
-  .center-grid{gap:64px}
-  .image-stack.center-images .tall{height:560px}
-  .simulation{padding:92px 0}
-  .sim-grid{width:min(100% - 56px,1240px);grid-template-columns:1fr}
-  .sim-visual,.sim-copy{min-height:540px}
-  .sim-copy{border-left:0;border-top:1px solid var(--rule-dark)}
-  .program-card{grid-template-columns:110px 1fr}
-  .program-card>div:last-child{gap:38px}
-  .people{grid-template-columns:repeat(2,1fr)}
-  .memory-visual{width:min(420px,100%)}
-}
-
-@media(max-width:820px){
-  header{height:auto}
-  .nav{height:auto;padding:12px 0;align-items:flex-start}
-  .brand .brand-logo{width:88px!important;height:42px!important}
-  .nav nav{overflow-x:auto;max-width:calc(100vw - 150px);padding-bottom:5px}
-  .nav ul{width:max-content;gap:18px}
-  .nav li a{font-size:8px;white-space:nowrap}
-  .hero,.hero .hero-content{min-height:720px}
-  .hero .hero-content{padding:68px 0 60px}
-  .hero-brand-lockup{top:34px;width:246px;padding:11px 14px}
-  .hero .hero-copy h1{font-size:48px}
-  .hero .hero-copy p{font-size:15px}
-  #center,.extreme,.learning,.programs,.team,.about{padding:100px 0}
-  .image-stack.center-images .tall{height:430px}
-  .program-card{grid-template-columns:78px 1fr}
-  .program-card>div:last-child{grid-template-columns:1fr;gap:12px}
-  .serve{padding:96px 0 110px}
-  .serve-bar{grid-template-columns:1fr 1fr}
-  .serve-bar span:nth-child(3n){border-right:1px solid var(--rule)}
-  .serve-bar span:nth-child(2n){border-right:0}
-  html[dir="rtl"] .serve-bar span:nth-child(3n){border-left:1px solid var(--rule)}
-  html[dir="rtl"] .serve-bar span:nth-child(2n){border-left:0}
-}
-
-@media(max-width:560px){
-  .wrap{width:min(100% - 30px,1240px)}
-  .nav{width:min(100% - 24px,1320px)}
-  .nav nav{max-width:calc(100vw - 118px)}
-  .hero,.hero .hero-content{min-height:690px}
-  .hero .hero-content{padding:64px 0 48px}
-  .hero-brand-lockup{position:absolute;top:28px;width:210px}
-  .hero .hero-copy h1,html[lang="he"] .hero .hero-copy h1{font-size:39px;line-height:1.06}
-  .hero .hero-copy p{font-size:14px;line-height:1.65}
-  .hero-actions{flex-wrap:wrap}
-  .center-grid{gap:42px}
-  .image-stack{grid-template-columns:1fr}
-  .image-stack.center-images .tall{height:360px}
-  .image-stack .small-col{grid-template-columns:1fr 1fr;grid-template-rows:none}
-  .image-stack .small{min-height:180px}
-  .extreme-row{grid-template-columns:1fr;gap:7px;padding:18px 0}
-  .learning-grid{grid-template-columns:1fr;gap:56px}
-  .simulation{padding:70px 0}
-  .sim-grid{width:min(100% - 30px,1240px)}
-  .sim-visual{min-height:400px}
-  .sim-copy{min-height:auto;padding:48px 26px}
-  .sim-inset{right:18px;bottom:18px;width:38%}
-  .program-card{grid-template-columns:48px 1fr;padding:22px 0}
-  .program-card h3{font-size:22px}
-  .serve-bar{grid-template-columns:1fr}
-  .serve-bar span,.serve-bar span:nth-child(2n),.serve-bar span:nth-child(3n){border-right:0!important;border-left:0!important}
-  .people{grid-template-columns:1fr}
-  .person-photo{aspect-ratio:1/1.08}
-  .person-overlay{position:static;opacity:1;transform:none;background:var(--deep);padding:18px}
-  .person:hover .person-photo img,.person:focus-within .person-photo img{transform:none;filter:grayscale(28%) saturate(.82) contrast(.98)}
-  .about-grid.memory-grid{gap:36px}
-  .cta{padding:0 15px 46px}
-  .cta .wrap{padding:42px 26px}
-}
-
-
-/* v16 hero symbol placement — preserve original site layout */
-.hero .hero-content{
-  display:grid!important;
-  align-items:center!important;
-  justify-content:initial!important;
-  flex-direction:initial!important;
-  column-gap:clamp(88px,9vw,150px);
-  padding-top:88px!important;
-  padding-bottom:88px!important;
-}
-.hero .hero-copy{grid-area:copy;max-width:760px!important;align-self:center}
-.hero-symbol-wrap{
-  grid-area:symbol;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-width:0;
-  pointer-events:none;
-}
-.hero-symbol{
-  width:clamp(150px,15vw,220px);
-  height:auto;
-  max-height:430px;
-  object-fit:contain;
-  filter:drop-shadow(0 16px 30px rgba(0,0,0,.20));
-}
-html[lang="en"] .hero .hero-content{
-  grid-template-columns:minmax(0,760px) minmax(180px,1fr);
-  grid-template-areas:"copy symbol";
-}
-html[lang="he"] .hero .hero-content{
-  grid-template-columns:minmax(180px,1fr) minmax(0,760px);
-  grid-template-areas:"symbol copy";
-}
-@media(max-width:1000px){
-  .hero .hero-content{column-gap:56px}
-  html[lang="en"] .hero .hero-content{grid-template-columns:minmax(0,1fr) 170px}
-  html[lang="he"] .hero .hero-content{grid-template-columns:170px minmax(0,1fr)}
-  .hero-symbol{width:150px}
-}
-@media(max-width:760px){
-  .hero .hero-content{
-    display:block!important;
-    padding-top:86px!important;
-    padding-bottom:66px!important;
+<!DOCTYPE html>
+
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title data-en="OFIR Leadership Center" data-he="מרכז אופיר למנהיגות">OFIR Leadership Center</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&amp;family=Roboto+Mono:wght@400;500&amp;family=Varela+Round&amp;display=swap" rel="stylesheet"/>
+
+
+<link rel="stylesheet" href="style.css"/><link rel="icon" type="image/png" href="assests/wheat.png"/></head>
+<body>
+<header>
+<div class="nav">
+<a class="brand" href="#top" aria-label="OFIR">
+<img class="brand-logo brand-logo-en" alt="OFIR" src="assests/logo_ofir_en.png"/>
+<img class="brand-logo brand-logo-he" alt="אופיר" src="assests/logo_ofir_he.png"/>
+</a>
+<div class="lang-switch lang-bar"><button class="lang-btn" data-lang="en" type="button">EN</button><span>/</span><button class="lang-btn" data-lang="he" type="button">עברית</button></div>
+<nav>
+<ul><li><a data-en="Center" data-he="המרכז" href="#center">Center</a></li><li><a data-en="Extreme conditions" data-he="תנאי קיצון" href="#extreme">Extreme conditions</a></li><li><a data-en="Simulation" data-he="הסימולציה" href="#simulation">Simulation</a></li><li><a data-en="Programs" data-he="פעילויות" href="#programs">Programs</a></li><li><a data-en="Who we serve" data-he="למי המרכז מיועד" href="#serve">Who we serve</a></li><li><a data-en="Team" data-he="הצוות המקצועי" href="#team">Team</a></li><li><a data-en="About Ofir" data-he="אופיר" href="#about">About Ofir</a></li><li><a data-en="Contact" data-he="יצירת קשר" href="#contact">Contact</a></li><li class="lang-switch"><button class="lang-btn active" data-lang="en" type="button">EN</button><span>/</span><button class="lang-btn" data-lang="he" type="button">עברית</button></li></ul>
+</nav><button class="nav-toggle" aria-label="Menu" aria-expanded="false" type="button"><span></span><span></span><span></span></button>
+</div>
+</header>
+<main id="top">
+<section class="hero">
+<video aria-hidden="true" autoplay="" class="hero-video" loop="" muted="" playsinline="" poster="assests/hero_poster.jpg" preload="auto">
+<source src="assests/hero_video.mp4" type="video/mp4"/>
+</video>
+<div class="hero-video-overlay"></div>
+<div class="wrap hero-content">
+<div class="hero-symbol-wrap" aria-label="OFIR Leadership Center"><img class="hero-full-logo hero-full-logo-en" alt="OFIR Leadership Center - In memory of SSG Ofir Shoshani" src="assests/hero_logo_en.png"/><img class="hero-full-logo hero-full-logo-he" alt="מרכז אופיר למנהיגות — לזכרה של סמ״ר אופיר שושני" src="assests/hero_logo_he.png"/></div>
+<div class="hero-copy">
+<div class="eyebrow" data-en="Leadership in crisis" data-he="מנהיגות בחירום">Leadership in crisis</div>
+<h1 data-en="When reality departs from the plan, leadership is tested." data-he="מנהיגות היא היכולת להוביל גם כשהמציאות מתפרקת">When reality departs from the plan, leadership is tested.</h1>
+<p data-en="Ofir develops and trains the human and organizational capacity to make decisions, lead teams and act with responsibility and effectiveness when conditions change, certainty disappears and pressure mounts." data-he="מרכז אופיר מפתח ומאמן את היכולת האנושית והארגונית לקבל החלטות, להוביל צוותים ולפעול באחריות ובאפקטיביות כאשר התנאים משתנים, הוודאות נעלמת והלחץ גובר">Ofir develops and trains the human and organizational capacity to make decisions, lead teams and act with responsibility and effectiveness when conditions change, certainty disappears and pressure mounts.</p>
+<div class="hero-actions">
+<a class="btn btn-solid" data-en="Explore the center" data-he="הכירו את המרכז" href="#center">Explore the center</a>
+<a class="btn btn-outline" data-en="How learning works" data-he="איך לומדים במרכז" href="#learning">How learning works</a>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="center" data-reveal>
+<div class="wrap center-grid">
+<div class="section-title">
+<div class="eyebrow" data-en="The Ofir Center for Leadership in Crisis" data-he="מרכז אופיר למנהיגות בחירום">The Ofir Center for Leadership in Crisis</div>
+<h2 data-en="Training managers and teams to perform under extreme conditions" data-he="אימון מנהלים וצוותים לתפקוד בתנאי קיצון">אימון מנהלים וצוותים לתפקוד בתנאי קיצון</h2>
+<p style="white-space:pre-line" data-en="A distinctive learning environment that combines hands-on practice with advanced technologies, letting managers and teams experience, practice and improve their performance under pressure and uncertainty.
+
+The training focuses on decision-making, emotional regulation, teamwork, communication, cognitive flexibility and the ability to keep performing at their best even as reality changes." data-he="סביבת למידה ייחודית המשלבת ניסיון מעשי עם טכנולוגיות מתקדמות, ומאפשרת למנהלים ולצוותים להתנסות, לתרגל ולשפר את תפקודם תחת לחץ ואי־ודאות.
+
+האימון מתמקד בקבלת החלטות, ויסות רגשי, עבודת צוות, תקשורת, גמישות מחשבתית והיכולת להמשיך לתפקד באופן מיטבי גם כשהמציאות משתנה">סביבת למידה ייחודית המשלבת ניסיון מעשי עם טכנולוגיות מתקדמות, ומאפשרת למנהלים ולצוותים להתנסות, לתרגל ולשפר את תפקודם תחת לחץ ואי־ודאות.
+
+האימון מתמקד בקבלת החלטות, ויסות רגשי, עבודת צוות, תקשורת, גמישות מחשבתית והיכולת להמשיך לתפקד באופן מיטבי גם כשהמציאות משתנה</p>
+
+</div>
+<div class="image-stack center-images">
+<div class="tall"><img alt="Ofir Leadership Center interior with logo signage" src="assests/interior_signage.png"/></div>
+<div class="small-col">
+<div class="small"><img alt="Ofir center interior lounge" src="assests/interior_lounge.jpg"/></div>
+<div class="small"><img alt="Ofir center hospitality area" src="assests/hospitality_area.png"/></div>
+</div>
+</div>
+</div>
+</section>
+<section class="extreme" id="extreme" data-reveal>
+<div class="wrap extreme-grid">
+<div class="extreme-intro">
+<div class="eyebrow" data-en="What are extreme conditions?" data-he="מהם תנאי קיצון?">What are extreme conditions?</div>
+<h2 data-en="What makes extreme situations so complex?" data-he="מה הופך מצבי קיצון למורכבים כל כך?">מה הופך מצבי קיצון למורכבים כל כך?</h2>
+<p data-en="Extreme situations are not necessarily a disaster or an emergency. They arise when managers and teams must act under a combination of pressure, overload, fast pace, partial or contradictory information and uncertainty - and at times also in the face of human, value-based and moral dilemmas." data-he="מצבי קיצון אינם בהכרח אסון או מצב חירום. הם נוצרים כאשר מנהלים וצוותים נדרשים לפעול תחת שילוב של לחץ, עומס, קצב מהיר, מידע חלקי או סותר ואי־ודאות  ולעיתים גם מול דילמות אנושיות, ערכיות ומוסריות.">מצבי קיצון אינם בהכרח אסון או מצב חירום. הם נוצרים כאשר מנהלים וצוותים נדרשים לפעול תחת שילוב של לחץ, עומס, קצב מהיר, מידע חלקי או סותר ואי־ודאות  ולעיתים גם מול דילמות אנושיות, ערכיות ומוסריות.</p>
+</div>
+<div class="extreme-list">
+<div class="extreme-row"><b data-en="Cognitive load" data-he="עומס קוגניטיבי">עומס קוגניטיבי</b><span data-en="A flood of data and tasks that makes attention and prioritization difficult." data-he="הצפת נתונים ומשימות המקשה על קשב ותעדוף.">הצפת נתונים ומשימות המקשה על קשב ותעדוף.</span></div>
+<div class="extreme-row"><b data-en="Uncertainty" data-he="אי־ודאות">אי־ודאות</b><span data-en="A blurred picture, based on partial or contradictory information." data-he="תמונת מצב מעורפלת, המבוססת על מידע חלקי או סותר.">תמונת מצב מעורפלת, המבוססת על מידע חלקי או סותר.</span></div>
+<div class="extreme-row"><b data-en="Time pressure" data-he="לחץ זמן">לחץ זמן</b><span data-en="You must act even without a full picture; inaction carries a price." data-he="חובה לפעול גם ללא תמונה מלאה; לחוסר-החלטה יש מחיר.">חובה לפעול גם ללא תמונה מלאה; לחוסר-החלטה יש מחיר.</span></div>
+<div class="extreme-row"><b data-en="Emotional pressure" data-he="לחץ רגשי">לחץ רגשי</b><span data-en="The weight of responsibility, a sense of threat and high personal stake in the outcome." data-he="כובד אחריות, תחושת איום ומעורבות אישית גבוהה בתוצאות.">כובד אחריות, תחושת איום ומעורבות אישית גבוהה בתוצאות.</span></div>
+<div class="extreme-row"><b data-en="Moral conflict" data-he="קונפליקט מוסרי">קונפליקט מוסרי</b><span data-en="A clash between organizational and human needs, with no single &quot;right&quot; answer." data-he="התנגשות בין צרכים ארגוניים ואנושיים, ללא פתרון &quot;נכון&quot; אחד.">התנגשות בין צרכים ארגוניים ואנושיים, ללא פתרון "נכון" אחד.</span></div>
+<div class="extreme-row"><b data-en="Systemic disruption" data-he="שיבוש מערכתי">שיבוש מערכתי</b><span data-en="The collapse of routine procedures and familiar baseline assumptions." data-he="קריסת נהלי השגרה והנחות היסוד המוכרות.">קריסת נהלי השגרה והנחות היסוד המוכרות.</span></div>
+<div class="extreme-row"><b data-en="Critical consequences" data-he="השלכות קריטיות">השלכות קריטיות</b><span data-en="Every detail or decision has a dramatic, immediate impact on the organization and its people." data-he="השפעה דרמטית ומיידית של כל פריט או החלטה על הארגון ואנשיו.">השפעה דרמטית ומיידית של כל פריט או החלטה על הארגון ואנשיו.</span></div>
+</div>
+</div>
+</section><section class="learning" id="learning" data-reveal>
+<div class="wrap">
+<div class="learning-head">
+<div class="eyebrow" data-en="The learning methodology" data-he="מתודולוגיית הלמידה">מתודולוגיית הלמידה</div>
+<h2 data-en="Experience. Understand. Internalize." data-he="להתנסות. להבין. להטמיע.">להתנסות. להבין. להטמיע.</h2>
+<p data-en="You don&#x27;t just learn about crises - you train the ability to function inside them. The program moves participants from theory to reality: exposure to knowledge, training in a controlled crisis environment, and processing the experience into managerial tools." data-he="לא רק לומדים על משברים- מתאמנים על היכולת לתפקד בתוכם. תהליך ההכשרה מעביר את המשתתפים מתיאוריה למציאות: חשיפה לידע, אימון בסביבת משבר מבוקרת, ועיבוד החוויה לכלים ניהוליים.">לא רק לומדים על משברים- מתאמנים על היכולת לתפקד בתוכם. תהליך ההכשרה מעביר את המשתתפים מתיאוריה למציאות: חשיפה לידע, אימון בסביבת משבר מבוקרת, ועיבוד החוויה לכלים ניהוליים.</p>
+</div>
+<div class="learning-grid">
+<article class="learning-card">
+<div class="learning-index" data-en="01" data-he="01">01</div>
+<h3 data-en="Experience" data-he="להתנסות">להתנסות</h3>
+<p data-en="Behavioral, cognitive and emotional training in an environment that simulates a real crisis - practicing leadership, thinking and real-time decision-making under load, time pressure, uncertainty and conflicting information." data-he="אימון התנהגותי, קוגניטיבי ורגשי בסביבה המדמה משבר אמיתי. תרגול יכולות הובלה, חשיבה וקבלת החלטות בזמן אמת, תחת עומס, לחץ זמן, אי-ודאות ומידע סותר.">אימון התנהגותי, קוגניטיבי ורגשי בסביבה המדמה משבר אמיתי. תרגול יכולות הובלה, חשיבה וקבלת החלטות בזמן אמת, תחת עומס, לחץ זמן, אי-ודאות ומידע סותר.</p>
+</article>
+<article class="learning-card">
+<div class="learning-index" data-en="02" data-he="02">02</div>
+<h3 data-en="Understand" data-he="להבין">להבין</h3>
+<p data-en="Analyzing extreme situations through leadership tours, lectures and field encounters - recognizing the pressures at work in a crisis, decision-making mechanisms, and the immediate impact on people and systems." data-he="ניתוח מצבי קיצון באמצעות סיורי מנהיגות, הרצאות ומפגשי שטח. הכרת הלחצים הפועלים במשבר, מנגנוני קבלת ההחלטות וההשפעה המיידית על אנשים ומערכות.">ניתוח מצבי קיצון באמצעות סיורי מנהיגות, הרצאות ומפגשי שטח. הכרת הלחצים הפועלים במשבר, מנגנוני קבלת ההחלטות וההשפעה המיידית על אנשים ומערכות.</p>
+</article>
+<article class="learning-card">
+<div class="learning-index" data-en="03" data-he="03">03</div>
+<h3 data-en="Internalize" data-he="להטמיע">להטמיע</h3>
+<p data-en="Professional processing of the patterns of action, communication and decisions revealed in the simulation - translating the hands-on experience into strategic knowledge and tools that can be applied immediately in role and organization." data-he="עיבוד מקצועי של דפוסי הפעולה, התקשורת וההחלטות שנחשפו בסימולציה. תרגום החוויה המעשית לידע אסטרטגי ולכלים הניתנים ליישום מיידי בתפקיד ובארגון.">עיבוד מקצועי של דפוסי הפעולה, התקשורת וההחלטות שנחשפו בסימולציה. תרגום החוויה המעשית לידע אסטרטגי ולכלים הניתנים ליישום מיידי בתפקיד ובארגון.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="simulation" id="simulation">
+<div class="sim-grid">
+<div class="sim-visual">
+<div class="sim-main"><img alt="Earth with meteors as the Ares Station simulation visual" src="assests/ares_station.png"/></div>
+
+</div>
+<div class="sim-copy">
+<div class="eyebrow" data-en="Immersive simulation" data-he="סימולציית מנהיגות">Immersive simulation</div>
+<h2 data-en="Crisis inside an immersive space station." data-he="משבר בתחנת חלל.">Crisis inside an immersive space station.</h2>
+<p data-en="A group leadership simulation in which participants must build a shared picture, coordinate across roles, and make consequential decisions as conditions deteriorate." data-he="סימולציה קבוצתית שבה המשתתפים נדרשים לבנות תמונת מצב משותפת, לתאם בין תפקידים ולקבל החלטות משמעותיות בזמן שהמצב ממשיך להשתנות.">A group leadership simulation in which participants must build a shared picture, coordinate across roles, and make consequential decisions as conditions deteriorate.</p>
+<div class="sim-list">
+<div class="sim-row"><span data-en="6–24 participants" data-he="6–24 משתתפים">6–12 participants</span><span data-en="Team-based leadership under pressure" data-he="תרגול צוותי תחת לחץ">Team-based leadership under pressure</span></div>
+<div class="sim-row"><span data-en="Distributed roles" data-he="תפקידים שונים">Distributed roles</span><span data-en="Different information, priorities and authority" data-he="לכל משתתף מידע, סדרי עדיפויות וסמכות שונים">Different information, priorities and authority</span></div>
+<div class="sim-row"><span data-en="Cascading disruption" data-he="משבר מתפתח">Cascading disruption</span><span data-en="The operating picture changes while decisions are being made" data-he="תמונת המצב משתנה בזמן שהצוות פועל">The operating picture changes while decisions are being made</span></div>
+<div class="sim-row"><span data-en="Structured debrief" data-he="תחקיר מובנה">Structured debrief</span><span data-en="Behavior, communication and key decisions become learning material" data-he="החלטות, תקשורת ודפוסי פעולה הופכים לחומר למידה">Behavior, communication and key decisions become learning material</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section programs" id="programs" data-reveal>
+<div class="wrap">
+<div class="programs-intro">
+<div>
+<div class="eyebrow" data-en="Our services" data-he="השירותים שלנו">השירותים שלנו</div>
+<h2 data-en="Four ways to work with the center." data-he="תוכניות ופעילויות במרכז">Four ways to work with the center.</h2>
+</div>
+<p data-en="From a focused simulator workshop to lectures, study days and Gaza-Envelope tours. Programs can be delivered independently or combined to fit the organization&#x27;s goals." data-he="מסדנת סימולטור ממוקדת ועד הרצאות, ימי עיון וסיורים בעוטף. ניתן לבחור פעילות אחת או לשלב בין הפורמטים בהתאם למטרות הארגון.">מסדנת סימולטור ממוקדת ועד הרצאות, ימי עיון וסיורים בעוטף. ניתן לבחור פעילות אחת או לשלב בין הפורמטים בהתאם למטרות הארגון.</p>
+</div>
+<div class="program-grid program-grid-five">
+<article class="program-card program-svc program-featured"><div class="svc-text"><span class="svc-num">01</span><h3 data-en="Simulator Workshop" data-he="סדנת סימולטור">סדנת סימולטור</h3><p data-en="A group leadership simulation that shifts the focus from theoretical knowledge to real-time performance. It runs under load and uncertainty, testing core abilities: decision-making with partial and conflicting information, staying focused under emotional pressure, cognitive flexibility and teamwork. It closes with a structured professional debrief for reflection and embedding the learning." data-he="סימולציית מנהיגות קבוצתית המעבירה את המוקד מידע תיאורטי לתפקוד בזמן אמת. התרגול מתבצע בתנאי עומס ואי-ודאות, ובוחן יכולות ליבה: קבלת החלטות מול מידע חלקי וסותר, שמירה על מיקוד תחת לחץ רגשי, גמישות מחשבתית ועבודת צוות. התהליך נחתם בתחקיר מקצועי מובנה לרפלקציה והטמעת הלמידה.">סימולציית מנהיגות קבוצתית המעבירה את המוקד מידע תיאורטי לתפקוד בזמן אמת. התרגול מתבצע בתנאי עומס ואי-ודאות, ובוחן יכולות ליבה: קבלת החלטות מול מידע חלקי וסותר, שמירה על מיקוד תחת לחץ רגשי, גמישות מחשבתית ועבודת צוות. התהליך נחתם בתחקיר מקצועי מובנה לרפלקציה והטמעת הלמידה.</p></div><div class="svc-media"><img src="assests/simulator_room.png" alt="Ofir leadership simulation - control room" loading="lazy"/></div></article>
+<article class="program-card program-svc"><span class="svc-num">02</span><h3 data-en="Lectures &amp; Study Days" data-he="הרצאות וימי עיון">הרצאות וימי עיון</h3><p data-en="Theoretical and practical depth on leadership, decision-making and functioning under extreme conditions. Delivered at the Ofir center or at the client&#x27;s site." data-he="העמקה תיאורטית ומעשית בנושאי מנהיגות, קבלת החלטות ותפקוד במצבי קיצון. הפעילות ניתנת להעברה במרכז אופיר או בבית הלקוח.">העמקה תיאורטית ומעשית בנושאי מנהיגות, קבלת החלטות ותפקוד במצבי קיצון. הפעילות ניתנת להעברה במרכז אופיר או בבית הלקוח.</p></article>
+<article class="program-card program-svc"><span class="svc-num">03</span><h3 data-en="October 7 Study Day" data-he="יום עיון 7 באוקטובר">יום עיון 7 באוקטובר</h3><p data-en="A full content day analyzing leadership, decision-making and systemic functioning under extreme conditions, through the case studies of the October 7 events." data-he="יום תוכן מלא המנתח מנהיגות, קבלת החלטות ותפקוד מערכתי במצבי קיצון, דרך מקרי הבוחן של אירועי ה-7 באוקטובר.">יום תוכן מלא המנתח מנהיגות, קבלת החלטות ותפקוד מערכתי במצבי קיצון, דרך מקרי הבוחן של אירועי ה-7 באוקטובר.</p></article>
+<article class="program-card program-svc"><span class="svc-num">04</span><h3 data-en="Gaza-Envelope Tours &amp; Journeys" data-he="סיורים ומסעות בעוטף">סיורים ומסעות בעוטף</h3><p data-en="Learning from the field: guided tours that connect the story of the place to practical questions of responsibility, leadership and decision-making." data-he="למידה מהשטח: סיורים מודרכים המחברים את סיפור המקום לסוגיות מעשיות של אחריות, מנהיגות וקבלת החלטות.">למידה מהשטח: סיורים מודרכים המחברים את סיפור המקום לסוגיות מעשיות של אחריות, מנהיגות וקבלת החלטות.</p></article>
+</div>
+</div>
+</section><section class="serve" id="serve" data-reveal>
+<div class="wrap">
+<div class="serve-head">
+<div class="eyebrow" data-en="Who we serve" data-he="למי המרכז מיועד">Who we serve</div>
+<h2 data-en="For organizations preparing for complex crises and rapid change" data-he="לארגונים שרוצים להערך למשברים מורכבים ושינויים מהירים">לארגונים שרוצים להערך למשברים מורכבים ושינויים מהירים</h2><p style="white-space:pre-line" data-en="Avoiding a decision - or making a suboptimal one - in real time can cost the organization dearly: disrupted operational continuity, reputational damage and financial loss.
+
+At the Ofir Center we train management and leadership teams to make decisions, maintain functional continuity and keep leading even under pressure, uncertainty and a changing reality." data-he="הימנעות מהחלטה או קבלת החלטה שאינה מיטבית בזמן אמת עלולות לגבות מהארגון מחיר כבד: פגיעה ברציפות התפקודית, נזק תדמיתי והפסד כלכלי.
+
+במרכז אופיר אנו מאמנים הנהלות וצוותי ניהול לקבל החלטות, לשמור על רציפות תפקודית ולהמשיך להוביל גם תחת לחץ, אי־ודאות ומציאות משתנה">הימנעות מהחלטה או קבלת החלטה שאינה מיטבית בזמן אמת עלולות לגבות מהארגון מחיר כבד: פגיעה ברציפות התפקודית, נזק תדמיתי והפסד כלכלי.
+
+במרכז אופיר אנו מאמנים הנהלות וצוותי ניהול לקבל החלטות, לשמור על רציפות תפקודית ולהמשיך להוביל גם תחת לחץ, אי־ודאות ומציאות משתנה</p>
+</div>
+<div class="serve-cats"><div class="serve-cat"><h4 data-en="Business Sector" data-he="המגזר העסקי">המגזר העסקי</h4><p data-en="Technology, cyber and infrastructure companies and business organizations" data-he="חברות טכנולוגיה, סייבר, תשתיות וארגונים עסקיים">חברות טכנולוגיה, סייבר, תשתיות וארגונים עסקיים</p></div><div class="serve-cat"><h4 data-en="Security &amp; Public Sector" data-he="המגזר הבטחוני והציבורי">המגזר הבטחוני והציבורי</h4><p data-en="Defense, rescue and emergency bodies, government ministries and local authorities" data-he="גופי בטחון, הצלה, חירום, משרדי ממשלה ורשויות מקומיות">גופי בטחון, הצלה, חירום, משרדי ממשלה ורשויות מקומיות</p></div><div class="serve-cat"><h4 data-en="Social Systems" data-he="מערכות חברתיות">מערכות חברתיות</h4><p data-en="Education, healthcare, welfare, nonprofits and community leadership" data-he="חינוך, בריאות, רווחה, עמותות ומנהיגות קהילתית">חינוך, בריאות, רווחה, עמותות ומנהיגות קהילתית</p></div><div class="serve-cat"><h4 data-en="International Bodies" data-he="גופים בין לאומיים">גופים בין לאומיים</h4><p data-en="Delegations, Jewish organizations and partners" data-he="משלחות, ארגונים יהודיים ושותפים">משלחות, ארגונים יהודיים ושותפים</p></div></div>
+</div>
+</section><section class="section team" id="team" data-reveal>
+<div class="wrap team-grid">
+<div class="team-intro">
+<div class="eyebrow" data-en="The people behind Ofir" data-he="הצוות המקצועי">The people behind Ofir</div>
+<h2 data-en="Field experience, professional expertise and multidisciplinary thinking." data-he="ניסיון מהשטח, מומחיות מקצועית וחשיבה רב־תחומית.">Field experience, professional expertise and multidisciplinary thinking.</h2>
+<p data-en="Our team combines command and systems-leadership experience with expertise in medical simulation, research, technology and learning design - to create practical, precise training relevant to the challenges managers and teams meet in reality." data-he="הצוות שלנו מחבר ניסיון בפיקוד ובהובלת מערכות עם מומחיות בסימולציה רפואית, מחקר, טכנולוגיה ועיצוב למידה  כדי ליצור אימון מעשי, מדויק ורלוונטי לאתגרים שמנהלים וצוותים פוגשים במציאות">Our team combines command and systems-leadership experience with expertise in medical simulation, research, technology and learning design - to create practical, precise training relevant to the challenges managers and teams meet in reality.</p>
+</div>
+<div class="people">
+<div class="person" tabindex="0"><div class="person-photo"><img alt="Mira Shoshani" src="assests/team_mira.png"/><div class="person-overlay"><p data-en="Former senior official in the Israel Security Agency, with more than 25 years of experience in leadership, command, complex systems management, and crisis decision-making." data-he="לשעבר בכירה בשב״כ, עם יותר מ־25 שנות ניסיון בפיקוד, בהובלת אנשים, בניהול מערכות מורכבות ובקבלת החלטות בתנאי משבר.">Former senior official in the Israel Security Agency, with more than 25 years of experience in leadership, command, complex systems management, and crisis decision-making.</p><div class="bio-meta" data-en="BA in Political Science · MA in Emergency and Disaster Management" data-he="B.A. במדע המדינה · M.A. בניהול מצבי חירום ואסונות">BA in Political Science · MA in Emergency and Disaster Management</div></div></div><h3 data-en="Mira Shoshani" data-he="מירה שושני">Mira Shoshani</h3><span data-en="Founder &amp; Managing Director" data-he="מייסדת ומנהלת">Founder &amp; Managing Director</span></div>
+<div class="person" tabindex="0"><div class="person-photo"><img alt="Ariel Brikman" src="assests/team_ariel.png"/><div class="person-overlay"><p data-en="Brigadier General (Res.), former senior Israeli Air Force officer. Served as CEO of the Ramon Foundation; a senior partner in its founding and led the content development of HaTayeset, a simulator center for training managers in Glilot. Extensive experience in leadership development, organizational management, mentoring executives and decision-making." data-he="תא״ל (מיל׳), לשעבר בכיר בחיל האוויר. כיהן כמנכ״ל קרן רמון, היה שותף בכיר בהקמה והוביל את פיתוח התכנים של הטייסת, מרכז סימולטורים להכשרת מנהלים בגלילת. בעל ניסיון רב בפיתוח מנהיגות, ניהול ארגונים, ליווי מנהלים וקבלת החלטות">תא״ל (מיל׳), לשעבר בכיר בחיל האוויר. כיהן כמנכ״ל קרן רמון, היה שותף בכיר בהקמה והוביל את פיתוח התכנים של הטייסת, מרכז סימולטורים להכשרת מנהלים בגלילת. בעל ניסיון רב בפיתוח מנהיגות, ניהול ארגונים, ליווי מנהלים וקבלת החלטות</p></div></div><h3 data-en="Ariel Brikman" data-he="אריאל בריקמן">Ariel Brikman</h3><span data-en="Business Strategy &amp; Mentoring" data-he="אסטרטגיה עסקית וליווי מנהלים">Business Strategy &amp; Mentoring</span></div>
+<div class="person" tabindex="0"><div class="person-photo"><img alt="Inbal Levin" src="assests/team_inbal.png"/><div class="person-overlay"><p style="white-space:pre-line" data-en="32 years as a midwife nurse; 18 years as a manager at MSR - the Israel Center for Medical Simulation, Tel Hashomer.
+Expert in the design and development of simulations, debriefings and learning processes across the fields of medicine, education and security." data-he="32  שנים אחות מיילדת, 18 שנה מנהלת במסר המרכז הארצי לסימולציה רפואית, תל השומר.
+מומחית לתכנון פיתוח סימולציות, תחקירים  ותהליכי למידה בעולמות הרפואה החינוך והביטחון.">32 years as a midwife nurse; 18 years as a manager at MSR - the Israel Center for Medical Simulation, Tel Hashomer.
+Expert in the design and development of simulations, debriefings and learning processes across the fields of medicine, education and security.</p><div class="bio-meta" data-en="RN · PCCRN · NMC · M.A" data-he="RN · PCCRN · NMC · M.A">RN · PCCRN · NMC · M.A</div></div></div><h3 data-en="Inbal Levin" data-he="ענבל לוין">Inbal Levin</h3><span data-en="Simulation &amp; Learning-Process Design Expert" data-he="מומחית לתכנון ופיתוח סימולציות ותהליכי למידה">Simulation &amp; Learning-Process Design Expert</span></div>
+<div class="person" tabindex="0"><div class="person-photo"><img alt="Meital Geva" src="assests/team_meital.png"/><div class="person-overlay"><p data-en="Former simulator instructor. Researcher, engineer, and designer specializing in complex systems, simulation, interactive technologies, and translating scientific methods into applied experiences." data-he="לשעבר מדריכת סימולטור. חוקרת, מהנדסת ומעצבת המתמחה במערכות מורכבות, סימולציה, טכנולוגיות אינטראקטיביות ובהפיכת שיטות מחקר מדעיות למערכות ולחוויות יישומיות.">Former simulator instructor. Researcher, engineer, and designer specializing in complex systems, simulation, interactive technologies, and translating scientific methods into applied experiences.</p><div class="bio-meta" data-en="B.Sc. · M.Sc. · Ph.D. in Mechanical Engineering · M.Des. in Industrial Design" data-he="B.Sc. · M.Sc. · Ph.D. בהנדסת מכונות · M.Des. בעיצוב תעשייתי">B.Sc. · M.Sc. · Ph.D. in Mechanical Engineering · M.Des. in Industrial Design</div></div></div><h3 data-en="Meital Geva, Ph.D." data-he="מיטל גבע, Ph.D.">Meital Geva, Ph.D.</h3><span data-en="Technology, Simulation &amp; Experience Design" data-he="טכנולוגיה, סימולציה ועיצוב חוויית למידה">Technology, Simulation &amp; Experience Design</span></div><div class="person" tabindex="0"><div class="person-photo"><img alt="Tomer Vered" src="assests/team_tomer.png"/><div class="person-overlay"><p data-en="Brig. Gen. (Res.) with rich security, organizational and educational experience following 30 years of service in the Air Force in numerous command roles. Co-founder of a defense innovation center for the development of the western Negev; mentors companies toward excellence and personal and organizational achievement and strategic thinking." data-he="תא״ל (מיל) בעל ניסיון בטחוני, ארגוני וחינוכי עשיר לאחר 30 שנות שירות בחיל האוויר בתפקידי פיקוד רבים. שותף להקמת מרכז חדשנות בטחוני לפיתוח אזור הנגב המערבי, מלווה חברות למצויינות והישגיות אישית וארגונית ולחשיבה אסטרטגית.">תא״ל (מיל) בעל ניסיון בטחוני, ארגוני וחינוכי עשיר לאחר 30 שנות שירות בחיל האוויר בתפקידי פיקוד רבים. שותף להקמת מרכז חדשנות בטחוני לפיתוח אזור הנגב המערבי, מלווה חברות למצויינות והישגיות אישית וארגונית ולחשיבה אסטרטגית.</p><div class="bio-meta" data-en="B.Sc. in Computer Science, M.A. in Political Science" data-he="B.Sc. מדעי המחשב, MA במדעי המדינה.">B.Sc. מדעי המחשב, MA במדעי המדינה.</div></div></div><h3 data-en="Tomer Vered" data-he="תומר ורד">תומר ורד</h3><span data-en="Leadership, Strategy &amp; Innovation" data-he="מנהיגות, אסטרטגיה וחדשנות">מנהיגות, אסטרטגיה וחדשנות</span></div>
+</div>
+</div>
+</section>
+
+<section class="section about" id="about" data-reveal>
+<div class="wrap">
+<div class="about-head">
+<h2 data-en="In memory of SSG Ofir Shoshani" data-he="ע״ש סמ״ר אופיר שושני">In memory of SSG Ofir Shoshani</h2>
+</div>
+<div class="about-grid memory-grid">
+<div class="about-visual memory-visual">
+<div class="memory-portrait"><img alt="Ofir Shoshani" src="assests/ofir.jpg"/></div>
+<div class="memory-dates">8.2.2003–7.10.2023</div>
+</div>
+<div class="about-copy">
+<div class="quote" data-en="SSG Ofir Shoshani was 20 years old when she was murdered in her home in Kfar Aza on October 7, 2023." data-he="סמ״ר אופיר שושני הייתה בת 20 כשנרצחה בביתה בכפר עזה ב־7 באוקטובר 2023.">SSG Ofir Shoshani was 20 years old when she was murdered in her home in Kfar Aza on October 7, 2023.</div>
+<p style="white-space:pre-line" data-en="As a young commander, Ofir shaped a clear and mature command philosophy. She believed in leading by example, in modesty, patience, composure and the pursuit of excellence - and above all in command grounded in respect for the person rather than the force of authority.
+
+Ofir saw a commander as responsible not only for accomplishing the mission, but also for her people and their development. She believed in constant learning, observation, trial and error, and the courage to ask - as she used to say: &quot;Don&#x27;t understand? Ask.&quot;
+
+In her eyes, a commander&#x27;s role is also to be part of how their people are shaped - helping them become &quot;thinking, better people and citizens.&quot;" data-he="מפקדת צעירה, אופיר גיבשה תפיסת פיקוד ברורה ובוגרת. היא האמינה בדוגמה אישית, בצניעות, בסבלנות, ברוגע ובחתירה למצוינות  ובעיקר בפיקוד שמבוסס על כבוד לאדם ולא על כוח הסמכות.
+
+אופיר ראתה במפקדת מי שאחראית לא רק לביצוע המשימה, אלא גם לאנשים שלה ולהתפתחותם. היא האמינה בלמידה מתמדת, בהתבוננות, בניסוי וטעייה ובאומץ לשאול  כפי שנהגה לומר: &quot;אתה לא מבין? תשאל.&quot;
+
+בעיניה, תפקידו של מפקד הוא גם להיות חלק מהדרך שבה אנשיו מתעצבים  לעזור להם להפוך ל״אנשים ואזרחים חושבים וטובים יותר״.">As a young commander, Ofir shaped a clear and mature command philosophy. She believed in leading by example, in modesty, patience, composure and the pursuit of excellence - and above all in command grounded in respect for the person rather than the force of authority.
+
+Ofir saw a commander as responsible not only for accomplishing the mission, but also for her people and their development. She believed in constant learning, observation, trial and error, and the courage to ask - as she used to say: &quot;Don&#x27;t understand? Ask.&quot;
+
+In her eyes, a commander&#x27;s role is also to be part of how their people are shaped - helping them become &quot;thinking, better people and citizens.&quot;</p>
+<p style="white-space:pre-line;font-weight:700" data-en="The Ofir Leadership Center carries her name and the command philosophy she left behind: leadership that connects responsibility for the mission, responsibility for people, continuous learning and personal example." data-he="מרכז אופיר למנהיגות נושא את שמה ואת תפיסת הפיקוד שהותירה אחריה: מנהיגות שמחברת בין אחריות למשימה, אחריות לאנשים, למידה מתמדת ודוגמה אישית">The Ofir Leadership Center carries her name and the command philosophy she left behind: leadership that connects responsibility for the mission, responsibility for people, continuous learning and personal example.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="cta" id="contact">
+<div class="wrap">
+<div class="cta-textcol"><h2 data-en="Discover how your team operates when reality changes." data-he="גלו כיצד הצוות שלכם פועל כשהמציאות משתנה.">Bring your leadership team into a situation that reveals how it really works.</h2><div class="footer-social cta-social"><a href="https://www.facebook.com/people/%D7%9E%D7%A8%D7%9B%D7%96-%D7%90%D7%95%D7%A4%D7%99%D7%A8-%D7%9C%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA/61594029811925/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="assests/facebook.png" alt="Facebook"/></a><a href="https://www.instagram.com/ofir_leadership_center/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="assests/instagram.png" alt="Instagram"/></a><a href="https://www.linkedin.com/company/%D7%9E%D7%A8%D7%9B%D7%96-%D7%90%D7%95%D7%A4%D7%99%D7%A8-%D7%9C%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA?trk=public_post_feed-actor-name" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="assests/linkedin.png" alt="LinkedIn"/></a></div></div>
+<div class="cta-actions"><form class="contact-form" id="contactForm"><input type="text" name="name" required data-en-ph="Full name" data-he-ph="שם מלא" aria-label="שם"/><input type="email" name="email" required data-en-ph="Email" data-he-ph="אימייל" aria-label="אימייל"/><input type="tel" name="phone" data-en-ph="Phone (optional)" data-he-ph="טלפון (רשות)" aria-label="טלפון"/><textarea name="message" rows="4" required data-en-ph="Your message" data-he-ph="תוכן הפנייה" aria-label="הודעה"></textarea><div class="form-submit-row"><button type="submit" data-en="Send" data-he="שליחה">שליחה</button><div class="footer-social cta-social cta-social-m"><a href="https://www.facebook.com/people/%D7%9E%D7%A8%D7%9B%D7%96-%D7%90%D7%95%D7%A4%D7%99%D7%A8-%D7%9C%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA/61594029811925/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="assests/facebook.png" alt="Facebook"/></a><a href="https://www.instagram.com/ofir_leadership_center/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="assests/instagram.png" alt="Instagram"/></a><a href="https://www.linkedin.com/company/%D7%9E%D7%A8%D7%9B%D7%96-%D7%90%D7%95%D7%A4%D7%99%D7%A8-%D7%9C%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA?trk=public_post_feed-actor-name" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="assests/linkedin.png" alt="LinkedIn"/></a></div></div><p class="form-status" data-status hidden></p></form></div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap footer-grid">
+<span data-en="OFIR Leadership Center" data-he="מרכז אופיר למנהיגות">OFIR Leadership Center</span>
+<span data-en="Leadership · Simulation · Research · Measurement" data-he="מנהיגות · סימולציה · מחקר · מדידה">Leadership · Simulation · Research · Measurement</span>
+</div>
+</footer>
+<script>
+(function(){
+  function setLang(lang){
+    const rtl = lang === 'he';
+    document.documentElement.lang = rtl ? 'he' : 'en';
+    document.documentElement.dir = rtl ? 'rtl' : 'ltr';
+    document.querySelectorAll('[data-en][data-he]').forEach(el => {
+      el.textContent = rtl ? el.getAttribute('data-he') : el.getAttribute('data-en');
+    });
+    document.querySelectorAll('[data-en-ph][data-he-ph]').forEach(el => {
+      el.setAttribute('placeholder', rtl ? el.getAttribute('data-he-ph') : el.getAttribute('data-en-ph'));
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+    try{localStorage.setItem('ofir-lang',lang)}catch(e){}
   }
-  .hero-symbol-wrap{display:none}
-}
-
-
-
-/* v19 — full hero logo lockup + deterministic bilingual placement */
-.hero .hero-content{
-  direction:ltr!important;
-  display:grid!important;
-  grid-template-columns:minmax(0,760px) minmax(280px,1fr)!important;
-  grid-template-areas:"copy logo"!important;
-  column-gap:clamp(110px,10vw,180px)!important;
-  align-items:center!important;
-}
-.hero .hero-copy{grid-area:copy!important;direction:ltr;text-align:left}
-.hero-symbol-wrap{grid-area:logo!important;display:flex!important;align-items:center;justify-content:flex-end;min-width:0}
-.hero-full-logo{display:block;width:min(100%,390px);height:auto;object-fit:contain;filter:drop-shadow(0 16px 34px rgba(0,0,0,.18))}
-.hero-full-logo-he{display:none}
-html[lang="he"] .hero .hero-content{
-  direction:ltr!important;
-  grid-template-columns:minmax(280px,1fr) minmax(0,760px)!important;
-  grid-template-areas:"logo copy"!important;
-}
-html[lang="he"] .hero .hero-copy{direction:rtl!important;text-align:right!important}
-html[lang="he"] .hero-symbol-wrap{justify-content:flex-start!important}
-html[lang="he"] .hero-full-logo-en{display:none!important}
-html[lang="he"] .hero-full-logo-he{display:block!important}
-html[lang="en"] .hero-full-logo-en{display:block!important}
-@media(max-width:1000px){
-  .hero .hero-content{column-gap:64px!important;grid-template-columns:minmax(0,1fr) 250px!important}
-  html[lang="he"] .hero .hero-content{grid-template-columns:250px minmax(0,1fr)!important}
-  .hero-full-logo{width:250px}
-}
-@media(max-width:760px){
-  .hero .hero-content,html[lang="he"] .hero .hero-content{display:block!important}
-  .hero-symbol-wrap{display:none!important}
-}
-
-
-/* v20 — programs reflect the actual five products */
-.program-grid-five{grid-template-columns:repeat(6,1fr);gap:18px;align-items:stretch}
-.program-grid-five .program-card{min-height:310px;border-radius:0;padding:30px 28px;border-top:1px solid rgba(34,43,35,.24);background:transparent;box-shadow:none;transform:none!important}
-.program-grid-five .program-core{grid-column:span 2}
-.program-grid-five .program-secondary{grid-column:span 3;min-height:235px;margin-top:18px;background:var(--page-alt)}
-.program-grid-five .program-featured{background:var(--deep);color:var(--ivory);border-top-color:transparent}
-.program-grid-five .program-featured p{color:rgba(236,232,220,.72)}
-.program-grid-five .program-card h3{font-size:26px;line-height:1.08;margin:0 0 16px;max-width:360px}
-.program-grid-five .program-card p{font-size:13px;line-height:1.68;max-width:390px}
-.program-grid-five .program-top{margin-bottom:74px}
-.program-grid-five .program-secondary .program-top{margin-bottom:48px}
-html[dir="rtl"] .program-grid-five .program-card{text-align:right}
-@media(max-width:1080px){.program-grid-five{grid-template-columns:repeat(2,1fr)}.program-grid-five .program-core,.program-grid-five .program-secondary{grid-column:auto;margin-top:0}.program-grid-five .program-card:last-child{grid-column:1/-1}}
-@media(max-width:760px){.program-grid-five{grid-template-columns:1fr}.program-grid-five .program-card,.program-grid-five .program-card:last-child{grid-column:auto;min-height:240px}.program-grid-five .program-top,.program-grid-five .program-secondary .program-top{margin-bottom:44px}}
-
-
-/* v21 — programs layout rebuilt for clearer hierarchy in EN + HE */
-.programs{background:#fff;padding:150px 0 160px}
-.programs-intro{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:72px;align-items:start;margin-bottom:56px}
-.programs-intro h2{font-size:clamp(42px,4.8vw,64px);line-height:1.02;max-width:640px}
-.programs-intro>p{font-size:16px;line-height:1.75;max-width:540px;color:rgba(34,43,35,.72)}
-.program-grid-five{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px;align-items:stretch}
-.program-grid-five .program-card{grid-column:span 4;display:flex;flex-direction:column;justify-content:flex-start;gap:22px;min-height:0;padding:28px 28px 30px;border:1px solid rgba(34,43,35,.12);border-radius:18px;background:#f6f4ee;box-shadow:none;transform:none!important}
-.program-grid-five .program-card:hover{background:#f2f0e9!important}
-.program-grid-five .program-core{grid-column:span 4}
-.program-grid-five .program-secondary{grid-column:span 6;background:#fbfaf7;margin-top:0}
-.program-grid-five .program-featured{background:var(--deep)!important;color:var(--ivory)!important;border-color:var(--deep)}
-.program-grid-five .program-featured:hover{background:var(--deep)!important}
-.program-grid-five .program-featured p{color:rgba(236,232,220,.74)!important}
-.program-grid-five .program-top{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin:0;padding:0 0 18px;border-bottom:1px solid rgba(34,43,35,.12)}
-.program-grid-five .program-featured .program-top{border-bottom-color:rgba(236,232,220,.16)}
-.program-grid-five .program-top span:first-child{font:500 11px/1 var(--mono);letter-spacing:.08em;color:inherit;opacity:.78}
-.program-grid-five .program-top span:last-child{font:500 9px/1.45 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:inherit;opacity:.52;max-width:160px}
-.program-grid-five .program-card>div:last-child{display:block}
-.program-grid-five .program-card h3{font-size:31px;line-height:1.06;margin:0 0 14px;max-width:none}
-.program-grid-five .program-secondary h3{font-size:28px}
-.program-grid-five .program-card p,.program-grid-five .program-featured p{font-size:14px;line-height:1.72;max-width:none;margin:0}
-html[dir="rtl"] .programs-intro{text-align:right}
-html[dir="rtl"] .program-grid-five .program-card{text-align:right}
-html[dir="rtl"] .program-grid-five .program-top{flex-direction:row-reverse}
-html[dir="rtl"] .program-grid-five .program-top span:last-child{letter-spacing:0;text-transform:none}
-@media(max-width:1100px){
-  .programs-intro{grid-template-columns:1fr;gap:24px;margin-bottom:42px}
-  .program-grid-five{grid-template-columns:repeat(6,minmax(0,1fr))}
-  .program-grid-five .program-core,.program-grid-five .program-secondary{grid-column:span 3}
-  .program-grid-five .program-card:last-child{grid-column:span 6}
-}
-@media(max-width:760px){
-  .programs{padding:92px 0 100px}
-  .programs-intro h2{font-size:40px}
-  .programs-intro>p{font-size:15px}
-  .program-grid-five{grid-template-columns:1fr;gap:14px}
-  .program-grid-five .program-card,.program-grid-five .program-core,.program-grid-five .program-secondary,.program-grid-five .program-card:last-child{grid-column:auto;padding:22px 20px 24px;border-radius:16px}
-  .program-grid-five .program-top{padding-bottom:14px}
-  .program-grid-five .program-card h3,.program-grid-five .program-secondary h3{font-size:24px;margin-bottom:10px}
-  .program-grid-five .program-card p{font-size:13.5px}
-}
-
-
-
-/* v22 — gentle motion, restrained and professional */
-@media (prefers-reduced-motion: no-preference){
-  /* Global interactive transitions */
-  a, button, .program-card, .person-photo img, .btn, .serve-bar span{
-    transition-property:opacity,transform,background-color,border-color,color,filter;
-    transition-duration:.28s;
-    transition-timing-function:cubic-bezier(.22,.61,.36,1);
-  }
-
-  /* Hero: very soft entrance */
-  .hero-copy{
-    animation:ofirFadeUp .75s cubic-bezier(.22,.61,.36,1) .08s both;
-  }
-  .hero-symbol-wrap{
-    animation:ofirFadeIn .9s ease .18s both;
-  }
-
-  /* Program cards */
-  .program-grid-five .program-card{
-    transition:transform .26s cubic-bezier(.22,.61,.36,1),
-               background-color .26s ease,
-               border-color .26s ease,
-               box-shadow .26s ease;
-  }
-  .program-grid-five .program-card:hover{
-    transform:translateY(-3px)!important;
-    border-color:rgba(34,43,35,.20);
-    box-shadow:0 10px 28px rgba(34,43,35,.055);
-  }
-  .program-grid-five .program-featured:hover{
-    transform:translateY(-3px)!important;
-    box-shadow:0 12px 30px rgba(18,24,19,.13);
-  }
-
-  /* Navigation and buttons */
-  .nav li a:hover{opacity:.72}
-  .btn:hover{transform:translateY(-2px)}
-  .btn:active{transform:translateY(0)}
-
-  /* Photography */
-  .image-stack img,
-  .memory-portrait img,
-  .ofir-portrait img{
-    transition:transform .7s cubic-bezier(.22,.61,.36,1),filter .5s ease;
-  }
-  .image-stack .tall:hover img,
-  .image-stack .small:hover img,
-  .memory-portrait:hover img,
-  .ofir-portrait:hover img{
-    transform:scale(1.018);
-  }
-
-  /* Audience categories: subtle response only */
-  .serve-bar span:hover{
-    background:rgba(172,183,165,.10);
-  }
-
-  @keyframes ofirFadeUp{
-    from{opacity:0;transform:translateY(12px)}
-    to{opacity:1;transform:translateY(0)}
-  }
-  @keyframes ofirFadeIn{
-    from{opacity:0}
-    to{opacity:1}
-  }
-}
-
-
-/* v23 — gentle section-to-section reveal */
-@media (prefers-reduced-motion: no-preference){
-  main > section:not(.hero) > .wrap,
-  main > section.simulation > .sim-grid{
-    will-change:opacity,transform;
-  }
-  .section-reveal-ready main > section:not(.hero) > .wrap,
-  .section-reveal-ready main > section.simulation > .sim-grid{
-    opacity:0;
-    transform:translateY(16px);
-    transition:opacity .72s ease,transform .72s cubic-bezier(.22,.61,.36,1);
-  }
-  .section-reveal-ready main > section.is-visible > .wrap,
-  .section-reveal-ready main > section.simulation.is-visible > .sim-grid{
-    opacity:1;
-    transform:translateY(0);
-  }
-  /* slight overlap in timing makes the page feel continuous, not animated */
-  main > section:not(.hero){
-    position:relative;
-  }
-}
-
-@media (prefers-reduced-motion: reduce){
-  *,*::before,*::after{
-    animation-duration:.01ms!important;
-    animation-iteration-count:1!important;
-    transition-duration:.01ms!important;
-    scroll-behavior:auto!important;
-  }
-}
-
-
-
-/* v25 — alignment refinements for programs + who we serve */
-.programs-intro{align-items:start!important;gap:76px!important}
-.programs-intro>div{display:grid;align-content:start;gap:14px}
-.programs-intro .eyebrow{margin:0}
-.programs-intro h2{margin:0}
-.programs-intro>p{margin:0;align-self:start;justify-self:start;padding-top:20px;max-width:540px}
-html[dir="rtl"] .programs-intro>p{justify-self:end;text-align:right}
-
-.serve-head{align-items:start!important;margin-bottom:28px!important}
-.serve-head .eyebrow{align-self:start;margin-top:6px}
-.serve-head h2{margin-top:0}
-.serve-bar span{align-items:flex-start!important;justify-content:flex-start;padding-top:30px!important;padding-bottom:18px!important}
-html[dir="rtl"] .serve-bar span{text-align:right}
-
-@media(max-width:1100px){
-  .programs-intro{gap:26px!important}
-  .programs-intro>p{padding-top:0}
-}
-@media(max-width:760px){
-  .serve-head{margin-bottom:22px!important}
-  .serve-head .eyebrow{margin-top:0}
-  .serve-bar span{padding-top:22px!important;padding-bottom:16px!important}
-}
-
-
-
-/* v26 — stronger editorial system inspired by the reference site */
-:root{
-  --grid-max:1320px;
-  --section-y:136px;
-}
-.wrap{width:min(var(--grid-max),calc(100% - 96px));}
-.section{padding:var(--section-y) 0;}
-
-/* Global section rhythm: fewer boxes, stronger grid and alignment */
-.section-head,.section-title,.team-intro,.programs-intro,.serve-head,.about-head{position:relative}
-.eyebrow{font-size:9px;line-height:1.3;letter-spacing:.12em}
-
-/* Center — more editorial, less symmetrical */
-#center{padding:148px 0 158px}
-.center-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:start}
-.section-title{grid-column:1 / span 4;padding-top:22px}
-.image-stack{grid-column:6 / -1;grid-template-columns:1.35fr .65fr;gap:16px}
-.image-stack .small-col{gap:16px}
-.image-stack.center-images .tall{height:650px}
-.image-stack .small{min-height:317px}
-.section-title h2{font-size:clamp(46px,4.8vw,66px);line-height:1.01}
-.section-title p{font-size:15px;line-height:1.75;max-width:430px}
-.rule{margin:30px 0 24px}
-
-/* Extreme — narrow label column, wide content column */
-.extreme{padding:136px 0 148px}
-.extreme-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:start}
-.extreme-intro{grid-column:1 / span 4}
-.extreme-list{grid-column:6 / -1;border-top:1px solid var(--rule);background:none!important}
-.extreme h2{font-size:clamp(44px,4.4vw,60px)}
-.extreme-row{grid-template-columns:150px 1fr;padding:22px 0}
-.extreme-row b{font-size:9px}
-.extreme-row span{font-size:14px;line-height:1.65}
-
-/* Learning — simple two-column editorial spread */
-.learning{padding:136px 0 148px;background:#f5f4ef}
-.learning-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:start;margin-bottom:64px}
-.learning-head .eyebrow{grid-column:1 / span 3;margin:0}
-.learning-head h2{grid-column:4 / span 5;font-size:clamp(44px,4.5vw,60px);line-height:1.02}
-.learning-head p{grid-column:9 / -1;font-size:15px;line-height:1.72;max-width:none;padding:0}
-.learning-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
-.learning-card{grid-column:span 6;padding:24px 0 0!important;border-top:1px solid rgba(34,43,35,.28)}
-.learning-index{margin-bottom:44px}
-.learning-card h3{font-size:30px}
-
-/* Simulation becomes the main immersive break */
-.simulation{padding:0;background:var(--deep)}
-.sim-grid{width:100%;max-width:none;display:grid;grid-template-columns:7fr 5fr;min-height:720px}
-.sim-visual{min-height:720px}
-.sim-copy{min-height:720px;padding:88px 8vw 88px 72px;background:#202920}
-html[dir="rtl"] .sim-copy{padding:88px 72px 88px 8vw}
-.sim-copy h2{font-size:clamp(44px,4.7vw,62px)}
-.sim-inset{right:32px;bottom:32px}
-html[dir="rtl"] .sim-inset{right:auto;left:32px}
-
-/* Programs — keep cards because comparison is useful, but more disciplined */
-.programs{padding:136px 0 148px}
-.programs-intro{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;margin-bottom:48px;align-items:start!important}
-.programs-intro>div{grid-column:1 / span 6;display:block}
-.programs-intro>p{grid-column:8 / -1;padding-top:26px!important;justify-self:stretch!important;max-width:none!important}
-.programs-intro h2{font-size:clamp(46px,4.8vw,64px);max-width:620px}
-.program-grid-five{gap:16px}
-.program-grid-five .program-card{border-radius:0!important;border:0!important;border-top:1px solid rgba(34,43,35,.18)!important;background:transparent!important;padding:24px 8px 28px!important;box-shadow:none!important}
-.program-grid-five .program-card:hover{background:transparent!important;transform:translateY(-2px)!important}
-.program-grid-five .program-featured{background:var(--deep)!important;padding:26px 26px 30px!important;border-top-color:var(--deep)!important}
-.program-grid-five .program-featured:hover{background:var(--deep)!important}
-.program-grid-five .program-top{padding-bottom:16px}
-.program-grid-five .program-card h3{font-size:28px}
-.program-grid-five .program-card p{font-size:13.5px;line-height:1.68}
-
-/* Who we serve — flatten completely into a typographic matrix */
-.serve{padding:122px 0 136px;background:#f3f1ea}
-.serve-head{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:start!important;margin-bottom:34px!important}
-.serve-head .eyebrow{grid-column:1 / span 3;margin-top:0}
-.serve-head h2{grid-column:4 / span 6;font-size:clamp(36px,3.7vw,50px);line-height:1.08;margin:0}
-html[dir="rtl"] .serve-head .eyebrow{grid-column:10 / -1}
-html[dir="rtl"] .serve-head h2{grid-column:4 / span 6}
-.serve-bar{grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(34,43,35,.17)}
-.serve-bar span{min-height:104px;padding:24px 20px 18px!important;align-items:flex-start!important;font-size:11px;line-height:1.45;background:transparent}
-.serve-bar span:hover{background:rgba(34,43,35,.025)}
-
-/* Team — more like an editorial gallery */
-.team{padding:136px 0 148px}
-.team-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
-.team-intro{grid-column:1 / span 4;margin:0;position:sticky;top:110px;align-self:start}
-.people{grid-column:6 / -1;grid-template-columns:repeat(2,1fr);gap:38px 22px}
-.person-photo{border-radius:0!important;aspect-ratio:4/5}
-.person-overlay{border-radius:0!important}
-.person h3{font-size:17px}
-
-/* Memorial / Ofir — stronger asymmetric split */
-.about{padding:136px 0 150px}
-.about-grid.memory-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:start}
-.memory-visual{grid-column:1 / span 4;width:auto!important}
-.about-copy{grid-column:6 / -1;padding-top:0}
-.memory-portrait{border-radius:0!important}
-.about-copy .quote{font-size:28px;line-height:1.38;max-width:760px}
-.about-copy p{font-size:15px;line-height:1.8;max-width:760px}
-
-/* CTA — full-width, no floating card */
-.cta{padding:0;background:var(--deep);color:var(--ivory)}
-.cta .wrap{width:min(var(--grid-max),calc(100% - 96px));background:none!important;border-radius:0!important;padding:84px 0!important;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
-.cta h2{grid-column:1 / span 8;font-size:clamp(38px,4vw,56px)}
-.cta a{grid-column:10 / -1;justify-self:end;align-self:center}
-html[dir="rtl"] .cta h2{grid-column:5 / -1}
-html[dir="rtl"] .cta a{grid-column:1 / span 3;justify-self:start}
-
-/* Scroll reveals: slightly calmer and more systematic */
-@media (prefers-reduced-motion:no-preference){
-  [data-reveal]{opacity:0;transform:translateY(18px);transition:opacity .72s ease,transform .72s cubic-bezier(.22,.61,.36,1)}
-  [data-reveal].is-visible{opacity:1;transform:none}
-}
-
-@media(max-width:1080px){
-  .wrap{width:min(100% - 56px,var(--grid-max))}
-  .center-grid,.extreme-grid,.learning-head,.learning-grid,.programs-intro,.serve-head,.team-grid,.about-grid.memory-grid{grid-template-columns:1fr}
-  .section-title,.image-stack,.extreme-intro,.extreme-list,.learning-head .eyebrow,.learning-head h2,.learning-head p,.learning-card,.programs-intro>div,.programs-intro>p,.serve-head .eyebrow,.serve-head h2,.team-intro,.people,.memory-visual,.about-copy{grid-column:auto}
-  .team-intro{position:static}
-  .people{grid-template-columns:repeat(2,1fr)}
-  .sim-grid{grid-template-columns:1fr}
-  .sim-visual,.sim-copy{min-height:560px}
-  .cta .wrap{grid-template-columns:1fr;gap:28px}
-  .cta h2,.cta a,html[dir="rtl"] .cta h2,html[dir="rtl"] .cta a{grid-column:auto;justify-self:start}
-}
-@media(max-width:760px){
-  :root{--section-y:92px}
-  .wrap{width:min(100% - 30px,var(--grid-max))}
-  .people{grid-template-columns:1fr}
-  .serve-bar{grid-template-columns:1fr}
-  .programs-intro>p{padding-top:0!important}
-  .sim-copy,html[dir="rtl"] .sim-copy{padding:54px 24px}
-  .cta .wrap{width:min(100% - 30px,var(--grid-max));padding:58px 0!important}
-}
-
-/* --- font scale patch (was ofir_v27_font_scale_patch.css) --- */
-/* OFIR v27 — readability scale
-   Increase all non-title / non-eyebrow text in EN + HE.
-   Headings (h1-h4) and .eyebrow are intentionally unchanged. */
-
-/* Navigation / controls */
-.nav li a{font-size:11px!important;line-height:1.35!important}
-.lang-btn{font-size:11px!important;line-height:1.35!important}
-.btn{font-size:11px!important;line-height:1.35!important}
-.cta a{font-size:11px!important;line-height:1.35!important}
-
-/* Main reading copy */
-.hero .hero-copy p{font-size:18px!important;line-height:1.7!important}
-.section-title p{font-size:17px!important;line-height:1.78!important}
-.extreme-intro p{font-size:17px!important;line-height:1.78!important}
-.learning-head p{font-size:17px!important;line-height:1.76!important}
-.learning-card p{font-size:16px!important;line-height:1.72!important}
-.programs-intro>p{font-size:17px!important;line-height:1.76!important}
-.team-intro p{font-size:16.5px!important;line-height:1.76!important}
-.about-copy p{font-size:17px!important;line-height:1.82!important}
-
-/* Extreme-condition index */
-.extreme-row b{font-size:17px!important;font-weight:700!important;line-height:1.35!important;letter-spacing:0!important;text-transform:none!important;color:var(--deep)!important}
-.extreme-row span{font-size:15px!important;line-height:1.6!important}
-
-/* Learning labels / metadata */
-.learning-index{font-size:11px!important;line-height:1.4!important}
-.learning-tag{font-size:11px!important;line-height:1.5!important}
-
-/* Simulation */
-.sim-copy p{font-size:16px!important;line-height:1.74!important}
-.sim-row span:first-child{font-size:15.5px!important;line-height:1.5!important}
-.sim-row span:last-child{font-size:14px!important;line-height:1.55!important;color:rgba(236,232,220,.82)!important}
-
-/* Programs */
-.program-grid-five .program-card p,
-.program-grid-five .program-featured p{font-size:15.5px!important;line-height:1.72!important}
-.program-grid-five .program-top span:first-child{font-size:12.5px!important;line-height:1.25!important}
-.program-grid-five .program-top span:last-child{font-size:10.5px!important;line-height:1.5!important}
-
-/* Audience */
-.serve-bar span{font-size:13px!important;line-height:1.5!important}
-
-/* Team — names remain h3 and therefore unchanged */
-.person>span{font-size:11px!important;line-height:1.55!important}
-.person-overlay p{font-size:14px!important;line-height:1.6!important}
-.person-overlay .bio-meta{font-size:10.5px!important;line-height:1.55!important}
-
-/* Memorial */
-.memory-dates{font-size:13px!important;line-height:1.45!important}
-
-
-/* Legacy / auxiliary sections if retained in the current build */
-.triad p{font-size:15px!important;line-height:1.68!important}
-.note span{font-size:16px!important;line-height:1.5!important}
-.num,.service .icon,.feature-index,.step b{font-size:11px!important;line-height:1.4!important}
-.service p{font-size:14.5px!important;line-height:1.68!important}
-.section-head p{font-size:16px!important;line-height:1.72!important}
-.stat span{font-size:10.5px!important;line-height:1.6!important}
-.stats-source{font-size:10.5px!important;line-height:1.5!important}
-.feature p{font-size:15px!important;line-height:1.68!important}
-.step p{font-size:14px!important;line-height:1.65!important}
-.measure-copy p{font-size:16px!important;line-height:1.72!important}
-.measure-copy li{font-size:15px!important;line-height:1.55!important}
-.data-top,.data-foot{font-size:10.5px!important;line-height:1.45!important}
-
-/* Footer / small utility text */
-.footer-grid,footer{font-size:11px!important;line-height:1.5!important}
-
-/* Hebrew uses the same readable scale and keeps Varela Round */
-html[lang="he"] body,
-html[lang="he"] body *{font-family:'Varela Round',sans-serif}
-
-/* Headings (h1-h4) and .eyebrow are intentionally not overridden. */
-
-@media(max-width:1100px){
-  .nav li a{font-size:10px!important}
-  .lang-btn{font-size:10px!important}
-}
-
-@media(max-width:820px){
-  .nav li a{font-size:9.5px!important}
-  .lang-btn{font-size:9.5px!important}
-  .hero .hero-copy p{font-size:17px!important}
-}
-
-@media(max-width:560px){
-  .hero .hero-copy p{font-size:16px!important}
-  .section-title p,
-  .extreme-intro p,
-  .learning-head p,
-  .programs-intro>p,
-  .about-copy p{font-size:16px!important}
-  .learning-card p,
-  .sim-copy p{font-size:15px!important}
-  .program-grid-five .program-card p,
-  .program-grid-five .program-featured p{font-size:14.5px!important}
-  .person-overlay p{font-size:13.5px!important}
-  .serve-bar span{font-size:12.5px!important}
-}
-
-
-/* =========================================================
-   v28 tweaks (requested)
-   1) larger eyebrows   2) larger top navigation
-   3) EN / עברית aligned with the other nav words
-   Language-neutral: font-family and letter-spacing are left
-   to the existing lang rules so Hebrew keeps Varela Round.
-   ========================================================= */
-
-/* 1) Eyebrows — bigger in both languages */
-.eyebrow{font-size:12px!important;line-height:1.45!important}
-html[lang="he"] .eyebrow{font-size:13px!important;line-height:1.5!important}
-
-/* 2) Upper navigation — bigger */
-.nav li a{font-size:13px!important;line-height:1.4!important}
-.lang-btn{font-size:13px!important;line-height:1.4!important}
-.lang-switch span{font-size:13px!important;line-height:1.4!important}
-
-/* 3) Align the EN / עברית switch with the menu words */
-.nav ul{align-items:center!important}
-.lang-switch{display:flex!important;align-items:center!important;gap:6px!important;margin-left:0!important}
-.lang-switch .lang-btn{
-  padding:0!important;margin:0!important;border:0!important;
-  background:transparent!important;
-  line-height:1.4!important;vertical-align:baseline!important;
-}
-.lang-switch span{vertical-align:baseline!important}
-
-/* keep it readable (and proportionally larger) on smaller screens */
-@media(max-width:1100px){
-  .nav li a,.lang-btn,.lang-switch span{font-size:12px!important}
-}
-@media(max-width:820px){
-  .nav li a,.lang-btn,.lang-switch span{font-size:11px!important}
-}
-
-
-/* =========================================================
-   v29 — Learning methodology: three clean cards
-   (number small, verb title prominent, description below)
-   ========================================================= */
-@media(min-width:761px){
-  .learning-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:34px!important}
-}
-.learning-card{
-  grid-column:auto!important;
-  min-height:0!important;
-  border-radius:0!important;
-  background:transparent!important;
-  color:var(--deep)!important;
-  padding:26px 0 0!important;
-  border-top:2px solid var(--deep)!important;
-  display:flex!important;flex-direction:column!important;justify-content:flex-start!important;
-}
-.learning-card .learning-index{
-  margin-bottom:14px!important;font-size:12px!important;
-  color:var(--muted)!important;opacity:1!important;letter-spacing:.06em!important
-}
-.learning-card h3{
-  margin:0 0 12px!important;font-size:22px!important;font-weight:700!important;
-  line-height:1.25!important;color:var(--deep)!important
-}
-.learning-card p{font-size:15px!important;line-height:1.7!important;color:rgba(39,48,38,.82)!important}
-
-
-/* =========================================================
-   v30 — Learning head: eyebrow on its own row, ABOVE the
-   heading (was sitting as a 3rd column beside it).
-   ========================================================= */
-.learning-head .eyebrow{grid-column:1 / -1!important;margin:0 0 14px!important}
-.learning-head h2{grid-column:1 / span 7!important}
-.learning-head p{grid-column:9 / -1!important;align-self:end!important}
-@media(max-width:1100px){
-  .learning-head .eyebrow,
-  .learning-head h2,
-  .learning-head p{grid-column:auto!important}
-}
-
-
-/* =========================================================
-   v32 — Programs: four separated blocks (not a table).
-   Number stacked above the title; flagship spans full width.
-   ========================================================= */
-.program-grid-five{
-  display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
-  gap:18px!important;border-top:0!important;align-items:stretch!important
-}
-.program-grid-five .program-card,
-.program-grid-five .program-svc{
-  grid-column:auto!important;margin:0!important;min-height:0!important;box-shadow:none!important;transform:none!important;
-  background:#f5f3ed!important;color:var(--deep)!important;
-  border:0!important;border-radius:0!important;
-  padding:32px 30px!important;
-  display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:0!important;
-}
-.program-grid-five .program-svc:first-child{grid-column:1 / -1!important}
-.program-grid-five .program-card:hover,
-.program-grid-five .program-svc:hover{transform:none!important;background:#efece3!important;box-shadow:none!important}
-.program-grid-five .svc-num{
-  display:block!important;font:500 12px/1 var(--mono)!important;letter-spacing:.1em!important;
-  color:rgba(34,43,35,.5)!important;margin:0 0 18px!important
-}
-.program-grid-five .program-svc h3{font-size:26px!important;line-height:1.14!important;margin:0 0 12px!important;color:var(--deep)!important;max-width:none!important}
-.program-grid-five .program-svc>p{font-size:14.5px!important;line-height:1.72!important;color:rgba(34,43,35,.76)!important;margin:0!important;max-width:none!important}
-html[dir="rtl"] .program-grid-five .program-svc{text-align:right}
-@media(max-width:900px){
-  .program-grid-five{grid-template-columns:1fr!important}
-  .program-grid-five .program-svc:first-child{grid-column:auto!important}
-}
-
-
-/* v33 — simulation: enlarge the inset (control room) image on desktop */
-@media(min-width:821px){
-  .sim-inset{width:min(52%,400px)!important}
-}
-
-
-/* v34 — Serve head: eyebrow stacked ABOVE heading (right-aligned in HE) */
-.serve-head .eyebrow{grid-column:1 / -1!important;margin:0 0 14px!important}
-.serve-head h2{grid-column:1 / -1!important;max-width:900px!important}
-html[dir="rtl"] .serve-head .eyebrow,
-html[dir="rtl"] .serve-head h2{margin-right:0!important;margin-left:auto!important;text-align:right!important}
-
-
-/* =========================================================
-   v35 — Programs featured card 01: control-room image + text,
-   sharp edges. Cards 02-04 stay as the smaller row beneath.
-   ========================================================= */
-.program-grid-five .program-featured{
-  grid-column:1 / -1!important;display:grid!important;grid-template-columns:1fr 1.1fr!important;gap:0!important;
-  padding:0!important;background:#f1eee7!important;border:0!important;border-radius:0!important;
-  align-items:stretch!important;overflow:hidden!important;min-height:0!important;
-}
-.program-featured .svc-text{display:flex!important;flex-direction:column!important;justify-content:center!important;padding:48px 46px!important;gap:0!important}
-.program-featured .svc-text .svc-num{margin:0 0 16px!important}
-.program-featured .svc-text h3{font-size:30px!important;line-height:1.1!important;margin:0 0 16px!important;color:var(--deep)!important;max-width:none!important}
-.program-featured .svc-text p{font-size:15px!important;line-height:1.75!important;color:rgba(34,43,35,.78)!important;margin:0!important;max-width:560px!important}
-.program-featured .svc-media{position:relative!important;min-height:440px!important;overflow:hidden!important}
-.program-featured .svc-media img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;display:block!important}
-html[dir="rtl"] .program-featured .svc-text{text-align:right!important}
-@media(max-width:820px){
-  .program-grid-five .program-featured{grid-template-columns:1fr!important}
-  .program-featured .svc-media{min-height:220px!important;order:-1}
-  .program-featured .svc-text{padding:26px 22px!important}
-}
-
-
-/* v36 — Serve subtitle beneath the title (full width, right-aligned in HE) */
-.serve-head p{grid-column:1 / -1!important;margin:16px 0 0!important;font-size:16px!important;line-height:1.75!important;color:rgba(34,43,35,.74)!important;max-width:860px!important}
-html[dir="rtl"] .serve-head p{text-align:right!important;margin-left:auto!important;margin-right:0!important}
-
-
-/* =========================================================
-   v37 — Audience wheat list: two-column list with a wheat
-   icon as the bullet (replaces the bordered table grid).
-   ========================================================= */
-.serve-bar{
-  display:grid!important;grid-template-columns:1fr 1fr!important;
-  gap:4px 40px!important;border:0!important;margin-top:10px!important;
-}
-.serve-bar span,
-.serve-bar span:last-child,
-.serve-bar span:nth-child(2n),
-.serve-bar span:nth-child(3n){
-  min-height:0!important;border:0!important;background:transparent!important;
-  padding:15px 0!important;
-  display:flex!important;align-items:center!important;gap:14px!important;
-  justify-content:flex-start!important;
-  font-size:17px!important;line-height:1.4!important;letter-spacing:0!important;
-  color:var(--deep)!important;
-}
-.serve-bar span::before{
-  content:""!important;flex:0 0 auto!important;display:inline-block!important;
-  width:18px!important;height:34px!important;
-  background:url("assests/wheat.png?v=3") no-repeat center / contain!important;
-}
-.serve-bar span:hover{background:transparent!important}
-html[dir="rtl"] .serve-bar span{text-align:right!important}
-@media(max-width:640px){ .serve-bar{grid-template-columns:1fr!important;gap:2px!important} }
-
-/* --- who-we-serve four-category layout --- */
-.serve-cats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(34,43,35,.17)}.serve-cat{padding:26px 22px 22px;border-inline-start:1px solid rgba(34,43,35,.12)}.serve-cat:first-child{border-inline-start:0}.serve-cat h4{font:600 14px/1.3 var(--body);margin:0 0 10px;color:var(--deep)}.serve-cat p{font-size:12px;line-height:1.55;color:rgba(34,43,35,.66);margin:0}@media(max-width:900px){.serve-cats{grid-template-columns:1fr 1fr}.serve-cat:nth-child(odd){border-inline-start:0}}@media(max-width:560px){.serve-cats{grid-template-columns:1fr}.serve-cat{border-inline-start:0;border-top:1px solid rgba(34,43,35,.12)}.serve-cats{border-top:0}}
-
-/* --- serve section sage + footer social icons --- */
-.serve{background:#acb7a5!important}.serve-cats{border-top-color:rgba(39,48,38,.26)!important}.serve-cat{border-inline-start-color:rgba(39,48,38,.18)!important}.serve-cat p,.serve-head p{color:rgba(28,36,29,.80)!important}.footer-social{display:flex;align-items:center;gap:13px}.footer-social a{display:inline-flex;opacity:.85;transition:opacity .2s ease}.footer-social a:hover{opacity:1}.footer-social img{width:22px;height:22px;display:block}
-
-
-/* ===== v-mobile: real hamburger nav + anchor offset ===== */
-html{scroll-padding-top:78px}
-.nav-toggle{display:none}
-@media (max-width:760px){
-  .nav{flex-direction:row!important;align-items:center!important;justify-content:space-between!important;padding:0!important;height:62px!important;position:relative!important}
-  .brand{order:1}
-  .nav-toggle{display:flex!important;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:10px;border:0;background:transparent;cursor:pointer;order:3;z-index:60}
-  .nav-toggle span{display:block;width:100%;height:2px;background:var(--deep);border-radius:2px;transition:transform .28s ease,opacity .2s ease}
-  .nav>nav{order:2}
-  .nav nav{position:absolute!important;top:100%!important;left:0!important;right:0!important;width:auto!important;max-width:none!important;overflow:hidden!important;background:#f6f2eb;border-bottom:1px solid rgba(39,48,38,.1);box-shadow:0 12px 26px rgba(0,0,0,.07);max-height:0;transition:max-height .32s ease}
-  header.nav-open .nav nav{max-height:82vh;overflow-y:auto!important}
-  .nav nav ul{flex-direction:column!important;align-items:stretch!important;flex-wrap:nowrap!important;width:auto!important;gap:0!important;padding:4px 26px 16px!important}
-  .nav nav li{width:100%}
-  .nav nav li a{display:block!important;white-space:normal!important;padding:14px 0!important;font-size:15px!important;letter-spacing:0!important;border-bottom:1px solid rgba(39,48,38,.08)}
-  .nav nav li a:after{display:none!important}
-  .lang-switch{padding:15px 0 4px!important;justify-content:flex-start!important;gap:10px!important}
-  .lang-switch .lang-btn{font-size:15px!important}
-  .lang-switch span{font-size:15px!important}
-  header.nav-open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-  header.nav-open .nav-toggle span:nth-child(2){opacity:0}
-  header.nav-open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-}
-
-
-/* ===== team-carousel: horizontal snap carousel on mobile, active card shows its info ===== */
-@media (max-width:760px){
-  .team .people{
-    display:flex!important;grid-template-columns:none!important;
-    overflow-x:auto!important;scroll-snap-type:x mandatory!important;
-    gap:14px!important;padding:6px 9vw 12px!important;
-    -webkit-overflow-scrolling:touch;scrollbar-width:none;
-  }
-  .team .people::-webkit-scrollbar{display:none}
-  .team .person{
-    flex:0 0 82vw!important;max-width:340px!important;
-    scroll-snap-align:center!important;margin:0!important;
-    opacity:.5;transition:opacity .35s ease;
-  }
-  .team .person.is-active{opacity:1}
-  .team .person .person-overlay{
-    position:absolute!important;inset:0!important;
-    display:flex!important;flex-direction:column!important;justify-content:flex-end!important;
-    opacity:0!important;transition:opacity .35s ease!important;
-    background:linear-gradient(180deg,rgba(28,36,29,.05) 18%,rgba(28,36,29,.55) 55%,rgba(28,36,29,.96) 100%)!important;
-    border-radius:0!important;padding:22px!important;overflow:auto!important;
-  }
-  .team .person.is-active .person-overlay{opacity:1!important}
-  .team .person .person-overlay p{font-size:13px!important;line-height:1.55!important;color:rgba(236,232,220,.95)!important}
-  .team .person .person-overlay .bio-meta{font-size:10px!important;color:rgba(236,232,220,.7)!important}
-  /* swipe hint */
-  .team .people::after{content:"";flex:0 0 1px}
-}
-
-
-/* ===== v-mobile-2: center images uncropped, top-bar language toggle, carousel arrows + smaller cards ===== */
-@media (max-width:760px){
-  /* center section images: show full, no crop */
-  .center-images{grid-template-columns:1fr!important;gap:12px!important}
-  .center-images .tall,.center-images .small{height:auto!important;min-height:0!important;border-radius:2px}
-  .center-images .tall img,.center-images .small img{height:auto!important;width:100%!important;object-fit:contain!important}
-  .center-images .small-col{grid-template-columns:1fr 1fr!important;grid-template-rows:none!important;gap:12px!important}
-}
-/* language toggle visible in the top bar (mobile only) */
-.lang-bar{display:none!important}
-@media (max-width:760px){
-  .lang-bar{display:flex!important;align-items:center;gap:8px;order:2}
-  .lang-bar .lang-btn{font-size:14px!important;padding:0!important}
-  .lang-bar span{font-size:14px!important;color:rgba(39,48,38,.4)}
-  .nav nav .lang-switch{display:none!important}
-}
-/* team carousel: smaller cards (more peek) + navigation arrows */
-@media (max-width:760px){
-  .team .person{flex:0 0 30vw!important;max-width:135px!important}
-  .team .people{padding:6px 35vw 12px!important}
-  .team-nav{display:flex!important;justify-content:center;align-items:center;gap:28px;margin-top:18px}
-  .team-nav button{width:46px;height:46px;border-radius:50%;border:1px solid rgba(39,48,38,.3);background:rgba(255,255,255,.65);color:var(--deep);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s ease,border-color .2s ease}
-  .team-nav button:hover,.team-nav button:active{background:#fff;border-color:var(--deep)}
-  .team-nav svg{width:20px;height:20px;display:block}
-}
-.team-nav{display:none}
-
-
-/* ===== v-mobile-3: arrows LTR order, overlay keeps face visible, aligned small images ===== */
-@media (max-width:760px){
-  /* arrows in predictable left→right order */
-  .team-nav{direction:ltr!important}
-  /* overlay as a bottom panel so the person's face stays visible */
-  .team .person .person-overlay{
-    inset:auto 0 0 0!important;top:auto!important;
-    max-height:60%!important;overflow-y:auto!important;
-    justify-content:flex-end!important;
-    background:linear-gradient(180deg,rgba(28,36,29,0) 0%,rgba(28,36,29,.55) 26%,rgba(28,36,29,.9) 100%)!important;
-    padding:16px 18px 18px!important;
-  }
-  .team .person .person-overlay p{font-size:12.5px!important;line-height:1.5!important}
-  .team .person .person-overlay .bio-meta{margin-top:8px!important;padding-top:8px!important}
-  /* center: two small images same elevation/height */
-  .center-images .small-col{grid-template-columns:1fr 1fr!important;grid-template-rows:none!important;align-items:start!important;gap:12px!important}
-  .center-images .small{aspect-ratio:4/3!important;height:auto!important;min-height:0!important;overflow:hidden!important}
-  .center-images .small img{height:100%!important;width:100%!important;object-fit:cover!important}
-}
-
-
-/* ===== cta contact row: button + social icons on one line ===== */
-.cta .wrap .cta-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap;grid-column:1 / span 4;justify-self:start;align-self:center}
-html[dir="rtl"] .cta .wrap .cta-actions{grid-column:1 / span 4;justify-self:start}
-.cta .cta-social{display:flex;align-items:center;gap:14px}
-.cta .cta-social a{border:0!important;padding:0!important;background:transparent!important;border-radius:0!important}
-.cta .cta-social a:hover{background:transparent!important}
-.cta .cta-social img{width:24px;height:24px;display:block}
-@media(max-width:760px){.cta .wrap .cta-actions{grid-column:auto!important;justify-self:start!important;gap:18px}.cta .cta-social img{width:22px;height:22px}}
-
-
-/* ===== cta-clean: solid button (no thin frame) + guaranteed frameless icons ===== */
-.cta .cta-actions>a{
-  border:0!important;background:var(--ivory)!important;color:var(--deep)!important;
-  border-radius:999px!important;padding:14px 28px!important;
-  text-transform:none!important;font-size:13px!important;letter-spacing:.02em!important;
-  transition:background .2s ease!important;
-}
-.cta .cta-actions>a:hover{background:#fff!important;color:var(--deep)!important}
-.cta .cta-social a,.cta .cta-social a:hover{border:0!important;background:transparent!important;padding:0!important;border-radius:0!important}
-.cta .cta-social img{border:0!important}
-@media(max-width:760px){.cta .cta-actions>a{padding:13px 24px!important;font-size:13px!important}}
-
-/* team gallery: 3 per row, larger centered photos, centered captions */
-@media (min-width:761px){
-.team .team-grid{display:block!important}
-.team .team-intro{position:static!important;grid-column:auto!important;max-width:none!important;margin:0 0 56px!important}
-.team .people{display:grid!important;grid-template-columns:repeat(3,1fr)!important;gap:52px 28px!important;grid-column:auto!important;overflow:visible!important}
-.team .person{opacity:1!important;margin:0!important}
-.team .person-photo{max-width:320px!important;margin-left:auto!important;margin-right:auto!important}
-.team .person h3,.team .person>span{text-align:center!important}
-}
-
-/* serve-cat: bold headings, larger descriptions (match serve-head p) */
-.serve-cat h4{font-weight:700!important}
-.serve-cat p{font-size:16px!important;line-height:1.75!important}
-
-/* hero logo: raise so its center aligns with the copy column */
-@media (min-width:761px){
-.hero .hero-symbol-wrap .hero-full-logo{transform:translateY(-34px)!important}
-}
-
-/* CTA contact form */
-.cta .wrap{display:grid!important;grid-template-columns:1fr 1fr!important;gap:56px!important;align-items:stretch!important}
-.cta h2{grid-column:auto!important;max-width:none!important;margin:0!important;align-self:start!important}
-.cta .cta-actions{display:flex!important;flex-direction:column!important;grid-column:auto!important;gap:13px!important;align-items:stretch!important;justify-self:stretch!important;width:100%!important}
-.contact-form{display:flex;flex-direction:column;gap:12px;width:100%}
-.contact-form input,.contact-form textarea{width:100%;box-sizing:border-box;background:rgba(255,255,255,.07);border:1px solid rgba(236,232,220,.3);color:#f2efe5;padding:13px 15px;font:400 15px/1.5 var(--body);border-radius:0;outline:none}
-.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(236,232,220,.55)}
-.contact-form input:focus,.contact-form textarea:focus{border-color:rgba(236,232,220,.72);background:rgba(255,255,255,.11)}
-.contact-form textarea{resize:vertical;min-height:104px}
-.contact-form button{align-self:flex-start;margin-top:2px;background:#f2efe5;color:var(--deep);border:0;padding:13px 32px;font:600 12px var(--mono);letter-spacing:.06em;cursor:pointer;transition:opacity .2s ease}
-.contact-form button:hover{opacity:.85}
-.contact-form button:disabled{opacity:.5;cursor:default}
-.contact-form .form-status{margin:4px 0 0;font-size:14px;color:#f2efe5;line-height:1.5}
-.cta-textcol{grid-column:auto!important;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;gap:24px}
-.cta-textcol>h2{align-self:stretch}
-.cta .cta-social{display:flex;gap:14px;align-self:flex-start;margin:0}
-@media(max-width:820px){.cta .wrap{grid-template-columns:1fr!important;gap:30px!important}}
-
-/* CTA direct email link */
-.cta .cta-email{align-self:flex-start;display:inline-flex;align-items:center;gap:9px;color:#f2efe5;text-decoration:none;font:500 14px/1 var(--body);opacity:.9;margin-top:6px;transition:opacity .2s ease;direction:ltr}
-.cta .cta-email:hover{opacity:1;text-decoration:underline}
-.cta .cta-email svg{flex:0 0 auto}
-
-/* ===== mobile team redesign: bio below photo, start-aligned, side arrows ===== */
-.team-carousel{position:relative}
-@media (max-width:760px){
-  .team .team-grid{display:block!important}
-  .team .people{display:flex!important;grid-template-columns:none!important;overflow-x:auto!important;scroll-snap-type:x mandatory!important;gap:16px!important;padding:4px 16px 14px!important;scrollbar-width:none!important}
-  .team .people::-webkit-scrollbar{display:none}
-  .team .person{flex:0 0 78vw!important;max-width:340px!important;scroll-snap-align:start!important;opacity:1!important;margin:0!important;display:flex!important;flex-direction:column!important;text-align:right!important}
-  html[lang="en"] .team .person{text-align:left!important}
-  /* promote photo children so bio can be ordered below name/role */
-  .team .person-photo{display:contents!important}
-  .team .person-photo img{order:1!important;width:100%!important;height:auto!important;aspect-ratio:4/5!important;object-fit:cover!important;display:block!important;border-radius:0!important}
-  .team .person h3{order:2!important;margin:14px 0 2px!important;font-size:18px!important;text-align:inherit!important}
-  .team .person>span{order:3!important;font-size:12px!important;display:block!important;text-align:inherit!important}
-  .team .person .person-overlay{order:4!important;position:static!important;inset:auto!important;opacity:1!important;transform:none!important;max-height:none!important;overflow:visible!important;background:transparent!important;padding:12px 0 0!important;display:block!important;border-radius:0!important}
-  .team .person .person-overlay p{font-size:14px!important;line-height:1.6!important;color:rgba(34,43,35,.82)!important;text-align:inherit!important}
-  .team .person .person-overlay .bio-meta{color:rgba(34,43,35,.6)!important;border-top-color:rgba(34,43,35,.18)!important;text-align:inherit!important}
-  /* clean side arrows over the photo */
-  .team-nav{display:flex!important;position:absolute!important;top:4px!important;left:0!important;right:0!important;height:min(97.5vw,425px)!important;align-items:center!important;justify-content:space-between!important;gap:0!important;margin:0!important;pointer-events:none!important;z-index:6!important}
-  .team-nav button{pointer-events:auto!important;width:46px!important;height:64px!important;border:0!important;background:transparent!important;color:var(--deep)!important;border-radius:0!important;display:flex!important;align-items:center;justify-content:center;cursor:pointer;padding:0!important}
-  .team-nav button:hover,.team-nav button:active{background:transparent!important}
-  .team-nav svg{width:30px!important;height:30px!important;display:block}
-}
-
-/* ===== mobile nav dropdown: full-bleed so it isn't an inset beige panel ===== */
-@media (max-width:760px){
-  header.nav-open .nav nav,.nav nav{left:50%!important;right:auto!important;transform:translateX(-50%)!important;width:100vw!important;box-shadow:0 14px 26px rgba(0,0,0,.08)!important}
-}
-
-/* ===== mobile team v2: smaller photos (-30%), caption overlay like desktop ===== */
-@media (max-width:760px){
-  .team .person{flex:0 0 55vw!important;max-width:238px!important}
-  .team .person-photo{display:block!important;position:relative!important;aspect-ratio:4/5!important;overflow:hidden!important;background:#e7e6df!important}
-  .team .person-photo img{width:100%!important;height:100%!important;aspect-ratio:auto!important;object-fit:cover!important;order:0!important;display:block!important}
-  .team .person .person-overlay{position:absolute!important;inset:0!important;order:0!important;display:flex!important;flex-direction:column!important;justify-content:flex-end!important;padding:15px!important;background:linear-gradient(180deg,rgba(28,36,29,.04) 16%,rgba(28,36,29,.5) 55%,rgba(28,36,29,.96) 100%)!important;color:var(--ivory)!important;opacity:0!important;transform:none!important;max-height:none!important;overflow:auto!important;transition:opacity .3s ease!important}
-  .team .person.is-active .person-overlay,.team .person:focus-within .person-overlay{opacity:1!important}
-  .team .person .person-overlay p{font-size:12px!important;line-height:1.5!important;color:rgba(236,232,220,.95)!important;text-align:right!important}
-  html[lang="en"] .team .person .person-overlay p{text-align:left!important}
-  .team .person .person-overlay .bio-meta{color:rgba(236,232,220,.72)!important;border-top-color:rgba(236,232,220,.25)!important;text-align:right!important}
-  html[lang="en"] .team .person .person-overlay .bio-meta{text-align:left!important}
-  .team-nav{height:min(68.75vw,297px)!important}
-}
-
-/* ===== mobile contact: social icons on the Send row, opposite edge ===== */
-.cta .cta-social-m{display:none}
-.form-submit-row{display:contents}
-@media (max-width:820px){
-  .cta-textcol .cta-social{display:none!important}
-  .form-submit-row{display:flex!important;flex-direction:row!important;justify-content:space-between!important;align-items:center!important;width:100%!important;gap:14px!important;margin-top:4px!important}
-  .cta-social-m{display:flex!important;gap:14px!important;align-items:center!important}
-}
-
-/* ===== mobile refinements v3 ===== */
-@media (max-width:820px){
-  .form-submit-row{align-items:flex-end!important}
-}
-@media (max-width:760px){
-  /* team: clean photo; description below name/role, ONLY for the centered person */
-  .team .person-photo{display:contents!important}
-  .team .person-photo img{order:1!important;width:100%!important;height:auto!important;aspect-ratio:4/5!important;object-fit:cover!important;display:block!important;border-radius:0!important}
-  .team .person h3{order:2!important;margin:12px 0 2px!important;font-size:17px!important}
-  .team .person>span{order:3!important;font-size:12px!important;display:block!important}
-  .team .person .person-overlay{order:4!important;position:static!important;inset:auto!important;transform:none!important;opacity:1!important;max-height:none!important;overflow:visible!important;background:transparent!important;padding:10px 0 0!important;display:none!important}
-  .team .person.is-active .person-overlay{display:block!important}
-  .team .person .person-overlay p{font-size:13px!important;line-height:1.55!important;color:rgba(34,43,35,.82)!important}
-  .team .person .person-overlay .bio-meta{color:rgba(34,43,35,.6)!important;border-top-color:rgba(34,43,35,.18)!important}
-  /* hero: show the logo/icon on mobile (above the copy) */
-  .hero-symbol-wrap{display:flex!important;justify-content:center!important;align-items:center!important;margin:0 0 24px!important}
-  .hero-full-logo{width:min(74vw,300px)!important;height:auto!important;transform:none!important}
-}
-
-/* ===== mobile team v4: dim non-centered cards with a dark overlay ===== */
-@media (max-width:760px){
-  .team .person{position:relative!important}
-  .team .person:not(.is-active)::after{content:"";position:absolute;top:0;left:0;right:0;height:min(68.75vw,298px);background:rgba(24,31,25,.42);pointer-events:none;z-index:1}
-  .team .person.is-active::after{display:none!important}
-}
-
-/* ===== mobile hero logo v5: smaller & tighter ===== */
-@media (max-width:760px){
-  .hero-symbol-wrap{margin:0 0 14px!important;justify-content:center!important}
-  .hero-full-logo{width:min(46vw,168px)!important;margin:0 auto!important;transform:none!important}
-}
-
-/* ===== mobile hero logo v6: align to reading start (left EN / right HE) ===== */
-@media (max-width:760px){
-  html[lang="en"] .hero-symbol-wrap{justify-content:flex-start!important}
-  html[lang="he"] .hero-symbol-wrap{justify-content:flex-end!important}
-}
-
-/* ===== v7: desktop social to send-button center; mobile hero smaller/higher; mobile memorial smaller ===== */
-@media (min-width:821px){
-  .cta-textcol .cta-social{margin-bottom:10px!important}
-}
-@media (max-width:760px){
-  .hero .hero-content{padding-top:34px!important}
-  .hero-full-logo{width:min(40vw,150px)!important}
-  .about .about-copy .quote{font-size:19px!important;line-height:1.4!important}
-}
-
-/* ===== v8: mobile hero logo alignment (robust) + mobile memorial layout ===== */
-@media (max-width:760px){
-  /* hero logo: block + auto margins so it truly aligns (left EN / right HE) */
-  .hero-symbol-wrap{display:block!important;width:100%!important}
-  html[lang="en"] .hero-full-logo{margin:0 auto 14px 0!important}
-  html[lang="he"] .hero-full-logo{margin:0 0 14px auto!important}
-
-  /* memorial: caption beside photo (start side = right HE / left EN), dates below photo, bio full width */
-  .about .about-grid.memory-grid{display:grid!important;grid-template-columns:auto 1fr!important;gap:10px 14px!important;align-items:start!important}
-  .about .memory-visual{grid-column:1!important;grid-row:1!important;width:auto!important;max-width:44vw!important;margin:0!important}
-  .about .memory-portrait img{width:100%!important;height:auto!important;display:block!important}
-  .about .memory-dates{margin-top:10px!important}
-  .about .about-copy{display:contents!important}
-  .about .about-copy .quote{grid-column:2!important;grid-row:1!important;align-self:center!important;font-size:14px!important;line-height:1.45!important;margin:0!important;max-width:none!important}
-  .about .about-copy p{grid-column:1 / -1!important;margin-top:10px!important}
-}
-
-/* ===== v9: mobile memorial stacked (photo >= team width, dates below, caption bold at bio size) ===== */
-@media (max-width:760px){
-  .about .about-grid.memory-grid{display:block!important}
-  .about .memory-visual{grid-column:auto!important;width:min(60vw,270px)!important;max-width:none!important;margin:0!important}
-  .about .memory-portrait img{width:100%!important;height:auto!important;display:block!important}
-  .about .memory-dates{margin-top:10px!important}
-  .about .about-copy{display:block!important;margin-top:16px!important}
-  .about .about-copy .quote{grid-column:auto!important;font-size:17px!important;line-height:1.82!important;font-weight:700!important;margin:0 0 14px!important;max-width:none!important;color:var(--deep)!important}
-  .about .about-copy p{grid-column:auto!important}
-}
-@media (max-width:560px){
-  .about .about-copy .quote{font-size:16px!important}
-}
-
-/* ===== v10: bigger mobile memorial photo + hero text pushed to bottom ===== */
-@media (max-width:760px){
-  /* memorial photo bigger; date stays below it */
-  .about .about-grid.memory-grid{display:block!important}
-  .about .memory-visual{width:min(82vw,380px)!important;max-width:none!important;margin:0!important;display:block!important}
-  .about .memory-portrait{width:100%!important}
-  .about .memory-portrait img{width:100%!important;height:auto!important;display:block!important}
-  .about .memory-dates{display:block!important;margin-top:12px!important}
-  /* hero: logo stays at top, all text moves down toward the bottom */
-  .hero .hero-content{display:flex!important;flex-direction:column!important;justify-content:space-between!important;min-height:88vh!important;padding-top:34px!important;padding-bottom:54px!important}
-  .hero-symbol-wrap{margin:0!important;flex:0 0 auto!important}
-  .hero .hero-copy{flex:0 0 auto!important;padding-top:0!important}
-}
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click',()=>setLang(btn.dataset.lang)));
+  let initial='he';
+  try{initial=localStorage.getItem('ofir-lang')||'he'}catch(e){}
+  setLang(initial);
+})();
+</script>
+<script>
+(function(){
+  if(!window.matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
+  const sections=[...document.querySelectorAll('main > section:not(.hero)')];
+  document.documentElement.classList.add('section-reveal-ready');
+  const observer=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.08,rootMargin:'0px 0px -8% 0px'});
+  sections.forEach(section=>observer.observe(section));
+})();
+</script>
+
+<script>
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const els=[...document.querySelectorAll('[data-reveal]')];
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target);}})
+  },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  els.forEach(el=>io.observe(el));
+})();
+</script>
+
+<script>(function(){var h=document.querySelector("header"),t=document.querySelector(".nav-toggle");if(!t)return;t.addEventListener("click",function(){var o=h.classList.toggle("nav-open");t.setAttribute("aria-expanded",o?"true":"false");});document.querySelectorAll(".nav nav a,.nav nav .lang-btn").forEach(function(el){el.addEventListener("click",function(){h.classList.remove("nav-open");t.setAttribute("aria-expanded","false");});});})();</script><script>(function(){function initTeamCarousel(){var track=document.querySelector(".team .people");if(!track)return;var cards=[].slice.call(track.querySelectorAll(".person"));if(!cards.length)return;function update(){var c=track.getBoundingClientRect();var cx=c.left+c.width/2;var best=null,bd=1e9;cards.forEach(function(card){var r=card.getBoundingClientRect();var d=Math.abs((r.left+r.width/2)-cx);if(d<bd){bd=d;best=card;}});cards.forEach(function(card){card.classList.toggle("is-active",card===best);});}var raf;track.addEventListener("scroll",function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(update);},{passive:true});window.addEventListener("resize",function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(update);});setTimeout(update,60);}if(document.readyState!=="loading")initTeamCarousel();else document.addEventListener("DOMContentLoaded",initTeamCarousel);})();</script><script>(function(){function add(){var track=document.querySelector(".team .people");if(!track)return;if(document.querySelector(".team-carousel"))return;var cards=track.querySelectorAll(".person");if(!cards.length)return;var nav=document.createElement("div");nav.className="team-nav";nav.innerHTML='<button type="button" aria-label="הקודם" data-d="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>'+'<button type="button" aria-label="הבא" data-d="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>';var wrap=document.createElement("div");wrap.className="team-carousel";track.parentNode.insertBefore(wrap,track);wrap.appendChild(track);wrap.appendChild(nav);function step(){var r=cards[0].getBoundingClientRect();return r.width+14;}nav.querySelectorAll("button").forEach(function(b){b.addEventListener("click",function(){track.scrollBy({left:parseInt(b.getAttribute("data-d"),10)*step(),behavior:"smooth"});});});}if(document.readyState!=="loading")add();else document.addEventListener("DOMContentLoaded",add);})();</script><script>
+(function(){
+  var f=document.getElementById('contactForm'); if(!f) return;
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn=f.querySelector('button[type=submit]');
+    var status=f.querySelector('[data-status]');
+    var he=document.documentElement.dir==='rtl';
+    btn.disabled=true;
+    fetch('https://formsubmit.co/ajax/info@ofircenter.com',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
+      .then(function(r){return r.json();})
+      .then(function(){ f.reset(); status.hidden=false; status.textContent=he?'תודה! פנייתך נשלחה, נחזור אליך בהקדם.':'Thank you! Your message has been sent.'; })
+      .catch(function(){ status.hidden=false; status.textContent=he?'אירעה שגיאה בשליחה. נסו שוב מאוחר יותר.':'Something went wrong. Please try again later.'; })
+      .finally(function(){ btn.disabled=false; });
+  });
+})();
+</script></body>
+</html>
