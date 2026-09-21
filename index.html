@@ -1,43 +1,56 @@
 <!DOCTYPE html>
-
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  
 <title>מרכז אופיר למנהיגות | מנהיגות בתנאי לחץ ואי־ודאות</title>
 <meta name="description" content="מרכז אופיר למנהיגות מאמן מנהלים וצוותים לקבל החלטות, להוביל ולתפקד בתנאי לחץ, אי־ודאות ומשבר באמצעות סימולציה, ידע מקצועי ותהליכי למידה יישומיים.">
-  
+<link rel="canonical" href="https://ofircenter.com/">
+<meta name="robots" content="index,follow">
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&amp;family=Roboto+Mono:wght@400;500&amp;family=Varela+Round&amp;display=swap" rel="stylesheet"/>
-
-
 <link rel="stylesheet" href="style.css"/>
-<link rel="icon" type="image/png" href="assests/wheat_square.png" sizes="192x192"></head>
+<link rel="icon" type="image/png" href="assests/wheat_square.png" sizes="192x192">
+</head>
 <body>
+<div class="scroll-progress" aria-hidden="true"></div>
 <header>
 <div class="nav">
 <a class="brand" href="#top" aria-label="OFIR">
 <img class="brand-logo brand-logo-en" alt="OFIR" src="assests/logo_ofir_en.png"/>
 <img class="brand-logo brand-logo-he" alt="אופיר" src="assests/logo_ofir_he.png"/>
 </a>
-<div class="lang-switch lang-bar"><button class="lang-btn" data-lang="en" type="button">EN</button><span>/</span><button class="lang-btn" data-lang="he" type="button">עברית</button></div>
-<nav>
-<ul><li><a data-en="Center" data-he="המרכז" href="#center">Center</a></li><li><a data-en="Extreme conditions" data-he="תנאי קיצון" href="#extreme">Extreme conditions</a></li><li><a data-en="Simulation" data-he="הסימולציה" href="#simulation">Simulation</a></li><li><a data-en="Programs" data-he="פעילויות" href="#programs">Programs</a></li><li><a data-en="Who we serve" data-he="למי המרכז מיועד" href="#serve">Who we serve</a></li><li><a data-en="Team" data-he="הצוות המקצועי" href="#team">Team</a></li><li><a data-en="About Ofir" data-he="אופיר" href="#about">About Ofir</a></li><li><a data-en="Contact" data-he="יצירת קשר" href="#contact">Contact</a></li><li class="lang-switch"><button class="lang-btn active" data-lang="en" type="button">EN</button><span>/</span><button class="lang-btn" data-lang="he" type="button">עברית</button></li></ul>
-</nav><button class="nav-toggle" aria-label="Menu" aria-expanded="false" type="button"><span></span><span></span><span></span></button>
+<nav aria-label="Primary">
+<ul>
+<li><a data-en="Center" data-he="המרכז" href="#center">Center</a></li>
+<li><a data-en="Extreme conditions" data-he="תנאי קיצון" href="#extreme">Extreme conditions</a></li>
+<li><a data-en="Simulation" data-he="הסימולציה" href="#simulation">Simulation</a></li>
+<li><a data-en="Programs" data-he="פעילויות" href="#programs">Programs</a></li>
+<li><a data-en="Who we serve" data-he="למי מיועד" href="#serve">Who we serve</a></li>
+<li><a data-en="Team" data-he="הצוות" href="#team">Team</a></li>
+<li><a data-en="About Ofir" data-he="אופיר" href="#about">About Ofir</a></li>
+<li><a data-en="Contact" data-he="יצירת קשר" href="#contact">Contact</a></li>
+</ul>
+</nav>
+<div class="nav-right">
+<div class="lang-bar"><button class="lang-btn" data-lang="en" type="button">EN</button><span>/</span><button class="lang-btn active" data-lang="he" type="button">עברית</button></div>
+<button class="nav-toggle" aria-label="Menu" aria-expanded="false" type="button"><span></span><span></span><span></span></button>
+</div>
 </div>
 </header>
+
 <main id="top">
-<section class="hero">
-<video aria-hidden="true" autoplay="" class="hero-video" loop="" muted="" playsinline="" poster="assests/hero_poster.jpg" preload="auto">
+
+<!-- HERO -->
+<section class="hero on-dark">
+<video aria-hidden="true" autoplay="" class="hero-video" loop="" muted="" playsinline="" preload="auto">
 <source src="assests/hero_video.mp4" type="video/mp4"/>
 </video>
 <div class="hero-video-overlay"></div>
 <div class="wrap hero-content">
-<div class="hero-symbol-wrap" aria-label="OFIR Leadership Center"><img class="hero-full-logo hero-full-logo-en" alt="OFIR Leadership Center - In memory of SSG Ofir Shoshani" src="assests/hero_logo_en.png"/><img class="hero-full-logo hero-full-logo-he" alt="מרכז אופיר למנהיגות — לזכרה של סמ״ר אופיר שושני" src="assests/hero_logo_he.png"/></div>
-<div class="hero-copy">
-<div class="eyebrow" data-en="Leadership in crisis" data-he="מנהיגות בחירום">Leadership in crisis</div>
+<div class="hero-symbol-wrap" data-reveal="fade" aria-label="OFIR Leadership Center"><img class="hero-full-logo hero-full-logo-en" alt="OFIR Leadership Center — In memory of SSG Ofir Shoshani" src="assests/hero_logo_en.png"/><img class="hero-full-logo hero-full-logo-he" alt="מרכז אופיר למנהיגות — לזכרה של סמ״ר אופיר שושני" src="assests/hero_logo_he.png"/></div>
+<div class="hero-copy" data-reveal="hero">
 <h1 data-en="When reality departs from the plan, leadership is tested." data-he="מנהיגות היא היכולת להוביל גם כשהמציאות מתפרקת">When reality departs from the plan, leadership is tested.</h1>
 <p data-en="Ofir develops and trains the human and organizational capacity to make decisions, lead teams and act with responsibility and effectiveness when conditions change, certainty disappears and pressure mounts." data-he="מרכז אופיר מפתח ומאמן את היכולת האנושית והארגונית לקבל החלטות, להוביל צוותים ולפעול באחריות ובאפקטיביות כאשר התנאים משתנים, הוודאות נעלמת והלחץ גובר">Ofir develops and trains the human and organizational capacity to make decisions, lead teams and act with responsibility and effectiveness when conditions change, certainty disappears and pressure mounts.</p>
 <div class="hero-actions">
@@ -47,35 +60,38 @@
 </div>
 </div>
 </section>
-<section class="section" id="center" data-reveal>
+
+<!-- CENTER -->
+<section class="section" id="center">
 <div class="wrap center-grid">
-<div class="section-title">
-<div class="eyebrow" data-en="The Ofir Center for Leadership in Crisis" data-he="מרכז אופיר למנהיגות בחירום">The Ofir Center for Leadership in Crisis</div>
+<div class="section-head stack" data-reveal="soft">
+<span class="eyebrow" data-en="The Ofir Center for Leadership in Crisis" data-he="מרכז אופיר למנהיגות בחירום">The Ofir Center for Leadership in Crisis</span>
 <h2 data-en="Training managers and teams to perform under extreme conditions" data-he="אימון מנהלים וצוותים לתפקוד בתנאי קיצון">אימון מנהלים וצוותים לתפקוד בתנאי קיצון</h2>
-<p style="white-space:pre-line" data-en="A distinctive learning environment that combines hands-on practice with advanced technologies, letting managers and teams experience, practice and improve their performance under pressure and uncertainty.
+<p class="lead pre-line" data-en="A distinctive learning environment that combines hands-on practice with advanced technologies, letting managers and teams experience, practice and improve their performance under pressure and uncertainty.
 
 The training focuses on decision-making, emotional regulation, teamwork, communication, cognitive flexibility and the ability to keep performing at their best even as reality changes." data-he="סביבת למידה ייחודית המשלבת ניסיון מעשי עם טכנולוגיות מתקדמות, ומאפשרת למנהלים ולצוותים להתנסות, לתרגל ולשפר את תפקודם תחת לחץ ואי־ודאות.
 
 האימון מתמקד בקבלת החלטות, ויסות רגשי, עבודת צוות, תקשורת, גמישות מחשבתית והיכולת להמשיך לתפקד באופן מיטבי גם כשהמציאות משתנה">סביבת למידה ייחודית המשלבת ניסיון מעשי עם טכנולוגיות מתקדמות, ומאפשרת למנהלים ולצוותים להתנסות, לתרגל ולשפר את תפקודם תחת לחץ ואי־ודאות.
 
 האימון מתמקד בקבלת החלטות, ויסות רגשי, עבודת צוות, תקשורת, גמישות מחשבתית והיכולת להמשיך לתפקד באופן מיטבי גם כשהמציאות משתנה</p>
-
 </div>
-<div class="image-stack center-images">
-<div class="tall"><img alt="Ofir Leadership Center interior with logo signage" src="assests/interior_signage.png"/></div>
+<div class="center-images">
+<div class="tall media-reveal"><img alt="Ofir Leadership Center interior with logo signage" src="assests/interior_signage.png" loading="lazy"/></div>
 <div class="small-col">
-<div class="small"><img alt="Ofir center interior lounge" src="assests/interior_lounge.jpg"/></div>
-<div class="small"><img alt="Ofir center hospitality area" src="assests/hospitality_area.png"/></div>
+<div class="small media-reveal"><img alt="Ofir center interior lounge" src="assests/interior_lounge.jpg" loading="lazy"/></div>
+<div class="small media-reveal"><img alt="Ofir center hospitality area" src="assests/hospitality_area.png" loading="lazy"/></div>
 </div>
 </div>
 </div>
 </section>
-<section class="extreme" id="extreme" data-reveal>
+
+<!-- EXTREME -->
+<section class="section extreme" id="extreme">
 <div class="wrap extreme-grid">
-<div class="extreme-intro">
-<div class="eyebrow" data-en="What are extreme conditions?" data-he="מהם תנאי קיצון?">What are extreme conditions?</div>
+<div class="extreme-intro section-head stack" data-reveal>
+<span class="eyebrow" data-en="What are extreme conditions?" data-he="מהם תנאי קיצון?">What are extreme conditions?</span>
 <h2 data-en="What makes extreme situations so complex?" data-he="מה הופך מצבי קיצון למורכבים כל כך?">מה הופך מצבי קיצון למורכבים כל כך?</h2>
-<p data-en="Extreme situations are not necessarily a disaster or an emergency. They arise when managers and teams must act under a combination of pressure, overload, fast pace, partial or contradictory information and uncertainty - and at times also in the face of human, value-based and moral dilemmas." data-he="מצבי קיצון אינם בהכרח אסון או מצב חירום. הם נוצרים כאשר מנהלים וצוותים נדרשים לפעול תחת שילוב של לחץ, עומס, קצב מהיר, מידע חלקי או סותר ואי־ודאות  ולעיתים גם מול דילמות אנושיות, ערכיות ומוסריות.">מצבי קיצון אינם בהכרח אסון או מצב חירום. הם נוצרים כאשר מנהלים וצוותים נדרשים לפעול תחת שילוב של לחץ, עומס, קצב מהיר, מידע חלקי או סותר ואי־ודאות  ולעיתים גם מול דילמות אנושיות, ערכיות ומוסריות.</p>
+<p class="lead" data-en="Extreme situations are not necessarily a disaster or an emergency. They arise when managers and teams must act under a combination of pressure, overload, fast pace, partial or contradictory information and uncertainty — and at times also in the face of human, value-based and moral dilemmas." data-he="מצבי קיצון אינם בהכרח אסון או מצב חירום. הם נוצרים כאשר מנהלים וצוותים נדרשים לפעול תחת שילוב של לחץ, עומס, קצב מהיר, מידע חלקי או סותר ואי־ודאות — ולעיתים גם מול דילמות אנושיות, ערכיות ומוסריות.">מצבי קיצון אינם בהכרח אסון או מצב חירום. הם נוצרים כאשר מנהלים וצוותים נדרשים לפעול תחת שילוב של לחץ, עומס, קצב מהיר, מידע חלקי או סותר ואי־ודאות — ולעיתים גם מול דילמות אנושיות, ערכיות ומוסריות.</p>
 </div>
 <div class="extreme-list">
 <div class="extreme-row"><b data-en="Cognitive load" data-he="עומס קוגניטיבי">עומס קוגניטיבי</b><span data-en="A flood of data and tasks that makes attention and prioritization difficult." data-he="הצפת נתונים ומשימות המקשה על קשב ותעדוף.">הצפת נתונים ומשימות המקשה על קשב ותעדוף.</span></div>
@@ -87,44 +103,50 @@ The training focuses on decision-making, emotional regulation, teamwork, communi
 <div class="extreme-row"><b data-en="Critical consequences" data-he="השלכות קריטיות">השלכות קריטיות</b><span data-en="Every detail or decision has a dramatic, immediate impact on the organization and its people." data-he="השפעה דרמטית ומיידית של כל פריט או החלטה על הארגון ואנשיו.">השפעה דרמטית ומיידית של כל פריט או החלטה על הארגון ואנשיו.</span></div>
 </div>
 </div>
-</section><section class="learning" id="learning" data-reveal>
+</section>
+
+<!-- LEARNING -->
+<section class="section learning" id="learning">
 <div class="wrap">
-<div class="learning-head">
-<div class="eyebrow" data-en="The learning methodology" data-he="מתודולוגיית הלמידה">מתודולוגיית הלמידה</div>
+<div class="learning-head" data-reveal>
+<div>
+<span class="eyebrow" data-en="The learning methodology" data-he="מתודולוגיית הלמידה">מתודולוגיית הלמידה</span>
 <h2 data-en="Experience. Understand. Internalize." data-he="להתנסות. להבין. להטמיע.">להתנסות. להבין. להטמיע.</h2>
-<p data-en="You don&#x27;t just learn about crises - you train the ability to function inside them. The program moves participants from theory to reality: exposure to knowledge, training in a controlled crisis environment, and processing the experience into managerial tools." data-he="לא רק לומדים על משברים- מתאמנים על היכולת לתפקד בתוכם. תהליך ההכשרה מעביר את המשתתפים מתיאוריה למציאות: חשיפה לידע, אימון בסביבת משבר מבוקרת, ועיבוד החוויה לכלים ניהוליים.">לא רק לומדים על משברים- מתאמנים על היכולת לתפקד בתוכם. תהליך ההכשרה מעביר את המשתתפים מתיאוריה למציאות: חשיפה לידע, אימון בסביבת משבר מבוקרת, ועיבוד החוויה לכלים ניהוליים.</p>
 </div>
-<div class="learning-grid">
+<p class="lead" data-en="You don't just learn about crises — you train the ability to function inside them. The program moves participants from theory to reality: exposure to knowledge, training in a controlled crisis environment, and processing the experience into managerial tools." data-he="לא רק לומדים על משברים — מתאמנים על היכולת לתפקד בתוכם. תהליך ההכשרה מעביר את המשתתפים מתיאוריה למציאות: חשיפה לידע, אימון בסביבת משבר מבוקרת, ועיבוד החוויה לכלים ניהוליים.">לא רק לומדים על משברים — מתאמנים על היכולת לתפקד בתוכם. תהליך ההכשרה מעביר את המשתתפים מתיאוריה למציאות: חשיפה לידע, אימון בסביבת משבר מבוקרת, ועיבוד החוויה לכלים ניהוליים.</p>
+</div>
+<div class="learning-grid" data-stagger>
 <article class="learning-card">
-<div class="learning-index" data-en="01" data-he="01">01</div>
+<div class="learning-index">01</div>
 <h3 data-en="Experience" data-he="להתנסות">להתנסות</h3>
-<p data-en="Behavioral, cognitive and emotional training in an environment that simulates a real crisis - practicing leadership, thinking and real-time decision-making under load, time pressure, uncertainty and conflicting information." data-he="אימון התנהגותי, קוגניטיבי ורגשי בסביבה המדמה משבר אמיתי. תרגול יכולות הובלה, חשיבה וקבלת החלטות בזמן אמת, תחת עומס, לחץ זמן, אי-ודאות ומידע סותר.">אימון התנהגותי, קוגניטיבי ורגשי בסביבה המדמה משבר אמיתי. תרגול יכולות הובלה, חשיבה וקבלת החלטות בזמן אמת, תחת עומס, לחץ זמן, אי-ודאות ומידע סותר.</p>
+<p data-en="Behavioral, cognitive and emotional training in an environment that simulates a real crisis — practicing leadership, thinking and real-time decision-making under load, time pressure, uncertainty and conflicting information." data-he="אימון התנהגותי, קוגניטיבי ורגשי בסביבה המדמה משבר אמיתי. תרגול יכולות הובלה, חשיבה וקבלת החלטות בזמן אמת, תחת עומס, לחץ זמן, אי-ודאות ומידע סותר.">אימון התנהגותי, קוגניטיבי ורגשי בסביבה המדמה משבר אמיתי. תרגול יכולות הובלה, חשיבה וקבלת החלטות בזמן אמת, תחת עומס, לחץ זמן, אי-ודאות ומידע סותר.</p>
 </article>
 <article class="learning-card">
-<div class="learning-index" data-en="02" data-he="02">02</div>
+<div class="learning-index">02</div>
 <h3 data-en="Understand" data-he="להבין">להבין</h3>
-<p data-en="Analyzing extreme situations through leadership tours, lectures and field encounters - recognizing the pressures at work in a crisis, decision-making mechanisms, and the immediate impact on people and systems." data-he="ניתוח מצבי קיצון באמצעות סיורי מנהיגות, הרצאות ומפגשי שטח. הכרת הלחצים הפועלים במשבר, מנגנוני קבלת ההחלטות וההשפעה המיידית על אנשים ומערכות.">ניתוח מצבי קיצון באמצעות סיורי מנהיגות, הרצאות ומפגשי שטח. הכרת הלחצים הפועלים במשבר, מנגנוני קבלת ההחלטות וההשפעה המיידית על אנשים ומערכות.</p>
+<p data-en="Analyzing extreme situations through leadership tours, lectures and field encounters — recognizing the pressures at work in a crisis, decision-making mechanisms, and the immediate impact on people and systems." data-he="ניתוח מצבי קיצון באמצעות סיורי מנהיגות, הרצאות ומפגשי שטח. הכרת הלחצים הפועלים במשבר, מנגנוני קבלת ההחלטות וההשפעה המיידית על אנשים ומערכות.">ניתוח מצבי קיצון באמצעות סיורי מנהיגות, הרצאות ומפגשי שטח. הכרת הלחצים הפועלים במשבר, מנגנוני קבלת ההחלטות וההשפעה המיידית על אנשים ומערכות.</p>
 </article>
 <article class="learning-card">
-<div class="learning-index" data-en="03" data-he="03">03</div>
+<div class="learning-index">03</div>
 <h3 data-en="Internalize" data-he="להטמיע">להטמיע</h3>
-<p data-en="Professional processing of the patterns of action, communication and decisions revealed in the simulation - translating the hands-on experience into strategic knowledge and tools that can be applied immediately in role and organization." data-he="עיבוד מקצועי של דפוסי הפעולה, התקשורת וההחלטות שנחשפו בסימולציה. תרגום החוויה המעשית לידע אסטרטגי ולכלים הניתנים ליישום מיידי בתפקיד ובארגון.">עיבוד מקצועי של דפוסי הפעולה, התקשורת וההחלטות שנחשפו בסימולציה. תרגום החוויה המעשית לידע אסטרטגי ולכלים הניתנים ליישום מיידי בתפקיד ובארגון.</p>
+<p data-en="Professional processing of the patterns of action, communication and decisions revealed in the simulation — translating the hands-on experience into strategic knowledge and tools that can be applied immediately in role and organization." data-he="עיבוד מקצועי של דפוסי הפעולה, התקשורת וההחלטות שנחשפו בסימולציה. תרגום החוויה המעשית לידע אסטרטגי ולכלים הניתנים ליישום מיידי בתפקיד ובארגון.">עיבוד מקצועי של דפוסי הפעולה, התקשורת וההחלטות שנחשפו בסימולציה. תרגום החוויה המעשית לידע אסטרטגי ולכלים הניתנים ליישום מיידי בתפקיד ובארגון.</p>
 </article>
 </div>
 </div>
 </section>
-<section class="simulation" id="simulation">
-<div class="sim-grid">
-<div class="sim-visual">
-<div class="sim-main"><img alt="Earth with meteors as the Ares Station simulation visual" src="assests/ares_station.png"/></div>
 
-</div>
-<div class="sim-copy">
-<div class="eyebrow" data-en="Immersive simulation" data-he="סימולציית מנהיגות">Immersive simulation</div>
+<!-- SIMULATION (primary dark immersive) -->
+<section class="simulation on-dark" id="simulation">
+<div class="sim-grid">
+<div class="sim-visual"><img alt="Earth with meteors as the Ares Station simulation visual" src="assests/ares_station.png" loading="lazy"/></div>
+<div class="sim-copy" data-reveal="fade">
+<div>
+<span class="eyebrow" data-en="Immersive simulation" data-he="סימולציית מנהיגות">Immersive simulation</span>
 <h2 data-en="Crisis inside an immersive space station." data-he="משבר בתחנת חלל.">Crisis inside an immersive space station.</h2>
 <p data-en="A group leadership simulation in which participants must build a shared picture, coordinate across roles, and make consequential decisions as conditions deteriorate." data-he="סימולציה קבוצתית שבה המשתתפים נדרשים לבנות תמונת מצב משותפת, לתאם בין תפקידים ולקבל החלטות משמעותיות בזמן שהמצב ממשיך להשתנות.">A group leadership simulation in which participants must build a shared picture, coordinate across roles, and make consequential decisions as conditions deteriorate.</p>
+</div>
 <div class="sim-list">
-<div class="sim-row"><span data-en="6–24 participants" data-he="6–24 משתתפים">6–12 participants</span><span data-en="Team-based leadership under pressure" data-he="תרגול צוותי תחת לחץ">Team-based leadership under pressure</span></div>
+<div class="sim-row"><span data-en="6–24 participants" data-he="6–24 משתתפים">6–24 participants</span><span data-en="Team-based leadership under pressure" data-he="תרגול צוותי תחת לחץ">Team-based leadership under pressure</span></div>
 <div class="sim-row"><span data-en="Distributed roles" data-he="תפקידים שונים">Distributed roles</span><span data-en="Different information, priorities and authority" data-he="לכל משתתף מידע, סדרי עדיפויות וסמכות שונים">Different information, priorities and authority</span></div>
 <div class="sim-row"><span data-en="Cascading disruption" data-he="משבר מתפתח">Cascading disruption</span><span data-en="The operating picture changes while decisions are being made" data-he="תמונת המצב משתנה בזמן שהצוות פועל">The operating picture changes while decisions are being made</span></div>
 <div class="sim-row"><span data-en="Structured debrief" data-he="תחקיר מובנה">Structured debrief</span><span data-en="Behavior, communication and key decisions become learning material" data-he="החלטות, תקשורת ודפוסי פעולה הופכים לחומר למידה">Behavior, communication and key decisions become learning material</span></div>
@@ -132,27 +154,52 @@ The training focuses on decision-making, emotional regulation, teamwork, communi
 </div>
 </div>
 </section>
-<section class="section programs" id="programs" data-reveal>
+
+<!-- PROGRAMS -->
+<section class="section programs" id="programs">
 <div class="wrap">
-<div class="programs-intro">
+<div class="programs-intro" data-reveal>
 <div>
-<div class="eyebrow" data-en="Our services" data-he="השירותים שלנו">השירותים שלנו</div>
+<span class="eyebrow" data-en="Our services" data-he="השירותים שלנו">השירותים שלנו</span>
 <h2 data-en="Four ways to work with the center." data-he="תוכניות ופעילויות במרכז">Four ways to work with the center.</h2>
 </div>
-<p data-en="From a focused simulator workshop to lectures, study days and Gaza-Envelope tours. Programs can be delivered independently or combined to fit the organization&#x27;s goals." data-he="מסדנת סימולטור ממוקדת ועד הרצאות, ימי עיון וסיורים בעוטף. ניתן לבחור פעילות אחת או לשלב בין הפורמטים בהתאם למטרות הארגון.">מסדנת סימולטור ממוקדת ועד הרצאות, ימי עיון וסיורים בעוטף. ניתן לבחור פעילות אחת או לשלב בין הפורמטים בהתאם למטרות הארגון.</p>
+<p class="lead" data-en="From a focused simulator workshop to lectures, study days and Gaza-Envelope tours. Programs can be delivered independently or combined to fit the organization's goals." data-he="מסדנת סימולטור ממוקדת ועד הרצאות, ימי עיון וסיורים בעוטף. ניתן לבחור פעילות אחת או לשלב בין הפורמטים בהתאם למטרות הארגון.">מסדנת סימולטור ממוקדת ועד הרצאות, ימי עיון וסיורים בעוטף. ניתן לבחור פעילות אחת או לשלב בין הפורמטים בהתאם למטרות הארגון.</p>
 </div>
-<div class="program-grid program-grid-five">
-<article class="program-card program-svc program-featured"><div class="svc-text"><span class="svc-num">01</span><h3 data-en="Simulator Workshop" data-he="סדנת סימולטור">סדנת סימולטור</h3><p data-en="A group leadership simulation that shifts the focus from theoretical knowledge to real-time performance. It runs under load and uncertainty, testing core abilities: decision-making with partial and conflicting information, staying focused under emotional pressure, cognitive flexibility and teamwork. It closes with a structured professional debrief for reflection and embedding the learning." data-he="סימולציית מנהיגות קבוצתית המעבירה את המוקד מידע תיאורטי לתפקוד בזמן אמת. התרגול מתבצע בתנאי עומס ואי-ודאות, ובוחן יכולות ליבה: קבלת החלטות מול מידע חלקי וסותר, שמירה על מיקוד תחת לחץ רגשי, גמישות מחשבתית ועבודת צוות. התהליך נחתם בתחקיר מקצועי מובנה לרפלקציה והטמעת הלמידה.">סימולציית מנהיגות קבוצתית המעבירה את המוקד מידע תיאורטי לתפקוד בזמן אמת. התרגול מתבצע בתנאי עומס ואי-ודאות, ובוחן יכולות ליבה: קבלת החלטות מול מידע חלקי וסותר, שמירה על מיקוד תחת לחץ רגשי, גמישות מחשבתית ועבודת צוות. התהליך נחתם בתחקיר מקצועי מובנה לרפלקציה והטמעת הלמידה.</p></div><div class="svc-media"><img src="assests/simulator_room.png" alt="Ofir leadership simulation - control room" loading="lazy"/></div></article>
-<article class="program-card program-svc"><span class="svc-num">02</span><h3 data-en="Lectures &amp; Study Days" data-he="הרצאות וימי עיון">הרצאות וימי עיון</h3><p data-en="Theoretical and practical depth on leadership, decision-making and functioning under extreme conditions. Delivered at the Ofir center or at the client&#x27;s site." data-he="העמקה תיאורטית ומעשית בנושאי מנהיגות, קבלת החלטות ותפקוד במצבי קיצון. הפעילות ניתנת להעברה במרכז אופיר או בבית הלקוח.">העמקה תיאורטית ומעשית בנושאי מנהיגות, קבלת החלטות ותפקוד במצבי קיצון. הפעילות ניתנת להעברה במרכז אופיר או משרדי הלקוח.</p></article>
-<article class="program-card program-svc"><span class="svc-num">03</span><h3 data-en="October 7 Study Day" data-he="יום עיון 7 באוקטובר">יום עיון 7 באוקטובר</h3><p data-en="A full content day analyzing leadership, decision-making and systemic functioning under extreme conditions, through the case studies of the October 7 events." data-he="יום תוכן מלא המנתח מנהיגות, קבלת החלטות ותפקוד מערכתי במצבי קיצון, דרך מקרי הבוחן של אירועי ה-7 באוקטובר.">יום תוכן מלא המנתח מנהיגות, קבלת החלטות ותפקוד מערכתי במצבי קיצון, דרך מקרי הבוחן של אירועי ה-7 באוקטובר.</p></article>
-<article class="program-card program-svc"><span class="svc-num">04</span><h3 data-en="Gaza-Envelope Tours &amp; Journeys" data-he="סיורים ומסעות בעוטף">סיורים ומסעות בעוטף</h3><p data-en="Learning from the field: guided tours that connect the story of the place to practical questions of responsibility, leadership and decision-making." data-he="למידה מהשטח: סיורים מודרכים המחברים את סיפור המקום לסוגיות מעשיות של אחריות, מנהיגות וקבלת החלטות.">למידה מהשטח: סיורים מודרכים המחברים את סיפור המקום לסוגיות מעשיות של אחריות, מנהיגות וקבלת החלטות.</p></article>
+<div class="program-grid">
+<article class="program-svc program-featured" data-reveal>
+<div class="svc-text">
+<span class="svc-num">01</span>
+<h3 data-en="Simulator Workshop" data-he="סדנת סימולטור">סדנת סימולטור</h3>
+<p data-en="A group leadership simulation that shifts the focus from theoretical knowledge to real-time performance. It runs under load and uncertainty, testing core abilities: decision-making with partial and conflicting information, staying focused under emotional pressure, cognitive flexibility and teamwork. It closes with a structured professional debrief for reflection and embedding the learning." data-he="סימולציית מנהיגות קבוצתית המעבירה את המוקד מידע תיאורטי לתפקוד בזמן אמת. התרגול מתבצע בתנאי עומס ואי-ודאות, ובוחן יכולות ליבה: קבלת החלטות מול מידע חלקי וסותר, שמירה על מיקוד תחת לחץ רגשי, גמישות מחשבתית ועבודת צוות. התהליך נחתם בתחקיר מקצועי מובנה לרפלקציה והטמעת הלמידה.">סימולציית מנהיגות קבוצתית המעבירה את המוקד מידע תיאורטי לתפקוד בזמן אמת. התרגול מתבצע בתנאי עומס ואי-ודאות, ובוחן יכולות ליבה: קבלת החלטות מול מידע חלקי וסותר, שמירה על מיקוד תחת לחץ רגשי, גמישות מחשבתית ועבודת צוות. התהליך נחתם בתחקיר מקצועי מובנה לרפלקציה והטמעת הלמידה.</p>
+</div>
+<div class="svc-media media-reveal"><img src="assests/simulator_room.png" alt="Ofir leadership simulation — control room" loading="lazy"/></div>
+</article>
+<article class="program-svc">
+<span class="svc-num">02</span>
+<h3 data-en="Lectures &amp; Study Days" data-he="הרצאות וימי עיון">הרצאות וימי עיון</h3>
+<p data-en="Theoretical and practical depth on leadership, decision-making and functioning under extreme conditions. Delivered at the Ofir center or at the client's site." data-he="העמקה תיאורטית ומעשית בנושאי מנהיגות, קבלת החלטות ותפקוד במצבי קיצון. הפעילות ניתנת להעברה במרכז אופיר או במשרדי הלקוח.">העמקה תיאורטית ומעשית בנושאי מנהיגות, קבלת החלטות ותפקוד במצבי קיצון. הפעילות ניתנת להעברה במרכז אופיר או במשרדי הלקוח.</p>
+</article>
+<article class="program-svc">
+<span class="svc-num">03</span>
+<h3 data-en="October 7 Study Day" data-he="יום עיון 7 באוקטובר">יום עיון 7 באוקטובר</h3>
+<p data-en="A full content day analyzing leadership, decision-making and systemic functioning under extreme conditions, through the case studies of the October 7 events." data-he="יום תוכן מלא המנתח מנהיגות, קבלת החלטות ותפקוד מערכתי במצבי קיצון, דרך מקרי הבוחן של אירועי ה-7 באוקטובר.">יום תוכן מלא המנתח מנהיגות, קבלת החלטות ותפקוד מערכתי במצבי קיצון, דרך מקרי הבוחן של אירועי ה-7 באוקטובר.</p>
+</article>
+<article class="program-svc">
+<span class="svc-num">04</span>
+<h3 data-en="Gaza-Envelope Tours &amp; Journeys" data-he="סיורים ומסעות בעוטף">סיורים ומסעות בעוטף</h3>
+<p data-en="Learning from the field: guided tours that connect the story of the place to practical questions of responsibility, leadership and decision-making." data-he="למידה מהשטח: סיורים מודרכים המחברים את סיפור המקום לסוגיות מעשיות של אחריות, מנהיגות וקבלת החלטות.">למידה מהשטח: סיורים מודרכים המחברים את סיפור המקום לסוגיות מעשיות של אחריות, מנהיגות וקבלת החלטות.</p>
+</article>
 </div>
 </div>
-</section><section class="serve" id="serve" data-reveal>
+</section>
+
+<!-- WHO WE SERVE -->
+<section class="section serve on-dark" id="serve">
 <div class="wrap">
-<div class="serve-head">
-<div class="eyebrow" data-en="Who we serve" data-he="למי המרכז מיועד">Who we serve</div>
-<h2 data-en="For organizations preparing for complex crises and rapid change" data-he="לארגונים שרוצים להערך למשברים מורכבים ושינויים מהירים">לארגונים שרוצים להערך למשברים מורכבים ושינויים מהירים</h2><p style="white-space:pre-line" data-en="Avoiding a decision - or making a suboptimal one - in real time can cost the organization dearly: disrupted operational continuity, reputational damage and financial loss.
+<div class="serve-head stack" data-reveal>
+<span class="eyebrow" data-en="Who we serve" data-he="למי המרכז מיועד">Who we serve</span>
+<h2 data-en="For organizations preparing for complex crises and rapid change" data-he="לארגונים שרוצים להיערך למשברים מורכבים ושינויים מהירים">לארגונים שרוצים להיערך למשברים מורכבים ושינויים מהירים</h2>
+<p class="lead pre-line" data-en="Avoiding a decision — or making a suboptimal one — in real time can cost the organization dearly: disrupted operational continuity, reputational damage and financial loss.
 
 At the Ofir Center we train management and leadership teams to make decisions, maintain functional continuity and keep leading even under pressure, uncertainty and a changing reality." data-he="הימנעות מהחלטה או קבלת החלטה שאינה מיטבית בזמן אמת עלולות לגבות מהארגון מחיר כבד: פגיעה ברציפות התפקודית, נזק תדמיתי והפסד כלכלי.
 
@@ -160,86 +207,145 @@ At the Ofir Center we train management and leadership teams to make decisions, m
 
 במרכז אופיר אנו מאמנים הנהלות וצוותי ניהול לקבל החלטות, לשמור על רציפות תפקודית ולהמשיך להוביל גם תחת לחץ, אי־ודאות ומציאות משתנה</p>
 </div>
-<div class="serve-cats"><div class="serve-cat"><h4 data-en="Business Sector" data-he="המגזר העסקי">המגזר העסקי</h4><p data-en="Technology, cyber and infrastructure companies and business organizations" data-he="חברות טכנולוגיה, סייבר, תשתיות וארגונים עסקיים">חברות טכנולוגיה, סייבר, תשתיות וארגונים עסקיים</p></div><div class="serve-cat"><h4 data-en="Security &amp; Public Sector" data-he="המגזר הבטחוני והציבורי">המגזר הבטחוני והציבורי</h4><p data-en="Defense, rescue and emergency bodies, government ministries and local authorities" data-he="גופי בטחון, הצלה, חירום, משרדי ממשלה ורשויות מקומיות">גופי בטחון, הצלה, חירום, משרדי ממשלה ורשויות מקומיות</p></div><div class="serve-cat"><h4 data-en="Social Systems" data-he="מערכות חברתיות">מערכות חברתיות</h4><p data-en="Education, healthcare, welfare, nonprofits and community leadership" data-he="חינוך, בריאות, רווחה, עמותות ומנהיגות קהילתית">חינוך, בריאות, רווחה, עמותות ומנהיגות קהילתית</p></div><div class="serve-cat"><h4 data-en="International Bodies" data-he="גופים בין לאומיים">גופים בין לאומיים</h4><p data-en="Delegations, Jewish organizations and partners" data-he="משלחות, ארגונים יהודיים ושותפים">משלחות, ארגונים יהודיים ושותפים</p></div></div>
-</div>
-</section><section class="section team" id="team" data-reveal>
-<div class="wrap team-grid">
-<div class="team-intro">
-<div class="eyebrow" data-en="The people behind Ofir" data-he="הצוות המקצועי">The people behind Ofir</div>
-<h2 data-en="Field experience, professional expertise and multidisciplinary thinking." data-he="ניסיון מעשי, מומחיות וחשיבה רב־תחומית.">Field experience, professional expertise and multidisciplinary thinking.</h2>
-<p data-en="Our team combines command and systems-leadership experience with expertise in medical simulation, research, technology and learning design - to create practical, precise training relevant to the challenges managers and teams meet in reality." data-he="הצוות שלנו מחבר ניסיון בפיקוד ובהובלת מערכות עם מומחיות בסימולציה רפואית, מחקר, טכנולוגיה ועיצוב למידה  כדי ליצור אימון מעשי, מדויק ורלוונטי לאתגרים שמנהלים וצוותים פוגשים במציאות">Our team combines command and systems-leadership experience with expertise in medical simulation, research, technology and learning design - to create practical, precise training relevant to the challenges managers and teams meet in reality.</p>
-</div>
-<div class="people">
-<div class="person" tabindex="0"><div class="person-photo"><img alt="Mira Shoshani" src="assests/team_mira.png"/><div class="person-overlay"><p data-en="Former senior official in the Israel Security Agency, with more than 25 years of experience in leadership, command, complex systems management, and crisis decision-making." data-he="לשעבר בכירה בשב״כ, עם יותר מ־25 שנות ניסיון בפיקוד, בהובלת אנשים, בניהול מערכות מורכבות ובקבלת החלטות בתנאי משבר.">Former senior official in the Israel Security Agency, with more than 25 years of experience in leadership, command, complex systems management, and crisis decision-making.</p><div class="bio-meta" data-en="BA in Political Science · MA in Emergency and Disaster Management" data-he="B.A. במדע המדינה · M.A. בניהול מצבי חירום ואסונות">BA in Political Science · MA in Emergency and Disaster Management</div></div></div><h3 data-en="Mira Shoshani" data-he="מירה שושני">Mira Shoshani</h3><span data-en="Founder &amp; Managing Director" data-he="מייסדת ומנהלת">Founder &amp; Managing Director</span></div>
-<div class="person" tabindex="0"><div class="person-photo"><img alt="Ariel Brikman" src="assests/team_ariel.png"/><div class="person-overlay"><p data-en="Brigadier General (Res.), former senior Israeli Air Force officer. Served as CEO of the Ramon Foundation; a senior partner in its founding and led the content development of HaTayeset, a simulator center for training managers in Glilot. Extensive experience in leadership development, organizational management, mentoring executives and decision-making." data-he="תא״ל (מיל׳), לשעבר בכיר בחיל האוויר. כיהן כמנכ״ל קרן רמון, היה שותף בכיר בהקמה והוביל את פיתוח התכנים של הטייסת, מרכז סימולטורים להכשרת מנהלים בגלילות. בעל ניסיון רב בפיתוח מנהיגות, ניהול ארגונים, ליווי מנהלים וקבלת החלטות">תא״ל (מיל׳), לשעבר בכיר בחיל האוויר. כיהן כמנכ״ל קרן רמון, היה שותף בכיר בהקמה והוביל את פיתוח התכנים של הטייסת, מרכז סימולטורים להכשרת מנהלים בגלילת. בעל ניסיון רב בפיתוח מנהיגות, ניהול ארגונים, ליווי מנהלים וקבלת החלטות</p></div></div><h3 data-en="Ariel Brikman" data-he="אריאל בריקמן">Ariel Brikman</h3><span data-en="Business Strategy &amp; Mentoring" data-he="אסטרטגיה עסקית וליווי מנהלים">Business Strategy &amp; Mentoring</span></div>
-<div class="person" tabindex="0"><div class="person-photo"><img alt="Inbal Levin" src="assests/team_inbal.png"/><div class="person-overlay"><p style="white-space:pre-line" data-en="32 years as a midwife nurse; 18 years as a manager at MSR - the Israel Center for Medical Simulation, Tel Hashomer.
-Expert in the design and development of simulations, debriefings and learning processes across the fields of medicine, education and security." data-he="32  שנים אחות מיילדת, 18 שנה מנהלת במסר המרכז הארצי לסימולציה רפואית, תל השומר.
-מומחית לתכנון פיתוח סימולציות, תחקירים  ותהליכי למידה בעולמות הרפואה החינוך והביטחון.">32 years as a midwife nurse; 18 years as a manager at MSR - the Israel Center for Medical Simulation, Tel Hashomer.
-Expert in the design and development of simulations, debriefings and learning processes across the fields of medicine, education and security.</p><div class="bio-meta" data-en="RN · PCCRN · NMC · M.A" data-he="RN · PCCRN · NMC · M.A">RN · PCCRN · NMC · M.A</div></div></div><h3 data-en="Inbal Levin" data-he="ענבל לוין">Inbal Levin</h3><span data-en="Simulation &amp; Learning-Process Design Expert" data-he="מומחית לתכנון ופיתוח סימולציות ותהליכי למידה">Simulation &amp; Learning-Process Design Expert</span></div>
-<div class="person" tabindex="0"><div class="person-photo"><img alt="Meital Geva" src="assests/team_meital.png"/><div class="person-overlay"><p data-en="Former simulator instructor. Researcher, engineer, and designer specializing in complex systems, simulation, interactive technologies, and translating scientific methods into applied experiences." data-he="לשעבר מדריכת סימולטור. חוקרת, מהנדסת ומעצבת המתמחה במערכות מורכבות, סימולציה, טכנולוגיות אינטראקטיביות ובהפיכת שיטות מחקר מדעיות למערכות ולחוויות יישומיות.">Former simulator instructor. Researcher, engineer, and designer specializing in complex systems, simulation, interactive technologies, and translating scientific methods into applied experiences.</p><div class="bio-meta" data-en="B.Sc. · M.Sc. · Ph.D. in Mechanical Engineering · M.Des. in Industrial Design" data-he="B.Sc. · M.Sc. · Ph.D. בהנדסת מכונות · M.Des. בעיצוב תעשייתי">B.Sc. · M.Sc. · Ph.D. in Mechanical Engineering · M.Des. in Industrial Design</div></div></div><h3 data-en="Meital Geva, Ph.D." data-he="מיטל גבע, Ph.D.">Meital Geva, Ph.D.</h3><span data-en="Technology, Simulation &amp; Experience Design" data-he="טכנולוגיה, סימולציה ועיצוב חוויית למידה">Technology, Simulation &amp; Experience Design</span></div><div class="person" tabindex="0"><div class="person-photo"><img alt="Tomer Vered" src="assests/team_tomer.png"/><div class="person-overlay"><p data-en="Brig. Gen. (Res.) with rich security, organizational and educational experience following 30 years of service in the Air Force in numerous command roles. Co-founder of a defense innovation center for the development of the western Negev; mentors companies toward excellence and personal and organizational achievement and strategic thinking." data-he="תא״ל (מיל) בעל ניסיון בטחוני, ארגוני וחינוכי עשיר לאחר 30 שנות שירות בחיל האוויר בתפקידי פיקוד רבים. שותף להקמת מרכז חדשנות בטחוני לפיתוח אזור הנגב המערבי, מלווה חברות למצויינות והישגיות אישית וארגונית ולחשיבה אסטרטגית.">תא״ל (מיל) בעל ניסיון בטחוני, ארגוני וחינוכי עשיר לאחר 30 שנות שירות בחיל האוויר בתפקידי פיקוד רבים. שותף להקמת מרכז חדשנות בטחוני לפיתוח אזור הנגב המערבי, מלווה חברות למצויינות והישגיות אישית וארגונית ולחשיבה אסטרטגית.</p><div class="bio-meta" data-en="B.Sc. in Computer Science, M.A. in Political Science" data-he="B.Sc. מדעי המחשב, MA במדעי המדינה.">B.Sc. מדעי המחשב, MA במדעי המדינה.</div></div></div><h3 data-en="Tomer Vered" data-he="תומר ורד">תומר ורד</h3><span data-en="Leadership, Strategy &amp; Innovation" data-he="מנהיגות, אסטרטגיה וחדשנות">מנהיגות, אסטרטגיה וחדשנות</span></div>
+<div class="serve-cats" data-reveal="fade">
+<div class="serve-cat"><h4 data-en="Business Sector" data-he="המגזר העסקי">המגזר העסקי</h4><p data-en="Technology, cyber and infrastructure companies and business organizations" data-he="חברות טכנולוגיה, סייבר, תשתיות וארגונים עסקיים">חברות טכנולוגיה, סייבר, תשתיות וארגונים עסקיים</p></div>
+<div class="serve-cat"><h4 data-en="Security &amp; Public Sector" data-he="המגזר הביטחוני והציבורי">המגזר הביטחוני והציבורי</h4><p data-en="Defense, rescue and emergency bodies, government ministries and local authorities" data-he="גופי ביטחון, הצלה, חירום, משרדי ממשלה ורשויות מקומיות">גופי ביטחון, הצלה, חירום, משרדי ממשלה ורשויות מקומיות</p></div>
+<div class="serve-cat"><h4 data-en="Social Systems" data-he="מערכות חברתיות">מערכות חברתיות</h4><p data-en="Education, healthcare, welfare, nonprofits and community leadership" data-he="חינוך, בריאות, רווחה, עמותות ומנהיגות קהילתית">חינוך, בריאות, רווחה, עמותות ומנהיגות קהילתית</p></div>
+<div class="serve-cat"><h4 data-en="International Bodies" data-he="גופים בין-לאומיים">גופים בין-לאומיים</h4><p data-en="Delegations, Jewish organizations and partners" data-he="משלחות, ארגונים יהודיים ושותפים">משלחות, ארגונים יהודיים ושותפים</p></div>
 </div>
 </div>
 </section>
 
-<section class="section about" id="about" data-reveal>
+<!-- TEAM -->
+<section class="section team" id="team">
 <div class="wrap">
-<div class="about-head">
-<h2 data-en="In memory of SSG Ofir Shoshani" data-he="ע״ש סמ״ר אופיר שושני">In memory of SSG Ofir Shoshani</h2>
+<div class="team-intro stack" data-reveal>
+<span class="eyebrow" data-en="The people behind Ofir" data-he="הצוות המקצועי">The people behind Ofir</span>
+<h2 data-en="Field experience, professional expertise and multidisciplinary thinking." data-he="ניסיון מעשי, מומחיות וחשיבה רב־תחומית.">ניסיון מעשי, מומחיות וחשיבה רב־תחומית.</h2>
+<p class="lead" data-en="Our team combines command and systems-leadership experience with expertise in medical simulation, research, technology and learning design — to create practical, precise training relevant to the challenges managers and teams meet in reality." data-he="הצוות שלנו מחבר ניסיון בפיקוד ובהובלת מערכות עם מומחיות בסימולציה רפואית, מחקר, טכנולוגיה ועיצוב למידה — כדי ליצור אימון מעשי, מדויק ורלוונטי לאתגרים שמנהלים וצוותים פוגשים במציאות.">הצוות שלנו מחבר ניסיון בפיקוד ובהובלת מערכות עם מומחיות בסימולציה רפואית, מחקר, טכנולוגיה ועיצוב למידה — כדי ליצור אימון מעשי, מדויק ורלוונטי לאתגרים שמנהלים וצוותים פוגשים במציאות.</p>
 </div>
-<div class="about-grid memory-grid">
-<div class="about-visual memory-visual">
-<div class="memory-portrait"><img alt="Ofir Shoshani" src="assests/ofir.jpg"/></div>
-<div class="memory-dates">8.2.2003–7.10.2023</div>
+<div class="team-carousel">
+<div class="people" data-reveal="fade">
+<div class="person" tabindex="0">
+<div class="person-photo"><img alt="Mira Shoshani" src="assests/team_mira.png" loading="lazy"/><div class="person-overlay"><p data-en="Former senior official in the Israel Security Agency, with more than 25 years of experience in leadership, command, complex systems management, and crisis decision-making." data-he="לשעבר בכירה בשב״כ, עם יותר מ־25 שנות ניסיון בפיקוד, בהובלת אנשים, בניהול מערכות מורכבות ובקבלת החלטות בתנאי משבר.">Former senior official in the Israel Security Agency, with more than 25 years of experience in leadership, command, complex systems management, and crisis decision-making.</p><div class="bio-meta" data-en="BA in Political Science · MA in Emergency and Disaster Management" data-he="B.A. במדע המדינה · M.A. בניהול מצבי חירום ואסונות">BA in Political Science · MA in Emergency and Disaster Management</div></div></div>
+<h3 data-en="Mira Shoshani" data-he="מירה שושני">Mira Shoshani</h3>
+<span data-en="Founder &amp; Managing Director" data-he="מייסדת ומנהלת">Founder &amp; Managing Director</span>
 </div>
-<div class="about-copy">
-<div class="quote" data-en="SSG Ofir Shoshani was 20 years old when she was murdered in her home in Kfar Aza on October 7, 2023." data-he="סמ״ר אופיר שושני הייתה בת 20 כשנרצחה בביתה בכפר עזה ב־7 באוקטובר 2023.">SSG Ofir Shoshani was 20 years old when she was murdered in her home in Kfar Aza on October 7, 2023.</div>
-<p style="white-space:pre-line" data-en="As a young commander, Ofir shaped a clear and mature command philosophy. She believed in leading by example, in modesty, patience, composure and the pursuit of excellence - and above all in command grounded in respect for the person rather than the force of authority.
-
-Ofir saw a commander as responsible not only for accomplishing the mission, but also for her people and their development. She believed in constant learning, observation, trial and error, and the courage to ask - as she used to say: &quot;Don&#x27;t understand? Ask.&quot;
-
-In her eyes, a commander&#x27;s role is also to be part of how their people are shaped - helping them become &quot;thinking, better people and citizens.&quot;" data-he="מפקדת צעירה, אופיר גיבשה תפיסת פיקוד ברורה ובוגרת. היא האמינה בדוגמה אישית, בצניעות, בסבלנות, ברוגע ובחתירה למצוינות  ובעיקר בפיקוד שמבוסס על כבוד לאדם ולא על כוח הסמכות.
-
-אופיר ראתה במפקדת מי שאחראית לא רק לביצוע המשימה, אלא גם לאנשים שלה ולהתפתחותם. היא האמינה בלמידה מתמדת, בהתבוננות, בניסוי וטעייה ובאומץ לשאול  כפי שנהגה לומר: &quot;אתה לא מבין? תשאל.&quot;
-
-בעיניה, תפקידו של מפקד הוא גם להיות חלק מהדרך שבה אנשיו מתעצבים  לעזור להם להפוך ל״אנשים ואזרחים חושבים וטובים יותר״.">As a young commander, Ofir shaped a clear and mature command philosophy. She believed in leading by example, in modesty, patience, composure and the pursuit of excellence - and above all in command grounded in respect for the person rather than the force of authority.
-
-Ofir saw a commander as responsible not only for accomplishing the mission, but also for her people and their development. She believed in constant learning, observation, trial and error, and the courage to ask - as she used to say: &quot;Don&#x27;t understand? Ask.&quot;
-
-In her eyes, a commander&#x27;s role is also to be part of how their people are shaped - helping them become &quot;thinking, better people and citizens.&quot;</p>
-<p style="white-space:pre-line;font-weight:700" data-en="The Ofir Leadership Center carries her name and the command philosophy she left behind: leadership that connects responsibility for the mission, responsibility for people, continuous learning and personal example." data-he="מרכז אופיר למנהיגות נושא את שמה ואת תפיסת הפיקוד שהותירה אחריה: מנהיגות שמחברת בין אחריות למשימה, אחריות לאנשים, למידה מתמדת ודוגמה אישית">The Ofir Leadership Center carries her name and the command philosophy she left behind: leadership that connects responsibility for the mission, responsibility for people, continuous learning and personal example.</p>
+<div class="person" tabindex="0">
+<div class="person-photo"><img alt="Ariel Brikman" src="assests/team_ariel.png" loading="lazy"/><div class="person-overlay"><p data-en="Brigadier General (Res.), former senior Israeli Air Force officer. Served as CEO of the Ramon Foundation; a senior partner in founding and leading the content development of HaTayeset in Glilot. Extensive experience in leadership development, organizational management, mentoring executives and decision-making." data-he="תא״ל (מיל׳), לשעבר בכיר בחיל האוויר. כיהן כמנכ״ל קרן רמון, שותף בכיר בהקמה והובלת פיתוח התכנים של הטייסת בגלילות. בעל ניסיון רב בפיתוח מנהיגות, ניהול ארגונים, ליווי מנהלים וקבלת החלטות">תא״ל (מיל׳), לשעבר בכיר בחיל האוויר. כיהן כמנכ״ל קרן רמון, שותף בכיר בהקמה והובלת פיתוח התכנים של הטייסת בגלילות. בעל ניסיון רב בפיתוח מנהיגות, ניהול ארגונים, ליווי מנהלים וקבלת החלטות</p><div class="bio-meta" data-en="B.A. in Management &amp; Economics · M.A. in Strategy &amp; International Relations" data-he="B.A בניהול וכלכלה · M.A באסטרטגיה ויחסים בין־לאומיים">B.A בניהול וכלכלה · M.A באסטרטגיה ויחסים בין־לאומיים</div></div></div>
+<h3 data-en="Ariel Brikman" data-he="אריאל בריקמן">Ariel Brikman</h3>
+<span data-en="Business Strategy &amp; Mentoring" data-he="אסטרטגיה עסקית וליווי מנהלים">Business Strategy &amp; Mentoring</span>
+</div>
+<div class="person" tabindex="0">
+<div class="person-photo"><img alt="Moran Barel" src="assests/moran_team.png" loading="lazy"/><div class="person-overlay"><p data-en="Lt. Col. (Res.), following 25 years of service in the IDF and Military Intelligence in a range of intelligence and operational, command, training and management roles. Experienced in leading teams, managing complex projects and processes, and building partnerships and connections between organizations." data-he="סא״ל במילואים, לאחר 25 שנות שירות בצה״ל ובאמ״ן במגוון תפקידים מודיעיניים־מבצעיים, פיקוד, הדרכה וניהול. בעלת ניסיון בהובלת צוותים, ניהול פרויקטים ותהליכים מורכבים, וביצירת שיתופי פעולה וחיבורים בין ארגונים.">סא״ל במילואים, לאחר 25 שנות שירות בצה״ל ובאמ״ן במגוון תפקידים מודיעיניים־מבצעיים, פיקוד, הדרכה וניהול. בעלת ניסיון בהובלת צוותים, ניהול פרויקטים ותהליכים מורכבים, וביצירת שיתופי פעולה וחיבורים בין ארגונים.</p></div></div>
+<h3 data-en="Moran Barel" data-he="מורן בראל">מורן בראל</h3>
+<span data-en="Partnerships &amp; Business Development Manager" data-he="מנהלת קידום שותפויות ופיתוח עסקי">מנהלת קידום שותפויות ופיתוח עסקי</span>
+</div>
+<div class="person" tabindex="0">
+<div class="person-photo"><img alt="Inbal Levin" src="assests/team_inbal.png" loading="lazy"/><div class="person-overlay"><p class="pre-line" data-en="32 years as a midwife nurse; 18 years as a manager at MSR — the Israel Center for Medical Simulation, Tel Hashomer.
+Expert in the design and development of simulations, debriefings and learning processes across the fields of medicine, education and security." data-he="32 שנים אחות מיילדת, 18 שנה מנהלת במסר — המרכז הארצי לסימולציה רפואית, תל השומר.
+מומחית לתכנון ופיתוח סימולציות, תחקירים ותהליכי למידה בעולמות הרפואה, החינוך והביטחון.">32 years as a midwife nurse; 18 years as a manager at MSR — the Israel Center for Medical Simulation, Tel Hashomer.
+Expert in the design and development of simulations, debriefings and learning processes across the fields of medicine, education and security.</p><div class="bio-meta" data-en="RN · PCCRN · NMC · M.A" data-he="RN · PCCRN · NMC · M.A">RN · PCCRN · NMC · M.A</div></div></div>
+<h3 data-en="Inbal Levin" data-he="ענבל לוין">Inbal Levin</h3>
+<span data-en="Simulation &amp; Learning-Process Design Expert" data-he="מומחית לתכנון ופיתוח סימולציות ותהליכי למידה">Simulation &amp; Learning-Process Design Expert</span>
+</div>
+<div class="person" tabindex="0">
+<div class="person-photo"><img alt="Meital Geva" src="assests/team_meital.png" loading="lazy"/><div class="person-overlay"><p data-en="Former simulator instructor. Researcher, engineer and designer specializing in complex physical systems, computational models, interactive technologies, and turning scientific research methods into applied experiences." data-he="לשעבר מדריכת סימולטור. חוקרת, מהנדסת ומעצבת המתמחה במערכות פיזיקליות מורכבות, מודלים חישוביים, טכנולוגיות אינטראקטיביות ובהפיכת שיטות מחקר מדעיות לחוויות יישומיות.">Former simulator instructor. Researcher, engineer and designer specializing in complex physical systems, computational models, interactive technologies, and turning scientific research methods into applied experiences.</p><div class="bio-meta" data-en="B.Sc. · M.Sc. · Ph.D. in Mechanical Engineering · M.Des. in Industrial Design" data-he="B.Sc. · M.Sc. · Ph.D. בהנדסת מכונות · M.Des. בעיצוב תעשייתי">B.Sc. · M.Sc. · Ph.D. in Mechanical Engineering · M.Des. in Industrial Design</div></div></div>
+<h3 data-en="Meital Geva, Ph.D." data-he="מיטל גבע, Ph.D.">Meital Geva, Ph.D.</h3>
+<span data-en="Technology, Simulation &amp; Experience Design" data-he="טכנולוגיה, סימולציה ועיצוב חוויית למידה">Technology, Simulation &amp; Experience Design</span>
+</div>
+<div class="person" tabindex="0">
+<div class="person-photo"><img alt="Tomer Vered" src="assests/team_tomer.png" loading="lazy"/><div class="person-overlay"><p data-en="Brig. Gen. (Res.) with rich security, organizational and educational experience following 30 years of service in the Air Force in numerous command roles. Co-founder of a defense innovation center for the development of the western Negev; mentors companies toward excellence and personal and organizational achievement and strategic thinking." data-he="תא״ל (מיל) בעל ניסיון ביטחוני, ארגוני וחינוכי עשיר לאחר 30 שנות שירות בחיל האוויר בתפקידי פיקוד רבים. שותף להקמת מרכז חדשנות ביטחוני לפיתוח אזור הנגב המערבי, מלווה חברות למצוינות והישגיות אישית וארגונית ולחשיבה אסטרטגית.">Brig. Gen. (Res.) with rich security, organizational and educational experience following 30 years of service in the Air Force in numerous command roles. Co-founder of a defense innovation center for the development of the western Negev; mentors companies toward excellence and personal and organizational achievement and strategic thinking.</p><div class="bio-meta" data-en="B.Sc. in Computer Science · M.A. in Political Science" data-he="B.Sc. במדעי המחשב · M.A. במדעי המדינה">B.Sc. in Computer Science · M.A. in Political Science</div></div></div>
+<h3 data-en="Tomer Vered" data-he="תומר ורד">תומר ורד</h3>
+<span data-en="Leadership, Strategy &amp; Innovation" data-he="מנהיגות, אסטרטגיה וחדשנות">מנהיגות, אסטרטגיה וחדשנות</span>
+</div>
+</div>
+<div class="team-nav" role="group" aria-label="Team navigation">
+<button type="button" data-dir="left" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+<button type="button" data-dir="right" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
 </div>
 </div>
 </div>
 </section>
-<section class="cta" id="contact">
+
+<!-- ABOUT / MEMORIAL -->
+<section class="section about" id="about">
+<picture>
+<source media="(min-width:761px)" srcset="assests/ofir_full_desktop.png"/>
+<img class="about-bg" src="assests/ofir_full.png" alt="SSG Ofir Shoshani" loading="lazy"/>
+</picture>
 <div class="wrap">
-<div class="cta-textcol"><h2 data-en="Discover how your team operates when reality changes." data-he="גלו כיצד הצוות שלכם פועל כשהמציאות משתנה.">Bring your leadership team into a situation that reveals how it really works.</h2><div class="footer-social cta-social"><a href="https://www.facebook.com/people/%D7%9E%D7%A8%D7%9B%D7%96-%D7%90%D7%95%D7%A4%D7%99%D7%A8-%D7%9C%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA/61594029811925/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="assests/facebook.png" alt="Facebook"/></a><a href="https://www.instagram.com/ofir_leadership_center/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="assests/instagram.png" alt="Instagram"/></a><a href="https://www.linkedin.com/company/%D7%9E%D7%A8%D7%9B%D7%96-%D7%90%D7%95%D7%A4%D7%99%D7%A8-%D7%9C%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA?trk=public_post_feed-actor-name" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="assests/linkedin.png" alt="LinkedIn"/></a></div></div>
-<form class="contact-form" id="contactForm">
-  <input type="text" name="name" autocomplete="name" required data-en-ph="Full name" data-he-ph="שם מלא" aria-label="שם"/>
-  <input type="email" name="email" autocomplete="email" required data-en-ph="Email" data-he-ph="אימייל" aria-label="אימייל"/>
-  <input type="tel" name="phone" autocomplete="tel" data-en-ph="Phone (optional)" data-he-ph="טלפון (רשות)" aria-label="טלפון"/>
-  <textarea name="message" rows="4" required data-en-ph="Your message" data-he-ph="תוכן הפנייה" aria-label="הודעה"></textarea>
-  <div class="form-submit-row">
-    <button type="submit" data-en="Send" data-he="שליחה">שליחה</button>
-    <div class="footer-social cta-social cta-social-m">
-      <a href="https://www.facebook.com/people/%D7%9E%D7%A8%D7%9B%D7%96-%D7%90%D7%95%D7%A4%D7%99%D7%A8-%D7%9C%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA/61594029811925/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="assests/facebook.png" alt="Facebook"/></a>
-      <a href="https://www.instagram.com/ofir_leadership_center/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="assests/instagram.png" alt="Instagram"/></a>
-      <a href="https://www.linkedin.com/company/%D7%9E%D7%A8%D7%9B%D7%96-%D7%90%D7%95%D7%A4%D7%99%D7%A8-%D7%9C%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA?trk=public_post_feed-actor-name" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="assests/linkedin.png" alt="LinkedIn"/></a>
-    </div>
-  </div>
-  <p class="form-status" data-status hidden></p>
+<div class="about-copy about-over" data-reveal="slow">
+<div class="about-onimage">
+<div class="about-titlerow">
+<h2 class="about-title" data-en="In memory of SSG Ofir Shoshani" data-he="ע״ש סמ״ר
+אופיר שושני">ע״ש סמ״ר אופיר שושני</h2>
+<div class="memory-dates">8.2.2003 – 7.10.2023</div>
+</div>
+<p class="quote" data-en="SSG Ofir Shoshani was 20 years old when she was murdered in her home in Kfar Aza on October 7, 2023." data-he="סמ״ר אופיר שושני הייתה בת 20 כשנרצחה בביתה בכפר עזה ב־7 באוקטובר 2023.">SSG Ofir Shoshani was 20 years old when she was murdered in her home in Kfar Aza on October 7, 2023.</p>
+</div>
+<p class="pre-line" data-en="As a young commander, Ofir shaped a clear and mature command philosophy. She believed in leading by example, in modesty, patience, composure and the pursuit of excellence — and above all in command grounded in respect for the person rather than the force of authority.
+
+Ofir saw a commander as responsible not only for accomplishing the mission, but also for her people and their development. She believed in constant learning, observation, trial and error, and the courage to ask — as she used to say: &quot;Don't understand? Ask.&quot;
+
+In her eyes, a commander's role is also to be part of how their people are shaped — helping them become &quot;thinking, better people and citizens.&quot;" data-he="מפקדת צעירה, אופיר גיבשה תפיסת פיקוד ברורה ובוגרת. היא האמינה בדוגמה אישית, בצניעות, בסבלנות, ברוגע ובחתירה למצוינות — ובעיקר בפיקוד שמבוסס על כבוד לאדם ולא על כוח הסמכות.
+
+אופיר ראתה במפקדת מי שאחראית לא רק לביצוע המשימה, אלא גם לאנשים שלה ולהתפתחותם. היא האמינה בלמידה מתמדת, בהתבוננות, בניסוי וטעייה ובאומץ לשאול — כפי שנהגה לומר: &quot;אתה לא מבין? תשאל.&quot;
+
+בעיניה, תפקידו של מפקד הוא גם להיות חלק מהדרך שבה אנשיו מתעצבים — לעזור להם להפוך ל״אנשים ואזרחים חושבים וטובים יותר״.">As a young commander, Ofir shaped a clear and mature command philosophy. She believed in leading by example, in modesty, patience, composure and the pursuit of excellence — and above all in command grounded in respect for the person rather than the force of authority.
+
+Ofir saw a commander as responsible not only for accomplishing the mission, but also for her people and their development. She believed in constant learning, observation, trial and error, and the courage to ask — as she used to say: &quot;Don't understand? Ask.&quot;
+
+In her eyes, a commander's role is also to be part of how their people are shaped — helping them become &quot;thinking, better people and citizens.&quot;</p>
+<p class="lead-strong pre-line" data-en="The Ofir Leadership Center carries her name and the command philosophy she left behind: leadership that connects responsibility for the mission, responsibility for people, continuous learning and personal example." data-he="מרכז אופיר למנהיגות נושא את שמה ואת תפיסת הפיקוד שהותירה אחריה: מנהיגות שמחברת בין אחריות למשימה, אחריות לאנשים, למידה מתמדת ודוגמה אישית.">The Ofir Leadership Center carries her name and the command philosophy she left behind: leadership that connects responsibility for the mission, responsibility for people, continuous learning and personal example.</p>
+</div>
+</div>
+</section>
+
+<!-- CONTACT / CTA -->
+<section class="cta on-dark" id="contact">
+<div class="wrap cta-grid">
+<div class="cta-textcol" data-reveal="fade">
+<video class="cta-anim" src="assests/animation.webm" muted playsinline preload="auto" aria-hidden="true"></video>
+<h2 data-en="Discover how your team operates when reality changes." data-he="גלו כיצד הצוות
+שלכם פועל
+כשהמציאות
+משתנה.">Discover how your team operates when reality changes.</h2>
+<div class="cta-social">
+<a href="https://www.facebook.com/people/%D7%9E%D7%A8%D7%9B%D7%96-%D7%90%D7%95%D7%A4%D7%99%D7%A8-%D7%9C%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA/61594029811925/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="assests/facebook.png" alt="Facebook"/></a>
+<a href="https://www.instagram.com/ofir_leadership_center/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="assests/instagram.png" alt="Instagram"/></a>
+<a href="https://www.linkedin.com/company/%D7%9E%D7%A8%D7%9B%D7%96-%D7%90%D7%95%D7%A4%D7%99%D7%A8-%D7%9C%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA?trk=public_post_feed-actor-name" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="assests/linkedin.png" alt="LinkedIn"/></a>
+</div>
+</div>
+<form class="contact-form" id="contactForm" data-reveal="fade">
+<input type="text" name="name" autocomplete="name" required data-en-ph="Full name" data-he-ph="שם מלא" aria-label="שם"/>
+<input type="email" name="email" autocomplete="email" required data-en-ph="Email" data-he-ph="אימייל" aria-label="אימייל"/>
+<input type="tel" name="phone" autocomplete="tel" data-en-ph="Phone (optional)" data-he-ph="טלפון (רשות)" aria-label="טלפון"/>
+<textarea name="message" rows="4" required data-en-ph="Your message" data-he-ph="תוכן הפנייה" aria-label="הודעה"></textarea>
+<div class="form-submit-row">
+<button type="submit" data-en="Send" data-he="שליחה">שליחה</button>
+<div class="cta-social cta-social-m">
+<a href="https://www.facebook.com/people/%D7%9E%D7%A8%D7%9B%D7%96-%D7%90%D7%95%D7%A4%D7%99%D7%A8-%D7%9C%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA/61594029811925/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="assests/facebook.png" alt="Facebook"/></a>
+<a href="https://www.instagram.com/ofir_leadership_center/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="assests/instagram.png" alt="Instagram"/></a>
+<a href="https://www.linkedin.com/company/%D7%9E%D7%A8%D7%9B%D7%96-%D7%90%D7%95%D7%A4%D7%99%D7%A8-%D7%9C%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA?trk=public_post_feed-actor-name" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="assests/linkedin.png" alt="LinkedIn"/></a>
+</div>
+</div>
+<p class="form-status" data-status hidden></p>
 </form>
 </div>
-</div>
 </section>
+
 </main>
+
 <footer>
 <div class="wrap footer-grid">
 <span data-en="OFIR Leadership Center" data-he="מרכז אופיר למנהיגות">OFIR Leadership Center</span>
 <span data-en="Leadership · Simulation · Research · Measurement" data-he="מנהיגות · סימולציה · מחקר · מדידה">Leadership · Simulation · Research · Measurement</span>
 </div>
 </footer>
+
 <script>
+/* ---- bilingual switching (preserved) ---- */
 (function(){
   function setLang(lang){
     const rtl = lang === 'he';
@@ -260,35 +366,147 @@ In her eyes, a commander&#x27;s role is also to be part of how their people are 
   setLang(initial);
 })();
 </script>
+
 <script>
+/* ---- mobile menu toggle (preserved behavior) ---- */
 (function(){
-  if(!window.matchMedia('(prefers-reduced-motion: no-preference)').matches) return;
-  const sections=[...document.querySelectorAll('main > section:not(.hero)')];
-  document.documentElement.classList.add('section-reveal-ready');
-  const observer=new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
+  var h=document.querySelector("header"),t=document.querySelector(".nav-toggle");
+  if(!t)return;
+  t.addEventListener("click",function(){
+    var o=h.classList.toggle("nav-open");
+    t.setAttribute("aria-expanded",o?"true":"false");
+  });
+  document.querySelectorAll(".nav nav a,.nav .lang-btn").forEach(function(el){
+    el.addEventListener("click",function(){
+      h.classList.remove("nav-open");
+      t.setAttribute("aria-expanded","false");
+    });
+  });
+})();
+</script>
+
+<script>
+/* ---- unified scroll reveals (restrained, reduced-motion aware) ---- */
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = [].slice.call(document.querySelectorAll('[data-reveal], .media-reveal, [data-stagger]'));
+  if(reduce || !('IntersectionObserver' in window)){
+    targets.forEach(function(el){el.classList.add('is-visible');});
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
+    });
+  },{threshold:0.12, rootMargin:'0px 0px -6% 0px'});
+  targets.forEach(function(el){io.observe(el);});
+})();
+</script>
+
+<script>
+/* CTA transparent animation: plays once when the contact section is reached.
+   It starts large and settles to exactly the heading's height; edges dissolve. */
+(function(){
+  var vid = document.querySelector('.cta-anim');
+  var heading = document.querySelector('.cta-textcol h2');
+  var textcol = document.querySelector('.cta-textcol');
+  var section = document.getElementById('contact');
+  var fields = section ? section.querySelectorAll('.contact-form input, .contact-form textarea') : [];
+  if(!vid || !heading || !section) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function sizeToHeading(){
+    var desktop = window.matchMedia('(min-width:900px)').matches;
+    /* desktop: the leaf spans the height of the form's input fields (first field
+       top → message box bottom, excluding the Send button). mobile: keep it small
+       so the reserved strip never squeezes the heading. */
+    var target;
+    if(desktop && fields.length){
+      var first = fields[0].getBoundingClientRect();
+      var last = fields[fields.length - 1].getBoundingClientRect();
+      target = Math.round(last.bottom - first.top);
+    } else {
+      /* mobile: the leaf matches the height of the 4-line heading */
+      target = Math.round(heading.getBoundingClientRect().height);
+    }
+    if(target > 0){ vid.style.height = target + 'px'; vid.style.width = 'auto'; }
+    /* reserve a right-side strip the width of the animation (+gap) so the heading
+       and icons clear it and line up to the same edge */
+    var w = Math.round(vid.getBoundingClientRect().width);
+    if(textcol && w > 0) textcol.style.setProperty('--cta-anim-space', (w + (desktop?24:16)) + 'px');
+  }
+  sizeToHeading();
+  window.addEventListener('load', sizeToHeading);
+  window.addEventListener('resize', sizeToHeading, {passive:true});
+
+  if(reduce || !('IntersectionObserver' in window)){ sizeToHeading(); return; }
+
+  var played = false;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting && !played){
+        played = true; io.disconnect();
+        sizeToHeading();
+        vid.classList.add('is-arming');            /* jump to the large start size */
+        requestAnimationFrame(function(){ requestAnimationFrame(function(){
+          var d = (vid.duration && isFinite(vid.duration) && vid.duration > 0) ? vid.duration : 3.2;
+          vid.style.transitionDuration = d + 's';
+          vid.classList.remove('is-arming');
+          vid.classList.add('is-settling');        /* shrink to heading height */
+        }); });
+        try{ vid.currentTime = 0; }catch(_){}
+        var pr = vid.play();
+        if(pr && pr.catch){ pr.catch(function(){}); }
       }
     });
-  },{threshold:0.08,rootMargin:'0px 0px -8% 0px'});
-  sections.forEach(section=>observer.observe(section));
+  },{threshold:0.45});
+  io.observe(section);
 })();
 </script>
 
 <script>
+/* ---- team carousel (mobile): centred card is active (shows bio), arrows step, smooth ---- */
 (function(){
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const els=[...document.querySelectorAll('[data-reveal]')];
-  const io=new IntersectionObserver((entries)=>{
-    entries.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target);}})
-  },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
-  els.forEach(el=>io.observe(el));
+  var track=document.querySelector('.people');
+  if(!track) return;
+  var cards=[].slice.call(track.querySelectorAll('.person'));
+  if(!cards.length) return;
+  function markActive(){
+    var c=track.getBoundingClientRect();
+    var cx=c.left+c.width/2;
+    var best=0, bd=1e9;
+    cards.forEach(function(card,i){
+      var r=card.getBoundingClientRect();
+      var d=Math.abs((r.left+r.width/2)-cx);
+      if(d<bd){bd=d;best=i;}
+    });
+    cards.forEach(function(card,i){card.classList.toggle('is-active',i===best);});
+  }
+  function goVisual(sign){
+    var c=track.getBoundingClientRect();
+    var cx=c.left+c.width/2;
+    var target=null, best=1e9;
+    cards.forEach(function(card){
+      var r=card.getBoundingClientRect();
+      var d=(r.left+r.width/2)-cx;
+      if(sign<0 && d<-8 && Math.abs(d)<best){best=Math.abs(d);target=card;}
+      if(sign>0 && d>8 && Math.abs(d)<best){best=Math.abs(d);target=card;}
+    });
+    if(target) target.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});
+  }
+  var raf;
+  track.addEventListener('scroll',function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(markActive);},{passive:true});
+  window.addEventListener('resize',function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(markActive);});
+  var l=document.querySelector('.team-nav [data-dir="left"]');
+  var r=document.querySelector('.team-nav [data-dir="right"]');
+  if(l) l.addEventListener('click',function(){goVisual(-1);});
+  if(r) r.addEventListener('click',function(){goVisual(1);});
+  setTimeout(markActive,60);
+  markActive();
 })();
 </script>
-
-<script>(function(){var h=document.querySelector("header"),t=document.querySelector(".nav-toggle");if(!t)return;t.addEventListener("click",function(){var o=h.classList.toggle("nav-open");t.setAttribute("aria-expanded",o?"true":"false");});document.querySelectorAll(".nav nav a,.nav nav .lang-btn").forEach(function(el){el.addEventListener("click",function(){h.classList.remove("nav-open");t.setAttribute("aria-expanded","false");});});})();</script><script>(function(){function initTeamCarousel(){var track=document.querySelector(".team .people");if(!track)return;var cards=[].slice.call(track.querySelectorAll(".person"));if(!cards.length)return;function update(){var c=track.getBoundingClientRect();var cx=c.left+c.width/2;var best=null,bd=1e9;cards.forEach(function(card){var r=card.getBoundingClientRect();var d=Math.abs((r.left+r.width/2)-cx);if(d<bd){bd=d;best=card;}});cards.forEach(function(card){card.classList.toggle("is-active",card===best);});}var raf;track.addEventListener("scroll",function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(update);},{passive:true});window.addEventListener("resize",function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(update);});setTimeout(update,60);}if(document.readyState!=="loading")initTeamCarousel();else document.addEventListener("DOMContentLoaded",initTeamCarousel);})();</script><script>(function(){function add(){var track=document.querySelector(".team .people");if(!track)return;if(document.querySelector(".team-carousel"))return;var cards=track.querySelectorAll(".person");if(!cards.length)return;var nav=document.createElement("div");nav.className="team-nav";nav.innerHTML='<button type="button" aria-label="הקודם" data-d="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button>'+'<button type="button" aria-label="הבא" data-d="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>';var wrap=document.createElement("div");wrap.className="team-carousel";track.parentNode.insertBefore(wrap,track);wrap.appendChild(track);wrap.appendChild(nav);function step(){var r=cards[0].getBoundingClientRect();return r.width+14;}nav.querySelectorAll("button").forEach(function(b){b.addEventListener("click",function(){track.scrollBy({left:parseInt(b.getAttribute("data-d"),10)*step(),behavior:"smooth"});});});}if(document.readyState!=="loading")add();else document.addEventListener("DOMContentLoaded",add);})();</script><script>
+<script>
+/* ---- contact form (preserved: formsubmit.co) ---- */
 (function(){
   var f=document.getElementById('contactForm'); if(!f) return;
   f.addEventListener('submit', function(e){
@@ -304,5 +522,96 @@ In her eyes, a commander&#x27;s role is also to be part of how their people are 
       .finally(function(){ btn.disabled=false; });
   });
 })();
-</script></body>
+</script>
+<script>
+/* ===========================================================================
+   OFIR — living page engine (inlined so it always runs, even from file://)
+   scroll progress · sticky-nav state · image parallax · chapter spine ·
+   program-panel reveal. All motion off under prefers-reduced-motion.
+   =========================================================================== */
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var docEl = document.documentElement;
+  if (!reduce) docEl.classList.add('has-anim');
+
+  var progress = document.querySelector('.scroll-progress');
+  var header = document.querySelector('header');
+  var spine = document.querySelector('.spine');
+  var spineFill = document.querySelector('.spine__fill');
+  var sections = [].slice.call(document.querySelectorAll('main > section'));
+
+  var dots = [];
+  if (spine && !reduce) {
+    sections.forEach(function () {
+      var d = document.createElement('span');
+      d.className = 'spine__dot';
+      spine.appendChild(d);
+      dots.push(d);
+    });
+  }
+  function layoutDots() {
+    var full = docEl.scrollHeight || 1;
+    dots.forEach(function (d, i) {
+      d.style.top = Math.min(98, Math.max(2, (sections[i].offsetTop / full) * 100)) + '%';
+    });
+  }
+
+  var paras = [].slice.call(document.querySelectorAll(
+    '.center-images .tall img,.center-images .small img,.sim-visual img,' +
+    '.program-featured .svc-media img,.memory-portrait img'
+  ));
+  var svc = [].slice.call(document.querySelectorAll('.program-svc'));
+
+  var ticking = false;
+  function onScroll() { if (!ticking) { requestAnimationFrame(update); ticking = true; } }
+
+  function update() {
+    ticking = false;
+    var y = window.scrollY || docEl.scrollTop || 0;
+    var docH = (docEl.scrollHeight - window.innerHeight) || 1;
+    var p = Math.min(1, Math.max(0, y / docH));
+
+    if (progress) progress.style.transform = 'scaleX(' + p + ')';
+    if (spineFill) spineFill.style.height = (p * 100) + '%';
+    if (header) header.classList.toggle('is-scrolled', y > 8);
+
+    if (reduce) return;
+
+    var vh = window.innerHeight;
+    for (var i = 0; i < paras.length; i++) {
+      var el = paras[i];
+      var r = el.getBoundingClientRect();
+      if (r.bottom < -80 || r.top > vh + 80) continue;
+      var mid = r.top + r.height / 2;
+      var off = (mid - vh / 2) / vh;
+      var shift = Math.max(-15, Math.min(15, -off * 30));
+      el.style.translate = '0px ' + shift.toFixed(1) + 'px';
+    }
+
+    if (dots.length) {
+      var center = y + vh * 0.35, best = 0, bd = 1e9;
+      for (var s = 0; s < sections.length; s++) {
+        var d = Math.abs(sections[s].offsetTop - center);
+        if (d < bd) { bd = d; best = s; }
+      }
+      for (var k = 0; k < dots.length; k++) dots[k].classList.toggle('is-live', k === best);
+    }
+
+    for (var q = 0; q < svc.length; q++) {
+      var c = svc[q];
+      if (c.classList.contains('seen')) continue;
+      if (c.getBoundingClientRect().top < vh * 0.88) c.classList.add('seen');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', function () { layoutDots(); update(); });
+  window.addEventListener('load', function () { layoutDots(); update(); });
+  layoutDots();
+  update();
+})();
+</script>
+
+
+</body>
 </html>
