@@ -368,7 +368,8 @@ In her eyes, a commander's role is also to be part of how their people are shape
 <a href="https://www.linkedin.com/company/%D7%9E%D7%A8%D7%9B%D7%96-%D7%90%D7%95%D7%A4%D7%99%D7%A8-%D7%9C%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA?trk=public_post_feed-actor-name" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="assests/linkedin.png" alt="LinkedIn"/></a>
 </div>
 </div>
-<form class="contact-form" id="contactForm" data-reveal="fade" action="https://formsubmit.co/info@ofircenter.com" method="POST">
+<form class="contact-form" id="contactForm" data-reveal="fade" action="https://script.google.com/macros/s/AKfycbxewp7HT97Ga0nvaHOq5gOQdgMGyaFfGS90lBZAyJ1ZHC5Ut8E7KY1Xkv_igWX1OCew/exec" method="POST">
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0"/>
 <input type="text" name="name" autocomplete="name" required data-en-ph="Full name" data-he-ph="שם מלא" aria-label="שם"/>
 <input type="email" name="email" autocomplete="email" required data-en-ph="Email" data-he-ph="אימייל" aria-label="אימייל"/>
 <input type="tel" name="phone" autocomplete="tel" data-en-ph="Phone (optional)" data-he-ph="טלפון (רשות)" aria-label="טלפון"/>
@@ -566,9 +567,9 @@ In her eyes, a commander's role is also to be part of how their people are shape
     var status=f.querySelector('[data-status]');
     var he=document.documentElement.dir==='rtl';
     btn.disabled=true;
-    fetch('https://formsubmit.co/ajax/info@ofircenter.com',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
+    fetch(f.getAttribute('action'),{method:'POST',body:new URLSearchParams(new FormData(f))})
       .then(function(r){return r.json();})
-      .then(function(){ f.reset(); status.hidden=false; status.textContent=he?'תודה! פנייתך נשלחה, נחזור אליך בהקדם.':'Thank you! Your message has been sent.'; })
+      .then(function(res){ if(!res || !res.ok) throw new Error('failed'); f.reset(); status.hidden=false; status.textContent=he?'תודה! פנייתך נשלחה, נחזור אליך בהקדם.':'Thank you! Your message has been sent.'; })
       .catch(function(){ status.hidden=false; status.textContent=he?'אירעה שגיאה בשליחה. נסו שוב מאוחר יותר.':'Something went wrong. Please try again later.'; })
       .finally(function(){ btn.disabled=false; });
   });
