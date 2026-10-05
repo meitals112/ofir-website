@@ -25,14 +25,14 @@
 <meta name="twitter:title" content="מרכז אופיר למנהיגות – כפר עזה | ע״ש סמ״ר אופיר שושני">
 <meta name="twitter:description" content="מרכז אופיר למנהיגות בכפר עזה מאמן מנהלים וצוותים לקבל החלטות ולהוביל בתנאי לחץ, אי־ודאות ומשבר – באמצעות סימולציה, ימי עיון וסיורים בעוטף. לזכרה של סמ״ר אופיר שושני.">
 <meta name="twitter:image" content="https://ofircenter.com/assests/interior_signage.png">
-<link rel="preload" as="image" href="/assests/hero_poster.jpg">
+<link rel="preload" as="image" href="assests/hero_poster.jpg">
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&amp;family=Roboto+Mono:wght@400;500&amp;family=Varela+Round&amp;display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/style.css"/>
+<link rel="stylesheet" href="style.css"/>
 <style>a.lang-btn{text-decoration:none}</style>
-<link rel="icon" type="image/png" href="/assests/wheat_square.png" sizes="192x192">
-<link rel="apple-touch-icon" href="/assests/wheat_square.png">
+<link rel="icon" type="image/png" href="assests/wheat_square.png" sizes="192x192">
+<link rel="apple-touch-icon" href="assests/wheat_square.png">
 <!-- Structured data -->
 <script type="application/ld+json">
   
@@ -54,6 +54,7 @@
   "contactPoint": {
     "@type": "ContactPoint",
     "email": "contact@ofircenter.com",
+    "telephone": "+972-58-740-2802",
     "contactType": "customer service",
     "availableLanguage": ["he", "en"]
   }
@@ -362,6 +363,10 @@ In her eyes, a commander's role is also to be part of how their people are shape
 שלכם פועל
 כשהמציאות
 משתנה.</h2>
+<ul class="cta-direct">
+<li><a href="mailto:contact@ofircenter.com" aria-label="Email: contact@ofircenter.com"><img src="assests/mail.png" alt="" aria-hidden="true"/><span dir="ltr">contact@ofircenter.com</span></a></li>
+<li><a href="https://wa.me/972587402802" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp: 058-7402802"><img src="assests/whatsapp.png" alt="" aria-hidden="true"/><span dir="ltr">058-7402802</span></a></li>
+</ul>
 <div class="cta-social">
 <a href="https://www.facebook.com/people/%D7%9E%D7%A8%D7%9B%D7%96-%D7%90%D7%95%D7%A4%D7%99%D7%A8-%D7%9C%D7%9E%D7%A0%D7%94%D7%99%D7%92%D7%95%D7%AA/61594029811925/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="assests/facebook.png" alt="Facebook"/></a>
 <a href="https://www.instagram.com/ofir_leadership_center/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="assests/instagram.png" alt="Instagram"/></a>
@@ -665,5 +670,157 @@ In her eyes, a commander's role is also to be part of how their people are shape
 </script>
 
 
+<script>
+/* ---- block 01: gentle TRIANGULAR GRID in the empty space under the text.
+   Thin triangle cells softly appear and dissolve in slow waves that drift out
+   from the block's outer bottom corner (right in Hebrew, left in English). ---- */
+(function(){
+  var card=document.querySelector('.learning-grid .learning-card');
+  var grid=document.querySelector('.learning-grid');
+  if(!card||!grid) return;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var mob=function(){ return !window.matchMedia('(min-width:820px)').matches; };
+  var rtl=document.documentElement.dir==='rtl';
+  var cv=document.createElement('canvas'); cv.className='orb01'; cv.setAttribute('aria-hidden','true');
+  card.appendChild(cv);
+  var W=0,H=0,ctx,dpr=Math.min(2,window.devicePixelRatio||1),tris=[];
+  var SIDE=38, TH=SIDE*Math.sqrt(3)/2;
+  function size(){
+    var txt=card.querySelector('p'), cr=card.getBoundingClientRect(), tr=txt.getBoundingClientRect();
+    W=Math.round(cr.width); H=mob()?Math.max(80,Math.round(cr.bottom-tr.bottom-6)):Math.max(160,Math.round(cr.bottom-tr.bottom-24));
+    cv.style.width=W+'px'; cv.style.height=H+'px';
+    cv.width=W*dpr; cv.height=H*dpr; ctx=cv.getContext('2d'); ctx.setTransform(dpr,0,0,dpr,0,0);
+    rtl=document.documentElement.dir==='rtl';
+    tris=[];
+    for(var r=-1; r*TH<H+TH; r++){
+      var off=0;
+      for(var c=-2; c*SIDE/2<W+SIDE; c++){
+        var x=c*SIDE/2+off, y=r*TH, up=((c+r)%2===0);
+        var p=up?[[x,y+TH],[x+SIDE/2,y],[x+SIDE,y+TH]]:[[x,y],[x+SIDE,y],[x+SIDE/2,y+TH]];
+        var cx=(p[0][0]+p[1][0]+p[2][0])/3, cy=(p[0][1]+p[1][1]+p[2][1])/3;
+        tris.push({p:p,cx:cx,cy:cy,sd:Math.random()});
+      }
+    }
+  }
+  var t0=null, running=false;
+  function draw(now){
+    if(t0===null) t0=now; var s=(now-t0)/1000;
+    ctx.clearRect(0,0,W,H);
+    var ox=rtl?W:0, oy=H, maxD=Math.hypot(W,H);
+    ctx.lineWidth=0.8; ctx.lineJoin='round';
+    for(var i=0;i<tris.length;i++){
+      var t=tris[i], d=Math.hypot(t.cx-ox,t.cy-oy)/maxD;
+      var fall=Math.max(0,1-d*(mob()?1.6:1.15)); fall*=fall*(mob()?0.75:1);
+      if(fall<=0.01) continue;
+      var w=0.5+0.5*Math.sin(d*9 - s*0.7 + t.sd*2.4);
+      var a=fall*Math.max(0,w*1.25-0.25);
+      if(a<=0.01) continue;
+      var q=t.p;
+      ctx.beginPath(); ctx.moveTo(q[0][0],q[0][1]); ctx.lineTo(q[1][0],q[1][1]); ctx.lineTo(q[2][0],q[2][1]); ctx.closePath();
+      ctx.globalAlpha=a*0.10; ctx.fillStyle='#cfe0b4'; ctx.fill();
+      ctx.globalAlpha=a*0.38; ctx.strokeStyle='#cfe0b4'; ctx.stroke();
+    }
+    ctx.globalAlpha=1;
+    if(running&&!reduce) requestAnimationFrame(draw);
+  }
+  function start(){ size(); grid.classList.add('orb-ready'); running=true; requestAnimationFrame(draw); }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ io.disconnect(); setTimeout(start, reduce?0:2600); } });
+  },{threshold:0.2});
+  io.observe(grid);
+  new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(!grid.classList.contains('orb-ready')||reduce) return;
+      if(e.isIntersecting&&!running){ running=true; requestAnimationFrame(draw);} else if(!e.isIntersecting){ running=false; } });
+  }).observe(card);
+  window.addEventListener('resize',function(){ if(grid.classList.contains('orb-ready')){ size(); if(reduce) draw(performance.now()); } });
+  document.querySelectorAll('.lang-btn').forEach(function(b){ b.addEventListener('click',function(){
+    setTimeout(function(){ if(grid.classList.contains('orb-ready')){ size(); if(reduce) draw(performance.now()); } },60); }); });
+})();
+</script>
+<script>
+/* ---- #serve: very faint triangle lattice beside the heading — a hint of
+   connection only. Thin lines, low opacity, soft edges, slow breathing.
+   Desktop only; static for reduced motion; pauses off-screen. ---- */
+(function(){
+  var sec=document.getElementById('serve');
+  if(!sec) return;
+  var mob=function(){ return !window.matchMedia('(min-width:900px)').matches; };
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cv=document.createElement('canvas'); cv.className='tri-hint'; cv.setAttribute('aria-hidden','true');
+  sec.insertBefore(cv, sec.firstChild);
+  var ctx,W=0,H=0,dpr=Math.min(2,window.devicePixelRatio||1),tris=[];
+  var S=58, TH=S*Math.sqrt(3)/2;
+  function sm(a,b,x){ x=Math.min(1,Math.max(0,(x-a)/(b-a))); return x*x*(3-2*x); }
+  function layout(){
+    var sr=sec.getBoundingClientRect(), wrap=sec.querySelector('.wrap').getBoundingClientRect();
+    var h2=sec.querySelector('.serve-head h2').getBoundingClientRect(), lead=sec.querySelector('.serve-head .lead').getBoundingClientRect();
+    var cats=sec.querySelector('.serve-cats').getBoundingClientRect();
+    var rtl=document.documentElement.dir==='rtl', x0,x1;
+    if(rtl){ x0=wrap.left; x1=Math.min(h2.left,lead.left)-56; } else { x0=Math.max(h2.right,lead.right)+56; x1=wrap.right; }
+    var y0=h2.top-24, y1=cats.top-32;
+    if(mob()){ var ww=wrap.width*0.62; if(rtl){ x0=wrap.left; x1=x0+ww; } else { x1=wrap.right; x0=x1-ww; } y0=sr.top+8; y1=lead.top; }
+    W=Math.max(200,Math.round(x1-x0)); H=Math.max(200,Math.round(y1-y0));
+    cv.style.left=(x0-sr.left)+'px'; cv.style.top=(y0-sr.top)+'px'; cv.style.width=W+'px'; cv.style.height=H+'px';
+    cv.width=W*dpr; cv.height=H*dpr; ctx=cv.getContext('2d'); ctx.setTransform(dpr,0,0,dpr,0,0);
+    S=mob()?44:58; TH=S*Math.sqrt(3)/2;
+    tris=[]; var cx0=W/2, cy0=H/2, R=Math.min(W,H)*0.6;
+    for(var r=-1; r*TH<H+TH; r++) for(var c=-2; c*S/2<W+S; c++){
+      var x=c*S/2, y=r*TH, up=((c+r)%2===0);
+      var q=up?[[x,y+TH],[x+S/2,y],[x+S,y+TH]]:[[x,y],[x+S,y],[x+S/2,y+TH]];
+      var mx=(q[0][0]+q[1][0]+q[2][0])/3, my=(q[0][1]+q[1][1]+q[2][1])/3, sd=Math.random();
+      var pres=1-sm(0.35,1.0,Math.hypot(mx-cx0,my-cy0)/R+sd*0.3);   // soft, irregular edge
+      if(pres>0.02) tris.push({q:q,pres:pres,sd:sd});
+    }
+  }
+  var t0=null, running=false, rtlNow=true, edges=[];
+  var S0=S;
+  function order(){            // unique edges, each drawn as a line growing from the outer upper corner side
+    rtlNow=document.documentElement.dir==='rtl';
+    var ox=rtlNow?0:W, oy=0, seen={}, md=0; edges=[];
+    tris.forEach(function(t){
+      for(var v=0;v<3;v++){
+        var A=t.q[v], B=t.q[(v+1)%3];
+        var key=[Math.round(A[0]),Math.round(A[1]),Math.round(B[0]),Math.round(B[1])];
+        var k1=key.join(','), k2=[key[2],key[3],key[0],key[1]].join(',');
+        if(seen[k1]){ seen[k1].pres=Math.max(seen[k1].pres,t.pres); continue; }
+        var da=Math.hypot(A[0]-ox,A[1]-oy), db=Math.hypot(B[0]-ox,B[1]-oy);
+        var e=da<=db?{x1:A[0],y1:A[1],x2:B[0],y2:B[1],d:da}:{x1:B[0],y1:B[1],x2:A[0],y2:A[1],d:db};
+        e.pres=t.pres; e.sd=t.sd; e.d+=Math.random()*20;
+        seen[k1]=seen[k2]=e; edges.push(e); if(e.d>md) md=e.d;
+      }
+    });
+    edges.forEach(function(e){ e.at=(e.d/md)*5; });          // whole base drawn in ~5s
+  }
+  function draw(now){
+    if(t0===null) t0=now; var s=(now-t0)/1000;
+    ctx.clearRect(0,0,W,H); ctx.lineWidth=0.7; ctx.strokeStyle='#dfe9cf'; ctx.lineCap='round';
+    for(var i=0;i<edges.length;i++){
+      var e=edges[i];
+      var k=reduce?1:Math.min(1,Math.max(0,(s-e.at)/0.9)); if(k<=0) continue;
+      var g=1-Math.pow(1-k,3);                               // line grows from its start point
+      var b=reduce?0.6:0.55+0.45*(0.5+0.5*Math.sin(s*0.35+e.sd*6.283));
+      ctx.globalAlpha=e.pres*b*(mob()?0.12:0.15);
+      ctx.beginPath(); ctx.moveTo(e.x1,e.y1); ctx.lineTo(e.x1+(e.x2-e.x1)*g, e.y1+(e.y2-e.y1)*g); ctx.stroke();
+    }
+    ctx.globalAlpha=1;
+    if(running&&!reduce) requestAnimationFrame(draw);
+  }
+  function start(){ layout(); order(); sec.classList.add('tri-on'); running=true; requestAnimationFrame(draw); }
+  // begin only after the heading, text and categories have been revealed
+  function whenRevealed(cb){
+    var cats=mob()?sec.querySelector('.serve-head'):sec.querySelector('.serve-cats');
+    (function check(){ if(!cats||cats.classList.contains('is-visible')) setTimeout(cb, reduce?0:(mob()?900:1200)); else setTimeout(check,200); })();
+  }
+  var started=false;
+  new IntersectionObserver(function(es){ es.forEach(function(e){
+    if(e.isIntersecting){
+      if(!started){ started=true; whenRevealed(start); }
+      else if(sec.classList.contains('tri-on')&&!running&&!reduce){ running=true; requestAnimationFrame(draw);} }
+    else running=false; }); },{threshold:0.15}).observe(sec);
+  function relayout(){ if(sec.classList.contains('tri-on')){ layout(); order(); t0=null; if(reduce) draw(performance.now()); } }
+  window.addEventListener('resize',relayout);
+  document.querySelectorAll('.lang-btn').forEach(function(b){ b.addEventListener('click',function(){ setTimeout(relayout,80); }); });
+})();
+</script>
 </body>
 </html>
