@@ -616,6 +616,13 @@ html[dir="rtl"] .memory-dates{letter-spacing:.04em}
 .cta-social img{width:28px;height:28px;object-fit:contain;opacity:.78;transition:opacity .2s var(--ease)}
 .cta-social a:hover img{opacity:1}
 .cta-social-m{display:none}
+/* direct contact: email + WhatsApp, under the heading */
+.cta-direct{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-direction:column;gap:14px}
+.cta-direct a{display:inline-flex;align-items:center;gap:12px;color:var(--on-dark-soft);
+  text-decoration:none;font-size:1.05rem;transition:color .2s var(--ease)}
+.cta-direct a:hover,.cta-direct a:focus-visible{color:var(--on-dark)}
+.cta-direct img{width:24px;height:24px;object-fit:contain;opacity:.78;flex:none;transition:opacity .2s var(--ease)}
+.cta-direct a:hover img{opacity:1}
 /* mobile: social icons ride the Send button's row, at the form's left edge */
 @media (max-width:899px){
   .cta-textcol .cta-social{display:none}
@@ -663,6 +670,7 @@ html[dir="ltr"] .contact-form input,html[dir="ltr"] .contact-form textarea{direc
   /* icons pinned to the bottom, nudged up so their centre lines up with the
      taller Send button's centre ((48px button − 28px icon)/2) */
   .cta-textcol .cta-social{margin-top:auto;margin-bottom:10px}
+  .cta-textcol .cta-direct + .cta-social{padding-top:28px}   /* keep clear of the contact lines */
 }
 
 /* ---------- 17. Footer ---------- */
@@ -1107,4 +1115,336 @@ nav li a:hover::after{transform:scaleX(1)}
   .team-carousel{grid-column:6 / -1;width:100%}
   .people{grid-template-columns:repeat(2,minmax(0,1fr));
     column-gap:24px;row-gap:64px;max-width:none;margin-inline:0}
+}
+
+/* =======================================================================
+   TEAM bio — readable overlay on hover. Semi-transparent evergreen panel
+   over the photo (face shows through softly); larger body-font text.
+   ======================================================================= */
+@media (min-width:760px){
+  .person-overlay{
+    background:rgba(44,63,52,.84);
+    justify-content:center;padding:clamp(14px,1.6vw,22px);
+    overflow-y:auto;scrollbar-width:thin;
+  }
+  .person-overlay p{font-size:.9rem;line-height:1.55;color:#fff;margin:0;
+    text-shadow:0 1px 2px rgba(0,0,0,.25)}
+  .person-overlay .bio-meta,.bio-meta{
+    margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.35);
+    font-family:var(--font-body);font-size:.8rem;line-height:1.45;letter-spacing:0;
+    color:rgba(255,255,255,.9);
+  }
+}
+@media (min-width:760px) and (max-width:1099px){
+  .person-overlay{padding:12px}
+  .person-overlay p{font-size:.8rem;line-height:1.5}
+  .person-overlay .bio-meta{font-size:.72rem;margin-top:8px;padding-top:8px}
+}
+@media (min-width:760px) and (max-width:859px){
+  .person-overlay p{font-size:.75rem}
+}
+@media (min-width:1100px){
+  .person-overlay p{font-size:.88rem}
+}
+@media (min-width:1280px){
+  .person-overlay p{font-size:.95rem}
+}
+/* mobile: bio sits below the photo on light paper — darker, larger */
+@media (max-width:759px){
+  .person-overlay p{font-size:1rem;line-height:1.7;color:var(--ink)}
+  .person-overlay .bio-meta{font-family:var(--font-body);font-size:.92rem;letter-spacing:0;color:var(--ink-soft)}
+}
+
+/* =======================================================================
+   REFINEMENT PASS (Refero-informed): one action colour, readable sizes,
+   sharper corners. Overrides only — earlier rules left intact.
+   Refs: INVERSA (single vivid CTA on forest green, 18px body, sharp edges),
+   Legora (high text contrast), Munro Partners (one colour reserved for CTA).
+   ======================================================================= */
+:root{
+  /* ACTION colour — taken from the wheat in the Ofir logo. CTA-only:
+     primary buttons, submit, header contact link. Never for text/backgrounds. */
+  --action:#a4c46e;
+  --action-hover:#b6d483;
+  --on-action:#1f2d25;
+
+  --fs-eyebrow:.85rem;        /* 13.6px, was 11.5px */
+  --radius:2px;
+  --radius-media:2px;
+}
+
+/* ---- 1. Action colour ---- */
+.btn{font-size:.9rem;min-height:52px;padding:16px 28px;letter-spacing:.06em}
+html[dir="rtl"] .btn{font-size:1rem;letter-spacing:normal}
+.btn-solid,.on-dark .btn-solid{background:var(--action);color:var(--on-action);border-color:var(--action)}
+.btn-solid:hover,.on-dark .btn-solid:hover{background:var(--action-hover);border-color:var(--action-hover);color:var(--on-action)}
+.hero .btn-outline,.on-dark .btn-outline{border-color:rgba(241,242,238,.7);color:#fff}
+.contact-form button[type=submit]{background:var(--action);color:var(--on-action);
+  font-size:.9rem;min-height:52px;padding:16px 32px}
+html[dir="rtl"] .contact-form button[type=submit]{font-size:1rem}
+.contact-form button[type=submit]:hover{background:var(--action-hover)}
+/* header: the contact link becomes the one persistent CTA (desktop) */
+@media (min-width:900px){
+  nav li:last-child a{
+    background:var(--action);color:var(--on-action);
+    padding:10px 16px;border-radius:var(--radius);
+  }
+  nav li:last-child a:hover{background:var(--action-hover);color:var(--on-action)}
+  nav li:last-child a::after{display:none}
+}
+
+/* ---- 2. Readable sizes & contrast ---- */
+nav li a{font-size:.8rem;color:var(--ink)}
+html[dir="rtl"] nav li a{font-size:.95rem}
+.lang-btn{font-size:.9rem;color:var(--ink-soft)}
+.eyebrow{font-size:var(--fs-eyebrow)}
+.learning-index,.svc-num{font-size:.9rem}
+.simulation .sim-row span:last-child{color:var(--on-dark-soft);font-size:.92rem}
+.person > span{font-size:.92rem;color:var(--ink-soft)}
+.memory-dates{font-size:.9rem;color:var(--ink-soft)}
+.footer-grid,.footer-grid span{font-size:.85rem;color:var(--on-dark-soft)}
+/* extreme-conditions list: descriptions were 28% opacity until hovered */
+@media (min-width:760px){
+  .extreme-row span{opacity:.8}
+  .extreme-list:hover .extreme-row span,
+  .extreme-list:focus-within .extreme-row span{opacity:.6}
+  .extreme-list:hover .extreme-row:hover span,
+  .extreme-list:focus-within .extreme-row:focus-within span{opacity:1}
+}
+
+/* ---- 4. Sharper corners ---- */
+.program-svc{border-radius:var(--radius)}
+nav li a{white-space:nowrap}
+@media (min-width:900px) and (max-width:1199px){
+  nav ul{gap:16px}
+  nav li a{font-size:.7rem;letter-spacing:.04em}
+  html[dir="rtl"] nav li a{font-size:.88rem}
+  nav li:last-child a{padding:8px 12px}
+}
+
+/* =======================================================================
+   BACKGROUNDS — two tones only: white for light sections, deep evergreen
+   for dark ones (was white / mist / blue-tint / sand / white).
+   Consecutive light sections now read as one continuous area.
+   ======================================================================= */
+.extreme,.learning,.programs,.about,.team.section{background:var(--paper)}
+.extreme,.learning{margin-top:0;box-shadow:none}
+.extreme.section,.learning.section{padding-top:clamp(24px,4vw,56px)}
+.program-svc{background:var(--paper-2);border-color:transparent;box-shadow:none}
+
+/* =======================================================================
+   #learning — CONNECTED BLOCKS. One tall block (01), a wide block opens
+   beside it (02), a wide block opens beneath that (03). Blocks touch:
+   the method is one continuous process. Same physical layout in HE and EN.
+   Colour deepens → lightens: dark (experience) → mid (understand) → light (internalize).
+   ======================================================================= */
+.learning-grid{display:grid;gap:0;direction:ltr}
+.learning-card{
+  direction:rtl;
+  display:flex;flex-direction:column;justify-content:flex-end;gap:12px;
+  padding:clamp(24px,3vw,44px);
+  border:0;margin:0;min-height:220px;
+}
+html[dir="ltr"] .learning-card{direction:ltr}
+.learning-card:last-child{border-bottom:0}
+.learning-card:nth-child(1){background:var(--deep-2);color:var(--on-dark)}
+.learning-card:nth-child(2){background:var(--olive);color:#fff}
+.learning-card:nth-child(3){background:var(--sage);color:var(--ink)}
+.learning-card:nth-child(1) h3,.learning-card:nth-child(2) h3{color:#fff}
+.learning-card:nth-child(1) p,.learning-card:nth-child(2) p{color:rgba(255,255,255,.9)}
+.learning-card:nth-child(1) .learning-index,.learning-card:nth-child(2) .learning-index{color:rgba(255,255,255,.75)}
+.learning-card:nth-child(3) h3{color:var(--ink)}
+.learning-card:nth-child(3) p{color:var(--ink)}
+.learning-card:nth-child(3) .learning-index{color:var(--ink)}
+.learning-card h3{font-size:clamp(1.6rem,1.2rem + 1.4vw,2.3rem);margin:0}
+.learning-card p{font-size:1rem;line-height:1.65;max-width:52ch;margin:0}
+.learning-index{padding:0}
+
+@media (min-width:820px){
+  .learning-grid{grid-template-columns:minmax(0,.85fr) minmax(0,1.5fr);grid-template-rows:auto auto}
+  .learning-card{display:flex;grid-template-columns:none;min-height:240px}
+  .learning-card:nth-child(1){grid-column:1;grid-row:1 / span 2;min-height:520px}
+  .learning-card:nth-child(2){grid-column:2;grid-row:1}
+  .learning-card:nth-child(3){grid-column:2;grid-row:2}
+}
+
+/* animation: each block opens out of the previous one, in sequence */
+@media (prefers-reduced-motion:no-preference){
+  .has-anim .learning-grid .learning-card{transition:clip-path .9s cubic-bezier(.65,0,.35,1)}
+  .has-anim .learning-grid .learning-card > *{opacity:0;transform:translateY(8px);
+    transition:opacity .6s var(--ease),transform .6s var(--ease)}
+  /* closed states */
+  .has-anim .learning-grid:not(.is-visible) .learning-card:nth-child(1){clip-path:inset(100% 0 0 0)}  /* grows up */
+  .has-anim .learning-grid:not(.is-visible) .learning-card:nth-child(2){clip-path:inset(0 100% 0 0)}  /* opens rightward from block 1 */
+  .has-anim .learning-grid:not(.is-visible) .learning-card:nth-child(3){clip-path:inset(0 0 100% 0)}  /* opens downward from block 2 */
+  .has-anim .learning-grid.is-visible .learning-card{clip-path:inset(0 0 0 0)}
+  .has-anim .learning-grid.is-visible .learning-card:nth-child(2){transition-delay:.75s}
+  .has-anim .learning-grid.is-visible .learning-card:nth-child(3){transition-delay:1.5s}
+  .has-anim .learning-grid.is-visible .learning-card > *{opacity:1;transform:none}
+  .has-anim .learning-grid.is-visible .learning-card:nth-child(1) > *{transition-delay:.6s}
+  .has-anim .learning-grid.is-visible .learning-card:nth-child(2) > *{transition-delay:1.35s}
+  .has-anim .learning-grid.is-visible .learning-card:nth-child(3) > *{transition-delay:2.1s}
+}
+/* mobile: blocks stack and each opens downward from the one above */
+@media (max-width:819px) and (prefers-reduced-motion:no-preference){
+  .has-anim .learning-grid:not(.is-visible) .learning-card:nth-child(2){clip-path:inset(0 0 100% 0)}
+}
+/* close sub-pixel seams so the blocks read as one connected shape */
+@media (min-width:820px){
+  .learning-card:nth-child(2),.learning-card:nth-child(3){margin-left:-1px}
+  .learning-card:nth-child(3){margin-top:-1px}
+}
+@media (max-width:819px){.learning-card + .learning-card{margin-top:-1px}}
+
+/* =======================================================================
+   #learning blocks — DELICATE VARIANT (user reference: Caldera DESIGN.md)
+   Borrowed: flat surfaces layered by tone (no shadows), 16px element gap,
+   40px card padding, 16px "small" radius. Kept from site: evergreen palette,
+   wheat-green stays CTA-only. One feature block (01) in deep green, the rest
+   in light tones — like Caldera's single feature surface among limestone cards.
+   ======================================================================= */
+.learning-grid{gap:16px}
+.learning-card{
+  border-radius:16px;
+  padding:clamp(28px,3.2vw,40px);
+  gap:14px;justify-content:flex-start;
+}
+.learning-card:nth-child(1){background:var(--deep-2)}
+.learning-card:nth-child(2){background:#eef1ea;color:var(--ink)}
+.learning-card:nth-child(3){background:#e3e8df;color:var(--ink)}
+.learning-card:nth-child(2) h3,.learning-card:nth-child(3) h3{color:var(--ink)}
+.learning-card:nth-child(2) p,.learning-card:nth-child(3) p{color:var(--ink-soft)}
+.learning-card:nth-child(2) .learning-index,.learning-card:nth-child(3) .learning-index{color:var(--olive)}
+.learning-card h3{font-size:clamp(1.35rem,1.1rem + .8vw,1.75rem);line-height:1.2;letter-spacing:.01em}
+.learning-card p{font-size:1rem;line-height:1.75;max-width:46ch}
+.learning-index{font-size:.85rem;letter-spacing:.12em;margin-bottom:auto;padding-bottom:28px}
+/* undo the seam fixes — blocks now have air between them */
+.learning-card:nth-child(2),.learning-card:nth-child(3){margin-left:0}
+.learning-card:nth-child(3){margin-top:0}
+.learning-card + .learning-card{margin-top:0}
+@media (min-width:820px){
+  .learning-card:nth-child(1){min-height:500px}
+  .learning-card{min-height:242px}
+}
+/* animation keeps the same order, with rounded clip so corners stay soft */
+@media (prefers-reduced-motion:no-preference){
+  .has-anim .learning-grid:not(.is-visible) .learning-card:nth-child(1){clip-path:inset(100% 0 0 0 round 16px)}
+  .has-anim .learning-grid:not(.is-visible) .learning-card:nth-child(2){clip-path:inset(0 100% 0 0 round 16px)}
+  .has-anim .learning-grid:not(.is-visible) .learning-card:nth-child(3){clip-path:inset(0 0 100% 0 round 16px)}
+  .has-anim .learning-grid.is-visible .learning-card{clip-path:inset(0 0 0 0 round 16px)}
+}
+@media (max-width:819px) and (prefers-reduced-motion:no-preference){
+  .has-anim .learning-grid:not(.is-visible) .learning-card:nth-child(2){clip-path:inset(0 0 100% 0 round 16px)}
+}
+
+/* ---- #learning blocks follow reading direction: in Hebrew the tall
+   "להתנסות" block sits on the RIGHT and the next blocks open to its LEFT ---- */
+.learning-grid{direction:inherit}
+html[dir="rtl"] .learning-card{direction:rtl}
+@media (min-width:820px) and (prefers-reduced-motion:no-preference){
+  /* block 2 opens away from block 1: leftward in Hebrew, rightward in English */
+  html[dir="rtl"].has-anim .learning-grid:not(.is-visible) .learning-card:nth-child(2){clip-path:inset(0 0 0 100% round 16px)}
+  html[dir="ltr"].has-anim .learning-grid:not(.is-visible) .learning-card:nth-child(2){clip-path:inset(0 100% 0 0 round 16px)}
+}
+
+/* ---- contact (desktop): English heading wraps like the Hebrew one, and the
+   email/WhatsApp lines sit at the bottom of the text column in both languages ---- */
+@media (min-width:900px){
+  html[dir="ltr"] .cta-textcol h2{width:auto;max-width:12ch;white-space:normal;text-wrap:balance}
+  .cta-textcol .cta-direct{margin-top:auto;padding-top:32px}
+  .cta-textcol .cta-direct + .cta-social{margin-top:0;padding-top:24px}
+}
+@media (min-width:900px) and (max-width:1279px){
+  html[dir="rtl"] .cta-textcol h2{width:auto;max-width:100%;font-size:clamp(1.9rem,1rem + 2.4vw,2.6rem)}
+}
+@media (min-width:900px){
+  html[dir="ltr"] .cta-textcol h2{max-width:13ch;font-size:clamp(2rem,1.1rem + 1.8vw,2.9rem);line-height:1.08}
+}
+
+/* #learning header in English: lead paragraph sits BENEATH the heading
+   (the one-line English heading leaves no room for a side column) */
+@media (min-width:820px){
+  html[dir="ltr"] .learning-head{grid-template-columns:1fr;gap:20px}
+  html[dir="ltr"] .learning-head > p:last-child{margin-top:0;max-width:62ch}
+}
+
+/* #about on mobile, English: block stays on the pale (right) side of the photo
+   but text reads left-aligned; subtitle sentence smaller */
+@media (max-width:760px){
+  html[dir="ltr"] .about-onimage,
+  html[dir="ltr"] .about-titlerow,
+  html[dir="ltr"] .about-onimage .memory-dates,
+  html[dir="ltr"] .about-onimage .quote{text-align:left}
+  html[dir="ltr"] .about-onimage .about-title{font-size:clamp(1.45rem,1rem + 2.6vw,1.9rem);line-height:1.12}
+  html[dir="ltr"] .about-onimage .memory-dates{font-size:.8rem;margin-top:8px}
+  html[dir="ltr"] .about-onimage .quote{font-size:.95rem;line-height:1.45;margin-top:10px}
+}
+@media (max-width:760px){
+  html[dir="ltr"] .about-onimage{width:min(52%,260px);right:clamp(12px,3.5vw,20px)}
+  html[dir="ltr"] .about-onimage .about-title{font-size:clamp(1.3rem,.9rem + 2.4vw,1.7rem)}
+  html[dir="ltr"] .about-onimage .quote{font-size:.88rem;line-height:1.42}
+  html[dir="ltr"] .about-onimage .memory-dates{font-size:.74rem;letter-spacing:.04em}
+}
+/* block 01: title + text sit at the top, like blocks 02/03 */
+.learning-card:nth-child(1) .learning-index{margin-bottom:0}
+
+/* ---- block 01 orb: sits in the empty lower area; starts outside the outer
+   bottom corner (right in Hebrew, left in English) and rises in ---- */
+.orb01{display:none}
+@media (min-width:820px){
+  .learning-card:nth-child(1){position:relative}
+  .orb01{display:block;position:absolute;width:260px;height:260px;pointer-events:none;
+    inset-block-end:-10px;inset-inline-start:calc(50% - 130px);
+    opacity:0;transform:translate(calc(var(--orb-dir,1) * 120px),120px) scale(.7)}
+  html[dir="ltr"] .orb01{--orb-dir:-1}
+  /* once the blocks finish opening, drop the clip so the orb can enter from outside */
+  .learning-grid.orb-ready .learning-card:nth-child(1){clip-path:none}
+  .learning-grid.orb-ready .orb01{opacity:1;transform:none;
+    transition:opacity 1.6s ease, transform 3.2s cubic-bezier(.22,.61,.36,1)}
+}
+@media (min-width:820px){
+  /* beat the generic ".learning-card > *" reveal rules */
+  .learning-grid:not(.orb-ready) .learning-card > canvas.orb01{opacity:0 !important;
+    transform:translate(calc(var(--orb-dir,1) * 120px),120px) scale(.7) !important}
+  .learning-grid.orb-ready .learning-card > canvas.orb01{opacity:1 !important;transform:none !important;
+    transition:opacity 1.6s ease, transform 3.2s cubic-bezier(.22,.61,.36,1) !important;transition-delay:0s !important}
+}
+
+/* ---- block 01: opens TOP → BOTTOM; taller to give the leaf room; leaf sits at the
+   bottom, toward the inner side, and rises in from below the block ---- */
+@media (prefers-reduced-motion:no-preference){
+  html.has-anim .learning-grid:not(.is-visible) .learning-card:nth-child(1){clip-path:inset(0 0 100% 0 round 16px)}
+}
+@media (min-width:820px){
+  .learning-card:nth-child(1){min-height:640px}
+  .orb01{inset-block-end:18px;inset-inline-start:auto;inset-inline-end:24px;width:auto;height:auto}
+  .learning-grid:not(.orb-ready) .learning-card > canvas.orb01{opacity:0 !important;transform:translateY(90px) !important}
+  .learning-grid.orb-ready .learning-card > canvas.orb01{opacity:1 !important;transform:none !important}
+}
+/* triangular grid canvas: spans the block width under the text; fades in (no rise) */
+@media (min-width:820px){
+  .orb01{inset-inline:0;inset-block-end:0;border-radius:0 0 16px 16px}
+  .learning-grid:not(.orb-ready) .learning-card > canvas.orb01{transform:none !important}
+  .learning-grid.orb-ready .learning-card > canvas.orb01{transition:opacity 2.4s ease !important}
+}
+
+
+/* ---- #serve: faint triangle hint ---- */
+.tri-hint{display:none}
+@media (min-width:900px){
+  .tri-hint{display:block;position:absolute;z-index:0;pointer-events:none}
+  .serve.tri-on .tri-hint{opacity:1}
+}
+
+/* ---- mobile: subtle triangles too ---- */
+@media (max-width:819px){
+  .learning-card:nth-child(1){position:relative;padding-bottom:110px}
+  .orb01{display:block;position:absolute;inset-inline:0;bottom:0;pointer-events:none;border-radius:0 0 16px 16px}
+  .learning-grid:not(.orb-ready) .learning-card > canvas.orb01{opacity:0 !important;transform:none !important}
+  .learning-grid.orb-ready .learning-card > canvas.orb01{opacity:1 !important;transform:none !important;transition:opacity 2.4s ease !important}
+  .learning-grid.orb-ready .learning-card:nth-child(1){clip-path:none}
+}
+@media (max-width:899px){
+  .tri-hint{display:block;position:absolute;z-index:0;pointer-events:none}
+  .serve .wrap{position:relative;z-index:1}
 }
